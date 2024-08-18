@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80e33ec6c698bea46a6fb82a9daf1fc6
+guid: a51a1fd1199bf9d4c98fe93f5711753f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -53,7 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -121,60 +121,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: 1010MakeAGremGremTitle_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 0
-        width: 2228
-        height: 2492
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -938.9991, y: 1246}
-        - {x: -1004.9639, y: 812.057}
-        - {x: -1100.1056, y: -219.50916}
-        - {x: -1114, y: -413.64154}
-        - {x: -1114, y: -1056.943}
-        - {x: 516.0332, y: -1246}
-        - {x: 904.21094, y: -1246}
-        - {x: 1114, y: -881.84314}
-        - {x: 1114, y: 1139.4175}
-        - {x: -478.51373, y: 1246}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f67090ce9f4223469c166e5db918db6
-      internalID: 599946391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    outline:
-    - - {x: -1123.9395, y: 1246}
-      - {x: -1189.9043, y: 812.057}
-      - {x: -1285.0459, y: -219.50916}
-      - {x: -1299, y: -413.64154}
-      - {x: -1299, y: -1056.943}
-      - {x: 331.09277, y: -1246}
-      - {x: 719.2705, y: -1246}
-      - {x: 932.3877, y: -879.3055}
-      - {x: 932.3877, y: 1139.4175}
-      - {x: -663.4541, y: 1246}
+    sprites: []
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      1010MakeAGremGremTitle_0: 599946391
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
