@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SFX
   - BGM
+  - DoNotDestroy
   layers:
   - Default
   - TransparentFX
