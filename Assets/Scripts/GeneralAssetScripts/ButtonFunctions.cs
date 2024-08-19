@@ -18,7 +18,7 @@ public class ButtonFunctions : MonoBehaviour
     // Play Click SFX once on Click
     public void ClickSound()
     {
-        mySounds.volume = 0.5f;
+        mySounds.volume = 1f;
         mySounds.PlayOneShot(clickSound);
     }
 }
