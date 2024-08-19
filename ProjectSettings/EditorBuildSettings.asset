@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: acfea5cbdbcc9b14a83052892eb725d9
+  - enabled: 1
+    path: Assets/Scenes/MakeaGrem.unity
+    guid: 45eecdd20fbdb474e807c9b60a74c166
+  - enabled: 1
+    path: Assets/Scenes/Collection.unity
+    guid: cb1796a16660eee48a09486dfa0ab25d
   m_configObjects: {}
