@@ -53,7 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -121,18 +121,45 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: SettingsButtonHover_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 7344
+        height: 8368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ead6d7ebfda2243b39c3743a7c5c7b
+      internalID: 386328915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -3776, y: 4300}
+      - {x: -3776, y: -4300}
+      - {x: 3712.9966, y: -4300}
+      - {x: 3776, y: -4279.004}
+      - {x: 3776, y: 4300}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SettingsButtonHover_0: 386328915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
