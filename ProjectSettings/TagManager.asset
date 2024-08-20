@@ -7,6 +7,7 @@ TagManager:
   - SFX
   - BGM
   - DoNotDestroy
+  - SoundManager
   layers:
   - Default
   - TransparentFX
