@@ -11,14 +11,12 @@ public class ButtonFunctions : MonoBehaviour
     // Play hover SFX once on hover
     public void HoverSound()
     {
-        mySounds.volume = 0.5f;
         mySounds.PlayOneShot(hoverSound);
     }
 
     // Play Click SFX once on Click
     public void ClickSound()
     {
-        mySounds.volume = 1f;
         mySounds.PlayOneShot(clickSound);
     }
 }
