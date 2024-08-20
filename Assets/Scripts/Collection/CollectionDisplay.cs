@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class CollectionDisplay : MonoBehaviour
 {
@@ -44,6 +46,9 @@ public class CollectionDisplay : MonoBehaviour
 
                 // Set Sprites in Object
 
+                // Assign Display function to button in obj
+                obj.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(() => displaySet(set));
+
                 // Track new Game object in setsDisplayed
                 setsDisplayed.Add(set, obj);
             }
@@ -76,6 +81,9 @@ public class CollectionDisplay : MonoBehaviour
 
                 // Set Scale of Object
                 currentSet.transform.localScale = new Vector3(1f, 1f, 1f);
+
+                // Set Set Title
+                currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSet.setName;
             }
         }
         else
@@ -88,6 +96,8 @@ public class CollectionDisplay : MonoBehaviour
 
             // Set Scale of Object
             currentSet.transform.localScale = new Vector3(1f, 1f, 1f);
+            // Set Set Title
+            currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSet.setName;
         }
     }
 }
