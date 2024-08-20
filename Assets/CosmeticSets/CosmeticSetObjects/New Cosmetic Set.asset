@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
-  m_Name: BackToTheBasics
+  m_Name: New Cosmetic Set
   m_EditorClassIdentifier: 
-  setName: Back to the Basics
-  setDescription: I mean it's alright I guess
-  setRarity: 0
+  setName: asdasd
+  setDescription: asdasd
+  setRarity: 2
   setHead: {fileID: 0}
   setFace: {fileID: 0}
   setTorso: {fileID: 0}

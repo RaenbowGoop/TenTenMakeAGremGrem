@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3615bce6eea529e4cae0127731a1cd6c, type: 3}
   m_Name: CosmeticSetDatabase
   m_EditorClassIdentifier: 
-  cosmeticSets: []
+  cosmeticSets:
+  - {fileID: 11400000, guid: 1aa503762089fd9419aae0ad3fd5815e, type: 2}
+  - {fileID: 11400000, guid: 32f97748da6ccf64e80b3c8666353ae4, type: 2}
+  - {fileID: 11400000, guid: 9caa6d3ee78f6c140b3a45a6ff3fbbb5, type: 2}

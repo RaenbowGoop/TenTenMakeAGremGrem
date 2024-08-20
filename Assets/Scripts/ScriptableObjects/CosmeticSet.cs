@@ -6,7 +6,7 @@ using UnityEngine;
 public enum rarity { Offensive, BarelyLegal, Criminal, OhMyGOOP };
 
 [CreateAssetMenu(fileName = "New Cosmetic Set", menuName = "Cosmetic Sets/New Cosmetic Set")]
-public class CosmeticSet : ScriptableObject
+public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, System.IEquatable<CosmeticSet>
 {
     // Details
     public string setName;
@@ -39,7 +39,26 @@ public class CosmeticSet : ScriptableObject
     }
 
     // Comparators
-    // Compare by Set Rarity
+
+    // Overridden Default Comparators
+    public int CompareTo(CosmeticSet other)
+    {
+        if (other == null)
+        {
+            return 1;
+        }
+        else
+        {
+            return this.CompareByRarity(other);
+        }
+    }
+
+    public bool Equals(CosmeticSet other)
+    {
+        return this.setName.Equals(other.setName) && this.setRarity.Equals(other.setRarity);
+    }
+
+    // Custom Comparators
     public int CompareByRarity(CosmeticSet other)
     {
         return this.rarityValue.CompareTo(other.rarityValue);
@@ -49,6 +68,7 @@ public class CosmeticSet : ScriptableObject
     {
        return this.setName.CompareTo(other.setName);
     }
+
 
     public int CompareCosmeticObjectDefault(CosmeticSet other)
     {
@@ -71,4 +91,6 @@ public class CosmeticSet : ScriptableObject
             }
         }
     }
+
+
 }
