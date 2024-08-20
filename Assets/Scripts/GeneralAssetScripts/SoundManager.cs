@@ -8,19 +8,46 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField] GameObject musicSlider;
     [SerializeField] GameObject sfxSlider;
+    public PlayerDataManager player;
+
     float musicVolume;
     float sfxVolume;
+
+    // On Start, Set Players volume settings
+    void Start()
+    {
+        // Find Player Object
+        player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerDataManager> ();
+
+        // Get Player Volume Settings
+        musicVolume = player.BGMVolumeSetting;
+        sfxVolume = player.SFXVolumeSetting;
+
+        // Set Slider Values
+        musicSlider.GetComponent<Slider>().value = musicVolume;
+        sfxSlider.GetComponent<Slider>().value = sfxVolume;
+
+        // Set BGM and SFX Volume Levels
+        SetAllMusicVolume();
+        SetAllSFXVolume();
+    }
 
     // set music volume
     public void SetMusicVolume()
     {
         musicVolume = musicSlider.GetComponent<Slider>().value;
+
+        // Saving Music Volume Settings
+        player.BGMVolumeSetting = musicVolume;
     }
 
     // set sfx volume
     public void SetSFXVolume()
     {
         sfxVolume = sfxSlider.GetComponent<Slider>().value;
+
+        // Saving SFX Volume Settings
+        player.SFXVolumeSetting = sfxVolume;
     }
 
     // sets volume of all music in current scene
@@ -41,18 +68,5 @@ public class SoundManager : MonoBehaviour
         {
             music.GetComponent<AudioSource>().volume = sfxVolume;
         }
-    }
-
-    // on scene load:
-    //   if reloading into MainMenu, relink volume sliders
-    //   if loading into a different scene, set volume for music and sfx in current scene
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "MainMenu")
-        {
-            musicSlider = GameObject.Find("MusicVolumeSlider");
-            sfxSlider = GameObject.Find("SFXVolumeSlider");
-        }
-        SetMusicVolume();
     }
 }
