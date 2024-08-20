@@ -8,6 +8,16 @@ public class ButtonFunctions : MonoBehaviour
     public AudioClip hoverSound;
     public AudioClip clickSound;
 
+    // On Start, Set Players volume settings
+    void Start()
+    {
+        // Find Player Object
+        PlayerDataManager player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerDataManager>();
+
+        // Set SFX Volume Levels
+        mySounds.volume = player.SFXVolumeSetting;
+    }
+
     // Play hover SFX once on hover
     public void HoverSound()
     {

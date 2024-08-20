@@ -439,7 +439,6 @@ GameObject:
   - component: {fileID: 382347591}
   - component: {fileID: 382347590}
   - component: {fileID: 382347589}
-  - component: {fileID: 382347592}
   m_Layer: 0
   m_Name: ButtonFunctions
   m_TagString: SFX
@@ -567,25 +566,12 @@ Transform:
   m_GameObject: {fileID: 382347588}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3419025, y: 0.94805, z: -0.105915144}
+  m_LocalPosition: {x: -1.0092739, y: 0.8246468, z: -0.13029751}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2139612323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &382347592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382347588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d825c69709ba934aa1530b0b058c4f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameTag: SFX
 --- !u!1 &410613413
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +935,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 8f0822837d0e90e4caf83f9fe8061a33, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 6811732d2f54ec040807e35fab9e6118, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 6811732d2f54ec040807e35fab9e6118, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1108,7 +1094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &499181284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,6 +1580,66 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &855369072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 855369074}
+  - component: {fileID: 855369073}
+  - component: {fileID: 855369075}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &855369073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855369072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d825c69709ba934aa1530b0b058c4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameTag: Player
+--- !u!4 &855369074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855369072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3652662, y: -0.5844369, z: 0.1269149}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &855369075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855369072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870e38180cd46a745827d875a7080e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGMVolumeSetting: 1
+  SFXVolumeSetting: 1
 --- !u!1 &976959865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,7 +1748,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 5bbe6f0ef62acd84481926b6a539bf90, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 00e135dfba145a249a4bf5c0a65a0fa1, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 00e135dfba145a249a4bf5c0a65a0fa1, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2388,7 +2434,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: a51a1fd1199bf9d4c98fe93f5711753f, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 519b5f72422097c42a04382ff19616fe, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 519b5f72422097c42a04382ff19616fe, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2991,7 +3037,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1613132177}
-  - component: {fileID: 1613132176}
   - component: {fileID: 1613132175}
   m_Layer: 0
   m_Name: SoundManager
@@ -3014,19 +3059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 424073583}
   sfxSlider: {fileID: 1210925335}
---- !u!114 &1613132176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613132174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d825c69709ba934aa1530b0b058c4f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameTag: SoundManager
+  player: {fileID: 0}
 --- !u!4 &1613132177
 Transform:
   m_ObjectHideFlags: 0
@@ -3035,12 +3068,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613132174}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3652662, y: -0.5844369, z: 0.1269149}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.6978948, y: -0.70784014, z: 0.10253254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2139612323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640436248
 GameObject:
@@ -3150,7 +3183,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: a96dac5ae414b0147beeae3c59a79fd9, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 8af3a89584719c44d9d06ecf0d9d2e06, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 8af3a89584719c44d9d06ecf0d9d2e06, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -3816,6 +3849,8 @@ Transform:
   m_Children:
   - {fileID: 1480543965}
   - {fileID: 192696909}
+  - {fileID: 382347591}
+  - {fileID: 1613132177}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
@@ -3829,6 +3864,5 @@ SceneRoots:
   - {fileID: 2074560633}
   - {fileID: 1287614424}
   - {fileID: 2139612323}
-  - {fileID: 382347591}
   - {fileID: 410613414}
-  - {fileID: 1613132177}
+  - {fileID: 855369074}
