@@ -15,11 +15,18 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
     private int rarityValue;
 
     // Sprites
-    [SerializeField] public Sprite setHead;
-    [SerializeField] public Sprite setFace;
-    [SerializeField] public Sprite setTorso;
-    [SerializeField] public Sprite setLegs;
+    [SerializeField] public Sprite setHeadFront;
+    [SerializeField] public Sprite setHeadBack;
+
+    [SerializeField] public Sprite setTorsoFront;
+    [SerializeField] public Sprite setTorsoBack;
+
+    [SerializeField] public Sprite setLegsFront;
+    [SerializeField] public Sprite setLegsBack;
+
     [SerializeField] public Sprite setFeet;
+
+    [SerializeField] public Sprite setBackPiece;
 
     public void Awake()
     {
