@@ -11,11 +11,10 @@ public class CosmeticSetDatabase : ScriptableObject, ISerializationCallbackRecei
 
     public void OnAfterDeserialize()
     {
-        //cosmeticSets.Sort();
+        cosmeticSets.Sort();
     }
 
     public void OnBeforeSerialize()
     {
     }
-
 }
