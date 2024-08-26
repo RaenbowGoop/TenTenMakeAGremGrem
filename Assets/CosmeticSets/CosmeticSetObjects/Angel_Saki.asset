@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
+  m_Name: Angel_Saki
+  m_EditorClassIdentifier: 
+  setName: Angel Saki
+  setDescription: It's Saki, but a beautiful angel!
+  setRarity: 2
+  setHeadFront: {fileID: 21300000, guid: 2017682ebf5ad634581f3f574ee4a30d, type: 3}
+  setHeadBack: {fileID: 21300000, guid: 365284c6a976deb43b3a26077d927fa6, type: 3}
+  setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoBack: {fileID: 21300000, guid: f183c6eab8dce0b46afac68157b04892, type: 3}
+  setLegsFront: {fileID: 21300000, guid: 38e0758b23558bc41a8069984ee0b5e3, type: 3}
+  setLegsMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsBack: {fileID: 21300000, guid: 28e7af0b6f1f09141b38d680ee3d805f, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPiece: {fileID: 21300000, guid: 1034ba905fa2ba445850817fd3a4328a, type: 3}

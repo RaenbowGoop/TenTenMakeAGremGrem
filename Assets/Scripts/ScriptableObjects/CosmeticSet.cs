@@ -19,65 +19,42 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
     [SerializeField] public Sprite setHeadBack;
 
     [SerializeField] public Sprite setTorsoFront;
+    [SerializeField] public Sprite setTorsoMiddle;
     [SerializeField] public Sprite setTorsoBack;
 
     [SerializeField] public Sprite setLegsFront;
+    [SerializeField] public Sprite setLegsMiddle;
     [SerializeField] public Sprite setLegsBack;
 
-    [SerializeField] public Sprite setFeet;
+    [SerializeField] public Sprite setShoesFront;
+    [SerializeField] public Sprite setShoesBack;
 
     [SerializeField] public Sprite setBackPiece;
 
-    public void Awake()
+    public short getRarity()
     {
-        // Set rarity value based on set rarity
-        if (setRarity == rarity.Offensive) {
-            rarityValue = 0;
-
-        } else if (setRarity == rarity.BarelyLegal) {
-            rarityValue = 1;
-
-        } else if (setRarity == rarity.Criminal) {
-            rarityValue = 2;
-        } else
+        if (setRarity == rarity.Offensive)
         {
-            rarityValue = 3;
+            return 3;
+
         }
-    }
+        else if (setRarity == rarity.BarelyLegal)
+        {
+            return 2;
 
-    // Comparators
-
-    // Overridden Default Comparators
-    public int CompareTo(CosmeticSet other)
-    {
-        if (other == null)
+        }
+        else if (setRarity == rarity.Criminal)
         {
             return 1;
         }
         else
         {
-            return this.CompareByRarity(other);
+            return 0;
         }
     }
 
-    public bool Equals(CosmeticSet other)
-    {
-        return this.setName.Equals(other.setName) && this.setRarity.Equals(other.setRarity);
-    }
-
-    // Custom Comparators
-    public int CompareByRarity(CosmeticSet other)
-    {
-        return this.rarityValue.CompareTo(other.rarityValue);
-    }
-
-    public int CompareByName(CosmeticSet other)
-    {
-       return this.setName.CompareTo(other.setName);
-    }
-
-
-    public int CompareCosmeticObjectDefault(CosmeticSet other)
+    // Comparators
+    public int CompareTo(CosmeticSet other)
     {
         // A null value means that this object is greater.
         if (other == null)
@@ -99,5 +76,44 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
         }
     }
 
+    public bool Equals(CosmeticSet other)
+    {
+        return this.setName.Equals(other.setName) && this.setRarity.Equals(other.setRarity);
+    }
 
+    // Custom Comparators
+    public int CompareByRarity(CosmeticSet other)
+    {
+        short thisRarity = this.getRarity();
+        short otherRarity = other.getRarity();
+
+        if (other == null)
+        {
+            return 1;
+        }
+        else
+        {
+            if (thisRarity > otherRarity)
+            {
+                return 1;
+            }
+            else if (thisRarity == otherRarity)
+            {
+                return 0;
+            }
+            return -1;
+        }
+    }
+
+    public int CompareByName(CosmeticSet other)
+    {
+        if (other == null)
+        {
+            return 1;
+        }
+        else
+        {
+            return string.Compare(this.setName, other.setName);
+        }
+    }
 }

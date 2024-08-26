@@ -62,13 +62,13 @@ public class CollectionDisplay : MonoBehaviour
         }
     }
 
-    private void displaySet(CosmeticSet newSet)
+    private void displaySet(CosmeticSet newSetObj)
     {
         // If there is not yet a set beign displayed
         if (currentSet != null)
         {
             //replaces unit if the selected unit is not currently being displayed
-            if (!currentSet.Equals(newSet))
+            if (!currentSet.Equals(newSetObj))
             {
                 // Get rid of old display
                 Destroy(currentSet);
@@ -83,7 +83,32 @@ public class CollectionDisplay : MonoBehaviour
                 currentSet.transform.localScale = new Vector3(1f, 1f, 1f);
 
                 // Set Set Title
-                currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSet.setName;
+                currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setName;
+
+                // Set Set Description
+                currentSet.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setDescription;
+
+                // Display Assets in Model
+                // Head
+                currentSet.transform.GetChild(0).transform.GetChild(10).GetComponentInChildren<Image>().sprite = newSetObj.setHeadFront;
+                currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = newSetObj.setHeadBack;
+
+                // Torso
+                currentSet.transform.GetChild(0).transform.GetChild(9).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoFront;
+                currentSet.transform.GetChild(0).transform.GetChild(7).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoMiddle;
+                currentSet.transform.GetChild(0).transform.GetChild(4).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoBack;
+
+                // Legs
+                currentSet.transform.GetChild(0).transform.GetChild(8).GetComponentInChildren<Image>().sprite = newSetObj.setLegsFront;
+                currentSet.transform.GetChild(0).transform.GetChild(5).GetComponentInChildren<Image>().sprite = newSetObj.setLegsMiddle;
+                currentSet.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = newSetObj.setLegsBack;
+
+                // Shoes
+                currentSet.transform.GetChild(0).transform.GetChild(6).GetComponentInChildren<Image>().sprite = newSetObj.setShoesFront;
+                currentSet.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Image>().sprite = newSetObj.setShoesBack;
+
+                // Back Piece
+                currentSet.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = newSetObj.setBackPiece;
             }
         }
         else
@@ -96,8 +121,34 @@ public class CollectionDisplay : MonoBehaviour
 
             // Set Scale of Object
             currentSet.transform.localScale = new Vector3(1f, 1f, 1f);
+
             // Set Set Title
-            currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSet.setName;
+            currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setName;
+
+            // Set Set Description
+            currentSet.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setDescription;
+
+            // Display Assets in Model
+            // Head
+            currentSet.transform.GetChild(0).transform.GetChild(10).GetComponentInChildren<Image>().sprite = newSetObj.setHeadFront;
+            currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = newSetObj.setHeadBack;
+
+            // Torso
+            currentSet.transform.GetChild(0).transform.GetChild(9).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoFront;
+            currentSet.transform.GetChild(0).transform.GetChild(7).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoMiddle;
+            currentSet.transform.GetChild(0).transform.GetChild(4).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoBack;
+
+            // Legs
+            currentSet.transform.GetChild(0).transform.GetChild(8).GetComponentInChildren<Image>().sprite = newSetObj.setLegsFront;
+            currentSet.transform.GetChild(0).transform.GetChild(5).GetComponentInChildren<Image>().sprite = newSetObj.setLegsMiddle;
+            currentSet.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = newSetObj.setLegsBack;
+
+            // Shoes
+            currentSet.transform.GetChild(0).transform.GetChild(6).GetComponentInChildren<Image>().sprite = newSetObj.setShoesFront;
+            currentSet.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Image>().sprite = newSetObj.setShoesBack;
+
+            // Back Piece
+            currentSet.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = newSetObj.setBackPiece;
         }
     }
 }
