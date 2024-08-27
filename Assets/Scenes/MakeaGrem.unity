@@ -539,7 +539,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 01ed4ad8aa278114e9aa6c38904e9119, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -865,37 +865,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &517195903
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 517195904}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &517195904
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517195903}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4308436, y: 1.0026401, z: 215.2705}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &536234455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1293,7 @@ PrefabInstance:
     - target: {fileID: 4279821750530825920, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2d55f8997f87a9042989ed559d1a45db, type: 3}
+      objectReference: {fileID: 8300000, guid: ecc0c91a01ef2a8458bb13293af72456, type: 3}
     - target: {fileID: 6100118757400603362, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
       propertyPath: m_Name
       value: BackgroundMusic
@@ -1995,4 +1964,3 @@ SceneRoots:
   - {fileID: 436088160}
   - {fileID: 590073850}
   - {fileID: 327699870}
-  - {fileID: 517195904}
