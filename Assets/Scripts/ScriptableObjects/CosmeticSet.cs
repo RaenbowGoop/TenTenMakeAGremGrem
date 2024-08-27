@@ -31,6 +31,8 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
 
     [SerializeField] public Sprite setBackPiece;
 
+    [SerializeField] public Sprite setIcon;
+
     public short getRarity()
     {
         if (setRarity == rarity.Offensive)
