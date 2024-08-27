@@ -11,6 +11,11 @@ public class SceneManager : MonoBehaviour
 
     // Loads Scene
     private void LoadScene(string sceneName) {
+        if (sceneName == "MakeaGrem")
+        {
+            //destroy bgm game obj
+            Destroy(GameObject.FindGameObjectsWithTag("BGM")[0]);
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 
