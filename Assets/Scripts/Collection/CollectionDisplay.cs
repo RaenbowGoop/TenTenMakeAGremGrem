@@ -57,11 +57,14 @@ public class CollectionDisplay : MonoBehaviour
                 else if (rarity == 1) { obj.transform.GetChild(0).GetComponent<Image>().sprite = criminalIcon; }
                 else { obj.transform.GetChild(0).GetComponent<Image>().sprite = ohMyGoopIcon; }
 
-                    // Assign Display function to button in obj
-                    obj.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(() => displaySet(set));
+                // Assign Display function to button in obj
+                obj.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(() => displaySet(set));
 
-                    // Track new Game object in setsDisplayed
-                    setsDisplayed.Add(set, obj);
+                // Set Set Icon 
+                obj.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = set.setIcon;
+
+                // Track new Game object in setsDisplayed
+                setsDisplayed.Add(set, obj);
                 }
         }
 
