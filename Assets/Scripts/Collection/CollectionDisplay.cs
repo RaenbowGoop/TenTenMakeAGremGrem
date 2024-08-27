@@ -97,10 +97,17 @@ public class CollectionDisplay : MonoBehaviour
                 currentSet.transform.localScale = new Vector3(1f, 1f, 1f);
 
                 // Set Set Title
-                currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setName;
+                currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setName.ToUpper();
 
                 // Set Set Description
                 currentSet.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setDescription;
+
+                // Set Set Stats
+                currentSet.transform.GetChild(3).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newSetObj.setHeadStats.ToString();
+                currentSet.transform.GetChild(3).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = newSetObj.setTorsoStats.ToString();
+                currentSet.transform.GetChild(3).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = newSetObj.setLegsStats.ToString();
+                currentSet.transform.GetChild(3).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = newSetObj.setShoesStats.ToString();
+                currentSet.transform.GetChild(3).transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = newSetObj.setBackPieceStats.ToString();
 
                 // Display Assets in Model
                 // Head
@@ -137,10 +144,17 @@ public class CollectionDisplay : MonoBehaviour
             currentSet.transform.localScale = new Vector3(1f, 1f, 1f);
 
             // Set Set Title
-            currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setName;
+            currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setName.ToUpper();
 
             // Set Set Description
             currentSet.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setDescription;
+
+            // Set Set Stats
+            currentSet.transform.GetChild(3).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newSetObj.setHeadStats.ToString();
+            currentSet.transform.GetChild(3).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = newSetObj.setTorsoStats.ToString();
+            currentSet.transform.GetChild(3).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = newSetObj.setLegsStats.ToString();
+            currentSet.transform.GetChild(3).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = newSetObj.setShoesStats.ToString();
+            currentSet.transform.GetChild(3).transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = newSetObj.setBackPieceStats.ToString();
 
             // Display Assets in Model
             // Head

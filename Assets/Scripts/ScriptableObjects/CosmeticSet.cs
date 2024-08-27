@@ -9,10 +9,16 @@ public enum rarity { Offensive, BarelyLegal, Criminal, OhMyGOOP };
 public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, System.IEquatable<CosmeticSet>
 {
     // Details
-    public string setName;
-    public string setDescription;
-    public rarity setRarity;
-    private int rarityValue;
+    [SerializeField] public string setName;
+    [SerializeField] public string setDescription;
+    [SerializeField] public rarity setRarity;
+
+    // Set Stats
+    [SerializeField] public int setHeadStats;
+    [SerializeField] public int setTorsoStats;
+    [SerializeField] public int setLegsStats;
+    [SerializeField] public int setShoesStats;
+    [SerializeField] public int setBackPieceStats;
 
     // Sprites
     [SerializeField] public Sprite setHeadFront;

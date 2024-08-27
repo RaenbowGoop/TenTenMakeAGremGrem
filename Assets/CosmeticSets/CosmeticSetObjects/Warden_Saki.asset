@@ -15,6 +15,12 @@ MonoBehaviour:
   setName: Warden Saki
   setDescription: Warden Saki on the scene. Warden Saki on the job.
   setRarity: 2
+  rarityValue: 0
+  setHeadStats: 1423
+  setTorsoStats: 3214
+  setLegsStats: 5463
+  setShoesStats: 334
+  setBackPieceStats: 6563
   setHeadFront: {fileID: 21300000, guid: 56a31b7d208197542b3f0464634c4ec1, type: 3}
   setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoFront: {fileID: 21300000, guid: 8068155c49941b0488ef2d6acdff2996, type: 3}

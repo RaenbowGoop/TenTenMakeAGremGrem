@@ -15,6 +15,12 @@ MonoBehaviour:
   setName: Star Lord Shiny
   setDescription: Star Lord Shiny! Master of Stars and Stickers!
   setRarity: 2
+  rarityValue: 0
+  setHeadStats: 31414
+  setTorsoStats: 1244
+  setLegsStats: 14244
+  setShoesStats: 42242
+  setBackPieceStats: 222234
   setHeadFront: {fileID: 21300000, guid: 94741ce20b6626b409e902443fd68bcf, type: 3}
   setHeadBack: {fileID: 21300000, guid: 3b0ba4685e3a4a84a81a0ef7df5478af, type: 3}
   setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
