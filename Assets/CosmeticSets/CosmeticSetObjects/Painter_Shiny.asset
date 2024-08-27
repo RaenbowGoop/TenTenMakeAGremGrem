@@ -15,6 +15,12 @@ MonoBehaviour:
   setName: Painter Shiny
   setDescription: Are you sure you're a professional?
   setRarity: 1
+  rarityValue: 0
+  setHeadStats: 133231
+  setTorsoStats: 13232
+  setLegsStats: 2323
+  setShoesStats: 32323
+  setBackPieceStats: 333223
   setHeadFront: {fileID: 21300000, guid: a22fb77771896fd4dbaf6fbff7c13d39, type: 3}
   setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}

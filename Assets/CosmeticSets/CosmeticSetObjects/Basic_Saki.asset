@@ -15,6 +15,12 @@ MonoBehaviour:
   setName: Basic Saki
   setDescription: It's Saki, but Basic!
   setRarity: 0
+  rarityValue: 0
+  setHeadStats: 2321
+  setTorsoStats: 31234
+  setLegsStats: 12442
+  setShoesStats: 3223
+  setBackPieceStats: 23231
   setHeadFront: {fileID: 21300000, guid: 4fb6e90281e62cd4b90361829d3ad86c, type: 3}
   setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
@@ -26,4 +32,4 @@ MonoBehaviour:
   setShoesFront: {fileID: 21300000, guid: 18cf9ce59559b2e43b68e079f21e028a, type: 3}
   setShoesBack: {fileID: 21300000, guid: 1602fe49e848641469c58c3fd21a622c, type: 3}
   setBackPiece: {fileID: 21300000, guid: 7505a387bc71a2146b9e45f3b593acd7, type: 3}
-  setIcon: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setIcon: {fileID: 21300000, guid: c8adbc1d293d558498e4e2ff8b6d0d78, type: 3}
