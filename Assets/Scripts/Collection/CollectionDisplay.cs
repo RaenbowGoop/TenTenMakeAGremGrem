@@ -18,6 +18,12 @@ public class CollectionDisplay : MonoBehaviour
     [SerializeField] GameObject setDisplay;
     GameObject currentSet;
 
+    // Cosmetic Set 
+    [SerializeField] Sprite offensiveIcon;
+    [SerializeField] Sprite barelyLegalIcon;
+    [SerializeField] Sprite criminalIcon;
+    [SerializeField] Sprite ohMyGoopIcon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,13 +51,18 @@ public class CollectionDisplay : MonoBehaviour
                 obj.transform.localScale = new Vector3(1f, 1f, 1f);
 
                 // Set Sprites in Object
+                short rarity = set.getRarity();
+                if (rarity == 3) { obj.transform.GetChild(0).GetComponent<Image>().sprite = offensiveIcon; }
+                else if (rarity == 2) { obj.transform.GetChild(0).GetComponent<Image>().sprite = barelyLegalIcon; }
+                else if (rarity == 1) { obj.transform.GetChild(0).GetComponent<Image>().sprite = criminalIcon; }
+                else { obj.transform.GetChild(0).GetComponent<Image>().sprite = ohMyGoopIcon; }
 
-                // Assign Display function to button in obj
-                obj.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(() => displaySet(set));
+                    // Assign Display function to button in obj
+                    obj.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(() => displaySet(set));
 
-                // Track new Game object in setsDisplayed
-                setsDisplayed.Add(set, obj);
-            }
+                    // Track new Game object in setsDisplayed
+                    setsDisplayed.Add(set, obj);
+                }
         }
 
         // Setting Up Set display
