@@ -13,6 +13,12 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
     [SerializeField] public string setDescription;
     [SerializeField] public rarity setRarity;
 
+    // Set Occupancy
+    [SerializeField] public bool hasHead;
+    [SerializeField] public bool hasTorso;
+    [SerializeField] public bool hasLegs;
+    [SerializeField] public bool hasShoes;
+    [SerializeField] public bool hasBackPiece;
     // Set Stats
     [SerializeField] public int setHeadStats;
     [SerializeField] public int setTorsoStats;
@@ -38,6 +44,15 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
     [SerializeField] public Sprite setBackPiece;
 
     [SerializeField] public Sprite setIcon;
+
+    void Awake()
+    {
+        hasHead = true;
+        hasTorso = true;
+        hasLegs = true;
+        hasShoes = true;
+        hasBackPiece = true;
+    }
 
     public short getRarity()
     {
