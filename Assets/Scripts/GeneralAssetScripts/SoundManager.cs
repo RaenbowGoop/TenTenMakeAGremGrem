@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField] GameObject musicSlider;
     [SerializeField] GameObject sfxSlider;
-    public PlayerDataManager player;
+    private PlayerDataManager player;
 
     float musicVolume;
     float sfxVolume;
