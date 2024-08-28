@@ -8,7 +8,6 @@ public class CollectionDisplay : MonoBehaviour
 {
     [SerializeField] CosmeticSetDatabase csdb;
     Dictionary<CosmeticSet, GameObject> setsDisplayed = new Dictionary<CosmeticSet, GameObject>();
-    int indexOfCurrentSet = -1;
 
     // Prefab(s) for display
     [SerializeField] GameObject setFrame;
@@ -69,10 +68,9 @@ public class CollectionDisplay : MonoBehaviour
         }
 
         // Setting Up Set display
-        if (indexOfCurrentSet == -1 && setsDisplayed.Count > 0)
+        if (!currentSet && setsDisplayed.Count > 0)
         {
-            indexOfCurrentSet = 0;
-            displaySet(csdb.cosmeticSets[indexOfCurrentSet]);
+            displaySet(csdb.cosmeticSets[0]);
         }
     }
 
