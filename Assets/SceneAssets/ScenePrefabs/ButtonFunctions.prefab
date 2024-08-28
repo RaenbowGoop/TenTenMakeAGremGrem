@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6340218913967150699}
   - component: {fileID: 987225185028139233}
   - component: {fileID: 8249235338897682751}
+  - component: {fileID: 6630336207221634376}
   m_Layer: 0
   m_Name: ButtonFunctions
   m_TagString: SFX
@@ -144,3 +145,16 @@ MonoBehaviour:
   mySounds: {fileID: 987225185028139233}
   hoverSound: {fileID: 8300000, guid: 35340265a1ea1da499aaa0513b9da423, type: 3}
   clickSound: {fileID: 8300000, guid: bcb2bab43502ff040aba9788de1a0cc5, type: 3}
+--- !u!114 &6630336207221634376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281041735883213438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023f5d9b40f11114787fe2cd016c2051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 987225185028139233}

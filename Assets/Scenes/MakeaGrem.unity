@@ -1291,9 +1291,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 327699870}
     m_Modifications:
     - target: {fileID: 4279821750530825920, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279821750530825920, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ecc0c91a01ef2a8458bb13293af72456, type: 3}
+      objectReference: {fileID: 8300000, guid: e31ed7ce5ced6514aacf6f4350ea5f1d, type: 3}
+    - target: {fileID: 4279821750530825920, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6100118757400603362, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
       propertyPath: m_Name
       value: BackgroundMusic
@@ -1342,11 +1350,38 @@ PrefabInstance:
     - {fileID: 5508804047760434573, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6100118757400603362, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 907581261}
   m_SourcePrefab: {fileID: 100100000, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
 --- !u!4 &907581259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9136288906963448545, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
+  m_PrefabInstance: {fileID: 907581258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &907581260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6100118757400603362, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
+  m_PrefabInstance: {fileID: 907581258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &907581261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907581260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a0adab5acae704389263c63e2352af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSources:
+  - {fileID: 907581262}
+--- !u!82 &907581262 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4279821750530825920, guid: 3a63f162ae7d7484c81a9465229c43f1, type: 3}
   m_PrefabInstance: {fileID: 907581258}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &932028259 stripped

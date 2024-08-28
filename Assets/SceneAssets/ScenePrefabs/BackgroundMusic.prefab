@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9136288906963448545}
   - component: {fileID: 4279821750530825920}
   - component: {fileID: 5508804047760434573}
+  - component: {fileID: 5359160577257159003}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: BGM
@@ -142,3 +143,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTag: BGM
+--- !u!114 &5359160577257159003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100118757400603362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a0adab5acae704389263c63e2352af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 4279821750530825920}
