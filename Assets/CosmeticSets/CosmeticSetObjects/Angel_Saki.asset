@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setName: Angel Saki
   setDescription: It's Saki, but a beautiful angel!
-  setRarity: 1
-  rarityValue: 0
+  setRarity: 3
+  hasHead: 1
+  hasTorso: 1
+  hasLegs: 1
+  hasShoes: 1
+  hasBackPiece: 1
   setHeadStats: 1233
   setTorsoStats: 223
   setLegsStats: 3234
