@@ -22,11 +22,11 @@ public class GremGachaDisplay : MonoBehaviour
 
         // Legs
         this.transform.GetChild(8).GetComponent<Image>().sprite = gremGachaManager.legs.setLegsFront;
-        this.transform.GetChild(5).GetComponent<Image>().sprite = gremGachaManager.legs.setLegsMiddle;
+        this.transform.GetChild(6).GetComponent<Image>().sprite = gremGachaManager.legs.setLegsMiddle;
         this.transform.GetChild(2).GetComponent<Image>().sprite = gremGachaManager.legs.setLegsBack;
 
         // Shoes
-        this.transform.GetChild(6).GetComponent<Image>().sprite = gremGachaManager.shoes.setShoesFront;
+        this.transform.GetChild(5).GetComponent<Image>().sprite = gremGachaManager.shoes.setShoesFront;
         this.transform.GetChild(3).GetComponent<Image>().sprite = gremGachaManager.shoes.setShoesBack;
 
         // Back Piece
