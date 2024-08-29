@@ -5733,8 +5733,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   darknessAnimation: {fileID: 521443331}
   postProcessVolume: {fileID: 1196855197}
-  targetHour: 2
-  targetMinute: 55
+  targetHour: 10
+  targetMinute: 10
   gracePeriod: 0
 --- !u!95 &1196855201
 Animator:
