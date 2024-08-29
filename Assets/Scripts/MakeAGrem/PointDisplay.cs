@@ -36,7 +36,7 @@ public class PointDisplay : MonoBehaviour
         multiplierDisplay();
 
         // Display Total Points
-        totalPointTextGroup.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = gremGachaManager.totalPoints.ToString();
+        totalPointTextGroup.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = gremGachaManager.totalPoints.ToString("N0");
 
         // Display Icons of Pieces ROLLED
         displaySetPieceIcons();
@@ -63,17 +63,17 @@ public class PointDisplay : MonoBehaviour
     void basePointDisplay()
     {
         // Set Base Points Total
-        basePointTextGroup.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = gremGachaManager.basePointTotal.ToString() + " pts";
+        basePointTextGroup.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = gremGachaManager.basePointTotal.ToString("N0") + " pts";
         // Set Base Points for Head
-        basePointTextGroup.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = gremGachaManager.head.setHeadStats.ToString() + " pts";
+        basePointTextGroup.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = gremGachaManager.head.setHeadStats.ToString("N0") + " pts";
         // Set Base Points for Torso
-        basePointTextGroup.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = gremGachaManager.torso.setTorsoStats.ToString() + " pts";
+        basePointTextGroup.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = gremGachaManager.torso.setTorsoStats.ToString("N0") + " pts";
         // Set Base Points for Legs
-        basePointTextGroup.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = gremGachaManager.legs.setLegsStats.ToString() + " pts";
+        basePointTextGroup.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = gremGachaManager.legs.setLegsStats.ToString("N0") + " pts";
         // Set Base Points for Shoes
-        basePointTextGroup.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = gremGachaManager.shoes.setShoesStats.ToString() + " pts";
+        basePointTextGroup.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = gremGachaManager.shoes.setShoesStats.ToString("N0") + " pts";
         // Set Base Points for Back Piece
-        basePointTextGroup.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gremGachaManager.backPiece.setBackPieceStats.ToString() + " pts";
+        basePointTextGroup.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gremGachaManager.backPiece.setBackPieceStats.ToString("N0") + " pts";
     }
 
     void multiplierDisplay()

@@ -20,11 +20,11 @@ MonoBehaviour:
   hasLegs: 1
   hasShoes: 1
   hasBackPiece: 1
-  setHeadStats: 1233
-  setTorsoStats: 223
-  setLegsStats: 3234
-  setShoesStats: 233114
-  setBackPieceStats: 446767
+  setHeadStats: 243583
+  setTorsoStats: 311302
+  setLegsStats: 334433
+  setShoesStats: 262553
+  setBackPieceStats: 168129
   setHeadFront: {fileID: 21300000, guid: 2017682ebf5ad634581f3f574ee4a30d, type: 3}
   setHeadBack: {fileID: 21300000, guid: 365284c6a976deb43b3a26077d927fa6, type: 3}
   setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
