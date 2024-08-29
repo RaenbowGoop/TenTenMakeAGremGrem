@@ -146,11 +146,14 @@ public class GremGachaManager : MonoBehaviour
             // Always take OMGOOP pieces as combos
             if (entry.Key.setRarity == rarity.OhMyGOOP)
             {
-                // OhMyGOOP Pieces have a static flat bonus
-                multipierCombos.Add( new MultiplierCombo() { set = entry.Key, multiplier = flatOMGoopBonus });
+                for (int i = 0; i < entry.Value; i++)
+                {
+                    // OhMyGOOP Pieces have a static flat bonus
+                    multipierCombos.Add(new MultiplierCombo() { set = entry.Key, multiplier = flatOMGoopBonus });
 
-                // Update total Multiplier
-                totalMultiplier += flatOMGoopBonus;
+                    // Update total Multiplier
+                    totalMultiplier += flatOMGoopBonus;
+                }
             } else {
                 // Check if count of set pieces is at least 2
                 if (entry.Value >= 2)
