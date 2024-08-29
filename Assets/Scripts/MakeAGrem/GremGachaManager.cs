@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct MultiplierCombo
+{
+    public CosmeticSet set;
+    public float multiplier;
+}
+
 public class GremGachaManager : MonoBehaviour
 {
     // Gacha Results
@@ -11,15 +17,33 @@ public class GremGachaManager : MonoBehaviour
     [HideInInspector] public CosmeticSet shoes;
     [HideInInspector] public CosmeticSet backPiece;
 
+    // Stats
+    [HideInInspector] public int basePointTotal;
+    [HideInInspector] public float multiplierTotal;
+    [HideInInspector] public int totalPoints;
+    [HideInInspector] public List<MultiplierCombo> multipierCombos;
+
     // Cosmetic Set Database
     [SerializeField] private CosmeticSetDatabase csDatabase;
-    public Dictionary<CosmeticSet, int> csDict;
+    private Dictionary<CosmeticSet, int> csDict;
 
     // Rarity Rates (Percentage)
     [SerializeField] private int rateOHMYGOOP;
     [SerializeField] private int rateCriminal;
     [SerializeField] private int rateBarelyLegal;
     [SerializeField] private int rateOffensive;
+    
+    // Multipliers
+    [SerializeField] private float flatOMGoopBonus;
+
+    [SerializeField] private float twoPcSetBonus;
+    [SerializeField] private float threePcSetBonus;
+    [SerializeField] private float fourPcSetBonus;
+    [SerializeField] private float fivePcSetBonus;
+
+    [SerializeField] private float offensiveBonusAmplifier;
+    [SerializeField] private float barelyLegalBonusAmplifier;
+    [SerializeField] private float criminalBonusAmplifier;
 
     // Random Num Generator
     private System.Random randNumGen;
@@ -35,6 +59,16 @@ public class GremGachaManager : MonoBehaviour
 
         // Roll Set Pieces
         generateSet();
+
+        // Calculate Base Points
+        basePointTotal = head.setHeadStats + torso.setTorsoStats + legs.setLegsStats + shoes.setShoesStats + backPiece.setBackPieceStats;
+
+        // Evaluate Combos
+        multipierCombos = new List<MultiplierCombo>();
+        multiplierTotal = evaluatePossibleCombos();
+
+        // Calculate Total Points
+        totalPoints = (int)(basePointTotal * multiplierTotal);
     }
 
     // rolls a random rarity
@@ -42,7 +76,6 @@ public class GremGachaManager : MonoBehaviour
     {
         // Generates number from 1 to 100
         int result = randNumGen.Next(1, 101);
-        Debug.Log("Rarity Roll: " + result.ToString());
 
         if (result <= rateOffensive) { return rarity.Offensive; }
         else if (result <= rateOffensive + rateBarelyLegal) { return rarity.BarelyLegal; }
@@ -68,7 +101,6 @@ public class GremGachaManager : MonoBehaviour
 
         // select item in filteredCosmeticItems
         int result = randNumGen.Next(0, filteredCosmeticItems.Count);
-        Debug.Log(result);
         return filteredCosmeticItems[result];
     }
 
@@ -81,33 +113,91 @@ public class GremGachaManager : MonoBehaviour
     }
 
     // Randomly generate Set pieces
-    private void generateSet()
+    void generateSet()
     {
         // Generate Head
         head = getRandomItem(csDatabase.cosmeticSetsWithHeads);
         logItemIntoDict(head);
-        Debug.Log(head.setName);
 
         // Generate Torso
         torso = getRandomItem(csDatabase.cosmeticSetsWithTorso);
         logItemIntoDict(torso);
-        Debug.Log(torso.setName);
 
         // Generate Legs
         legs = getRandomItem(csDatabase.cosmeticSetsWithLegs);
         logItemIntoDict(legs);
-        Debug.Log(legs.setName);
 
         // Generate Shoes
         shoes = getRandomItem(csDatabase.cosmeticSetsWithShoes);
         logItemIntoDict(shoes);
-        Debug.Log(shoes.setName);
 
         // Generate BackPiece
         backPiece = getRandomItem(csDatabase.cosmeticSetsWithBackPiece);
         logItemIntoDict(backPiece);
-        Debug.Log(backPiece.setName);
 
     }
 
+    // Evalute all combos and multipliers. Returns total multiplier caclulater
+     float evaluatePossibleCombos()
+    {
+        float totalMultiplier = 1;
+        foreach (KeyValuePair<CosmeticSet, int> entry in csDict)
+        {
+            // Always take OMGOOP pieces as combos
+            if (entry.Key.setRarity == rarity.OhMyGOOP)
+            {
+                // OhMyGOOP Pieces have a static flat bonus
+                multipierCombos.Add( new MultiplierCombo() { set = entry.Key, multiplier = flatOMGoopBonus });
+
+                // Update total Multiplier
+                totalMultiplier += flatOMGoopBonus;
+            } else {
+                // Check if count of set pieces is at least 2
+                if (entry.Value >= 2)
+                {
+                    float multiplier;
+
+                    // Determine set mutiplier based on num of pieces
+                    switch (entry.Value)
+                    {
+                        case 2:
+                            multiplier = twoPcSetBonus;
+                            break;
+                        case 3:
+                            multiplier = threePcSetBonus;
+                            break;
+                        case 4:
+                            multiplier = fourPcSetBonus;
+                            break;
+                        default:
+                            // 5 piece set is default
+                            multiplier = fivePcSetBonus;
+                            break;
+                    }
+
+                    // Apply Set rarity bonus
+                    switch (entry.Key.setRarity)
+                    {
+                        case rarity.Criminal:
+                            multiplier *= criminalBonusAmplifier;
+                            break;
+                        case rarity.BarelyLegal:
+                            multiplier *= barelyLegalBonusAmplifier;
+                            break;
+                        default:
+                            // rarity.Offensive Rarity by default
+                            multiplier *= offensiveBonusAmplifier;
+                            break;
+                    }
+                    // Store multiplier
+                    multipierCombos.Add(new MultiplierCombo() { set = entry.Key, multiplier = multiplier });
+
+                    // Update totalMultiplier
+                    totalMultiplier += multiplier;
+                }
+            }
+        }
+
+        return totalMultiplier;
+    }
 }
