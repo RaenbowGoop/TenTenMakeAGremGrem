@@ -8,8 +8,11 @@ using Unity​Engine.Rendering.PostProcessing;
 public class ColorTimeManager : MonoBehaviour
 {
 
-    [SerializeField] PlayableDirector darknessAnimation;
+    [SerializeField] PlayableDirector darkenAnimation;
+    [SerializeField] PlayableDirector lightenAnimation;
     [SerializeField] PostProcessVolume postProcessVolume;
+    [SerializeField] GameObject CafeSaki;
+
     [SerializeField] int targetHour;
     [SerializeField] int targetMinute;
     [SerializeField] int gracePeriod;
@@ -19,11 +22,13 @@ public class ColorTimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Immediately set darkness (w/o animation) if entering the scene when not target time + grace period
+        // Immediately set darken (w/o animation) if entering the scene when not target time + grace period
         isDark = checkIfNotTime();
         if (isDark)
         {
             postProcessVolume.weight = 1.0f;
+            CafeSaki.transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
+            CafeSaki.transform.GetChild(2).gameObject.SetActive(false);
         }
         
     }
@@ -31,22 +36,38 @@ public class ColorTimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If Time is still 10:10 (not dark yet), will stop checking after animation is played once
+        // If Time is still 10:10 (not dark yet)
         if (!isDark)
         {
-            // Try to trigger darkness
-            triggerDarknessIfNotTime();
+            // Try to trigger darken
+            triggerDarkenfNotTime();
+        } else {
+            // Try to trigger lighten
+            triggeLightenIfTime();
         }
     }
 
-    void triggerDarknessIfNotTime()
+    void triggerDarkenfNotTime()
     {
         // Check if it is not 10:10
         isDark = checkIfNotTime();
         if (isDark)
         {
             // Trigger darkness animation
-            darknessAnimation.Play();
+            darkenAnimation.Play();
+        }
+    }
+
+    void triggeLightenIfTime()
+    {
+        // Check if it is not 10:10
+        isDark = checkIfNotTime();
+        if (!isDark)
+        {
+            // Trigger lighten animation
+            CafeSaki.transform.GetChild(2).GetComponent<CanvasGroup>().alpha = 0.0f;
+            CafeSaki.transform.GetChild(2).gameObject.SetActive(true);
+            lightenAnimation.Play();
         }
     }
 
