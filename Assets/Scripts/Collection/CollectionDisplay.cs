@@ -85,8 +85,9 @@ public class CollectionDisplay : MonoBehaviour
         // Set Set Title
         currentSet.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setName.ToUpper();
 
-        // Set Set Description
+        // Set Set Description and Rarity
         currentSet.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setDescription;
+        currentSet.transform.GetChild(2).transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text = "rarity: " + newSetObj.setRarity.ToString().ToUpper();
 
         // Set Set Stats
         currentSet.transform.GetChild(3).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newSetObj.setHeadStats.ToString();
