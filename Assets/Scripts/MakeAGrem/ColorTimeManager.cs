@@ -28,7 +28,7 @@ public class ColorTimeManager : MonoBehaviour
         {
             postProcessVolume.weight = 1.0f;
             CafeSaki.transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
-            CafeSaki.transform.GetChild(2).gameObject.SetActive(false);
+            CafeSaki.transform.GetChild(2).transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
         }
         
     }
@@ -65,8 +65,6 @@ public class ColorTimeManager : MonoBehaviour
         if (!isDark)
         {
             // Trigger lighten animation
-            CafeSaki.transform.GetChild(2).GetComponent<CanvasGroup>().alpha = 0.0f;
-            CafeSaki.transform.GetChild(2).gameObject.SetActive(true);
             lightenAnimation.Play();
         }
     }
