@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseAnim: {fileID: 1460041745}
+  animationText: {fileID: 1460041746}
   mouseAnimObj: {fileID: 286993884}
 --- !u!222 &286993888
 CanvasRenderer:
@@ -2490,8 +2491,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294907648
-  m_fontColor: {r: 0, g: 0.09174347, b: 1, a: 1}
+    rgba: 4284763648
+  m_fontColor: {r: 0, g: 0.30588236, b: 0.3921569, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
