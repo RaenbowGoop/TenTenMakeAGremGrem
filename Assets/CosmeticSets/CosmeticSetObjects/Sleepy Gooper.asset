@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
-  m_Name: Prisoner_Shiny
+  m_Name: Sleepy Gooper
   m_EditorClassIdentifier: 
-  setName: Prisoner Shiny
-  setDescription: 'Prisoner Shiny on the scene. Prisoner Shiny on the run. '
-  setRarity: 2
+  setName: Sleepy Gooper
+  setDescription: That's quite the bed head...
+  setRarity: 0
   hasHead: 1
   hasTorso: 1
   hasLegs: 1
   hasShoes: 1
   hasBackPiece: 1
-  setHeadStats: 269349
-  setTorsoStats: 203123
-  setLegsStats: 170237
-  setShoesStats: 133232
-  setBackPieceStats: 197059
-  setHeadFront: {fileID: 21300000, guid: f7e482510ee15de4480e1225cbcf6e52, type: 3}
+  setHeadStats: 129750
+  setTorsoStats: 110430
+  setLegsStats: 117762
+  setShoesStats: 122286
+  setBackPieceStats: 129772
+  setHeadFront: {fileID: 21300000, guid: 4cdc966a116bc6e47ba9debc68ab089d, type: 3}
   setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setTorsoMiddle: {fileID: 21300000, guid: 0cfee8095202617429ca2a99d6158874, type: 3}
+  setTorsoMiddle: {fileID: 21300000, guid: 2474ab42052263a4d9d8288a943e3091, type: 3}
   setTorsoBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setLegsMiddle: {fileID: 21300000, guid: df8df704ff7e13643ba4aa1bfe72f657, type: 3}
+  setLegsMiddle: {fileID: 21300000, guid: 3175e298567754b439b7470b6fa0f0be, type: 3}
   setLegsBack: {fileID: 21300000, guid: 1602fe49e848641469c58c3fd21a622c, type: 3}
-  setShoesFront: {fileID: 21300000, guid: 6baa13377bb65d14492dbda08a86c16d, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 8f316caad0d94744abfe68647602f396, type: 3}
   setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setBackPiece: {fileID: 21300000, guid: bb08edc625b08c94ca1060d68a2e1654, type: 3}
-  setIcon: {fileID: 21300000, guid: 40a238a66db9a3443bf97c83dabfc630, type: 3}
+  setBackPiece: {fileID: 21300000, guid: 31daa8f83559f4a49a8fa611994a34c5, type: 3}
+  setIcon: {fileID: 21300000, guid: 64200fe28d4783f45a524782205e6c4d, type: 3}
