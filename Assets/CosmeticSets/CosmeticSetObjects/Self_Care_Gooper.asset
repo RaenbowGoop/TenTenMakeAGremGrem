@@ -12,28 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
   m_Name: Self_Care_Gooper
   m_EditorClassIdentifier: 
-  setName: 
-  setDescription: 
+  setName: Self Care Gooper
+  setDescription: Stay clean goopers!
   setRarity: 0
-  hasHead: 0
-  hasTorso: 0
-  hasLegs: 0
-  hasShoes: 0
-  hasBackPiece: 0
+  hasHead: 1
+  hasTorso: 1
+  hasLegs: 1
+  hasShoes: 1
+  hasBackPiece: 1
   setHeadStats: 0
   setTorsoStats: 0
   setLegsStats: 0
   setShoesStats: 0
   setBackPieceStats: 0
-  setHeadFront: {fileID: 0}
-  setHeadBack: {fileID: 0}
-  setTorsoFront: {fileID: 0}
-  setTorsoMiddle: {fileID: 0}
-  setTorsoBack: {fileID: 0}
-  setLegsFront: {fileID: 0}
-  setLegsMiddle: {fileID: 0}
-  setLegsBack: {fileID: 0}
-  setShoesFront: {fileID: 0}
-  setShoesBack: {fileID: 0}
-  setBackPiece: {fileID: 0}
-  setIcon: {fileID: 0}
+  setHeadFront: {fileID: 21300000, guid: 4d044c139e04d944da8bcc7b91e8ad3d, type: 3}
+  setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoBack: {fileID: 21300000, guid: 9cf61e25a365bf441afe763913c7a7e7, type: 3}
+  setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsBack: {fileID: 21300000, guid: 19d20f288eb125e4492a0ad7260a5e80, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 0f01d3f0bf11ee4439326c0ef127b46b, type: 3}
+  setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPiece: {fileID: 21300000, guid: ce91ed1967a58424580ec9c2df991331, type: 3}
+  setIcon: {fileID: 21300000, guid: 89a1fa013a873bd4fa1e65daa9b614ee, type: 3}
