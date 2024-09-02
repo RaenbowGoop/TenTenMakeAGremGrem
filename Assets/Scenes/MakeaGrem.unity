@@ -6973,9 +6973,9 @@ MonoBehaviour:
   lightenAnimation: {fileID: 1760101905}
   postProcessVolume: {fileID: 1196855197}
   CafeSaki: {fileID: 1079065800}
-  targetHour: 10
-  targetMinute: 10
-  gracePeriod: 0
+  targetHour: 4
+  targetMinute: 41
+  gracePeriod: 1
 --- !u!95 &1196855201
 Animator:
   serializedVersion: 5
