@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
-  m_Name: Laundry_Gooper
+  m_Name: Adzuki_Gooper
   m_EditorClassIdentifier: 
-  setName: Laundry Gooper
-  setDescription: I like the smell of new clothes
+  setName: Adzuki Gooper
+  setDescription: Does your hair taste like red beans?
   setRarity: 0
   hasHead: 1
   hasTorso: 1
@@ -25,15 +25,15 @@ MonoBehaviour:
   setLegsStats: 0
   setShoesStats: 0
   setBackPieceStats: 0
-  setHeadFront: {fileID: 21300000, guid: 001bee64612db2a4e860917b63f218a4, type: 3}
+  setHeadFront: {fileID: 21300000, guid: 4820b318c6d846a488803a284adf63b2, type: 3}
   setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setTorsoMiddle: {fileID: 21300000, guid: 089a9e207fcb7b24b9deea3e2417067a, type: 3}
+  setTorsoFront: {fileID: 21300000, guid: 2e748e32067ecc84baa970e94f319d51, type: 3}
+  setTorsoMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setLegsMiddle: {fileID: 21300000, guid: e58f294e4c7b20f49aa4b4ead17c4340, type: 3}
-  setLegsBack: {fileID: 21300000, guid: 1602fe49e848641469c58c3fd21a622c, type: 3}
-  setShoesFront: {fileID: 21300000, guid: 4bf96c2766c218e4f8b106051224690f, type: 3}
+  setLegsMiddle: {fileID: 21300000, guid: 4eb7bf10e9ad5684698b74b247ed2237, type: 3}
+  setLegsBack: {fileID: 21300000, guid: 093895c81fa4c834abb7a241254f6539, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 52f33a2f94086614dab201ec21e69c93, type: 3}
   setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setBackPiece: {fileID: 21300000, guid: 61edb4faca80c554b9744a5c157b832f, type: 3}
-  setIcon: {fileID: 21300000, guid: c3c3bf235627ad54d969b57b73ad35ff, type: 3}
+  setBackPiece: {fileID: 21300000, guid: b0273225b537968479b4eeb436eec44a, type: 3}
+  setIcon: {fileID: 21300000, guid: 2cfd2d7f4161dd14a801b93084069f32, type: 3}
