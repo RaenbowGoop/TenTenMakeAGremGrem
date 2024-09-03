@@ -45,15 +45,6 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
 
     [SerializeField] public Sprite setIcon;
 
-    void Awake()
-    {
-        hasHead = true;
-        hasTorso = true;
-        hasLegs = true;
-        hasShoes = true;
-        hasBackPiece = true;
-    }
-
     public short getRarity()
     {
         if (setRarity == rarity.Offensive)

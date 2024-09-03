@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cosmeticSets:
   - {fileID: 11400000, guid: d1b6b667ee0fb8543adcce3621a9adf4, type: 2}
+  - {fileID: 11400000, guid: d3d9970eedbfc0149a7b1a6626669e65, type: 2}
   - {fileID: 11400000, guid: afb84731d1d363741aa1df9e3e3b23c4, type: 2}
   - {fileID: 11400000, guid: 3ee94d8c7d579664fa485fbb7fbc37f7, type: 2}
   - {fileID: 11400000, guid: 5caa301cdd4d5954b8009be3be3a9637, type: 2}
@@ -28,7 +29,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0c1fb9b22fdd3c4fa216d8e63d526e4, type: 2}
   - {fileID: 11400000, guid: 5e9702dc7e3ddba4bb7a2e099d151433, type: 2}
   cosmeticSetsWithHeads:
-  - {fileID: 11400000, guid: d1b6b667ee0fb8543adcce3621a9adf4, type: 2}
   - {fileID: 11400000, guid: afb84731d1d363741aa1df9e3e3b23c4, type: 2}
   - {fileID: 11400000, guid: 3ee94d8c7d579664fa485fbb7fbc37f7, type: 2}
   - {fileID: 11400000, guid: 5caa301cdd4d5954b8009be3be3a9637, type: 2}

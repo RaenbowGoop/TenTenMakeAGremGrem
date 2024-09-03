@@ -90,11 +90,59 @@ public class CollectionDisplay : MonoBehaviour
         currentSet.transform.GetChild(2).transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text = "rarity: " + newSetObj.setRarity.ToString().ToUpper();
 
         // Set Set Stats
-        currentSet.transform.GetChild(3).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newSetObj.setHeadStats.ToString();
-        currentSet.transform.GetChild(3).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = newSetObj.setTorsoStats.ToString();
-        currentSet.transform.GetChild(3).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = newSetObj.setLegsStats.ToString();
-        currentSet.transform.GetChild(3).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = newSetObj.setShoesStats.ToString();
-        currentSet.transform.GetChild(3).transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = newSetObj.setBackPieceStats.ToString();
+        // Display number only if head points is not 0
+        if (newSetObj.hasHead)
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newSetObj.setHeadStats.ToString();
+        } else
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "N/A";
+            currentSet.transform.GetChild(3).transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+        }
+
+        // Display number only if torso points is not 0
+        if (newSetObj.hasTorso)
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = newSetObj.setTorsoStats.ToString();
+        }
+        else
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "N/A";
+            currentSet.transform.GetChild(3).transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(false);
+        }
+
+        // Display number only if legs points is not 0
+        if (newSetObj.hasLegs)
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = newSetObj.setLegsStats.ToString();
+        }
+        else
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "N/A";
+            currentSet.transform.GetChild(3).transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(false);
+        }
+
+        // Display number only if shoes points is not 0
+        if (newSetObj.hasShoes)
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = newSetObj.setShoesStats.ToString();
+        }
+        else
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "N/A";
+            currentSet.transform.GetChild(3).transform.GetChild(3).transform.GetChild(0).gameObject.SetActive(false);
+        }
+
+        // Display number only if back piece points is not 0
+        if (newSetObj.hasBackPiece)
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = newSetObj.setBackPieceStats.ToString();
+        }
+        else
+        {
+            currentSet.transform.GetChild(3).transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "N/A";
+            currentSet.transform.GetChild(3).transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(false);
+        }
 
         // Display Assets in Model
         // Head
