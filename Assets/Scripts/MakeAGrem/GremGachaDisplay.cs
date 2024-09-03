@@ -39,6 +39,7 @@ public class GremGachaDisplay : MonoBehaviour
 
             // Back Piece
             this.transform.GetChild(0).GetComponent<Image>().sprite = gremGachaManager.backPiece.setBackPiece;
+
             isDisplayed = true;
         }
     }

@@ -27,20 +27,24 @@ public class GremCardRarityDisplay : MonoBehaviour
 
     void Update()
     {
-        // Set Head Card Display
-        setCardDisplay(headCard, gremGachaManager.head.setRarity);
+        if (!isCardsSet)
+        { // Set Head Card Display
+            setCardDisplay(headCard, gremGachaManager.head.setRarity);
 
-        // Set Torso Card Display
-        setCardDisplay(torsoCard, gremGachaManager.torso.setRarity);
+            // Set Torso Card Display
+            setCardDisplay(torsoCard, gremGachaManager.torso.setRarity);
 
-        // Set Legs Card Display
-        setCardDisplay(bodyCard, gremGachaManager.legs.setRarity);
+            // Set Legs Card Display
+            setCardDisplay(bodyCard, gremGachaManager.legs.setRarity);
 
-        // Set Shoes Card Display
-        setCardDisplay(shoesCard, gremGachaManager.shoes.setRarity);
+            // Set Shoes Card Display
+            setCardDisplay(shoesCard, gremGachaManager.shoes.setRarity);
 
-        // Set Back Piece Card Display
-        setCardDisplay(backPieceCard, gremGachaManager.backPiece.setRarity);
+            // Set Back Piece Card Display
+            setCardDisplay(backPieceCard, gremGachaManager.backPiece.setRarity);
+
+            isCardsSet = true;
+        }
     }
 
     void setCardDisplay(GameObject card, rarity setRarity)
