@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
+  m_Name: Mr_Chip
+  m_EditorClassIdentifier: 
+  setName: Mr. Chip
+  setDescription: Oh my goop, it's Mr. Chip!
+  setRarity: 3
+  hasHead: 1
+  hasTorso: 0
+  hasLegs: 0
+  hasShoes: 0
+  hasBackPiece: 0
+  setHeadStats: 0
+  setTorsoStats: 0
+  setLegsStats: 0
+  setShoesStats: 0
+  setBackPieceStats: 0
+  setHeadFront: {fileID: 21300000, guid: 8d9ed020b5bde524ab4082d4f4a6f80f, type: 3}
+  setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoBack: {fileID: 21300000, guid: 4e6e090f768d1864fae06f8a549dc7a3, type: 3}
+  setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsBack: {fileID: 21300000, guid: cb0ed3fa79dc3374f8ba4104584bfcf6, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPiece: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setIcon: {fileID: 21300000, guid: 6cbcea5572bc6474f8bbb54fa10730e6, type: 3}
