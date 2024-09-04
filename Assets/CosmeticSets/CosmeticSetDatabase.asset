@@ -22,6 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9b80b2c02d3b0324f9cdab818a522ee7, type: 2}
   - {fileID: 11400000, guid: 01af57a286129c348b46528c75cf87f2, type: 2}
   - {fileID: 11400000, guid: 217f159188dc35a458cffca99fa4e9bf, type: 2}
+  - {fileID: 11400000, guid: 088f2417aceaadd49895da6066109f92, type: 2}
   - {fileID: 11400000, guid: 41a4d8f2c576b4f43b7e00588daeaab3, type: 2}
   - {fileID: 11400000, guid: afb84731d1d363741aa1df9e3e3b23c4, type: 2}
   - {fileID: 11400000, guid: 3ee94d8c7d579664fa485fbb7fbc37f7, type: 2}
@@ -95,6 +96,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5e9702dc7e3ddba4bb7a2e099d151433, type: 2}
   cosmeticSetsWithShoes:
   - {fileID: 11400000, guid: d1b6b667ee0fb8543adcce3621a9adf4, type: 2}
+  - {fileID: 11400000, guid: 088f2417aceaadd49895da6066109f92, type: 2}
   - {fileID: 11400000, guid: afb84731d1d363741aa1df9e3e3b23c4, type: 2}
   - {fileID: 11400000, guid: 3ee94d8c7d579664fa485fbb7fbc37f7, type: 2}
   - {fileID: 11400000, guid: 5caa301cdd4d5954b8009be3be3a9637, type: 2}
