@@ -30,18 +30,23 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
     [SerializeField] public Sprite setHeadFront;
     [SerializeField] public Sprite setHeadBack;
 
+    [SerializeField] public Sprite setTorsoSuperFront;
     [SerializeField] public Sprite setTorsoFront;
     [SerializeField] public Sprite setTorsoMiddle;
     [SerializeField] public Sprite setTorsoBack;
+    [SerializeField] public Sprite setTorsoSuperBack;
 
+    [SerializeField] public Sprite setLegsSuperFront;
     [SerializeField] public Sprite setLegsFront;
     [SerializeField] public Sprite setLegsMiddle;
     [SerializeField] public Sprite setLegsBack;
 
     [SerializeField] public Sprite setShoesFront;
+    [SerializeField] public Sprite setShoesMiddle;
     [SerializeField] public Sprite setShoesBack;
 
-    [SerializeField] public Sprite setBackPiece;
+    [SerializeField] public Sprite setBackPieceFront;
+    [SerializeField] public Sprite setBackPieceBack;
 
     [SerializeField] public Sprite setIcon;
 

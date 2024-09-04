@@ -145,26 +145,32 @@ public class CollectionDisplay : MonoBehaviour
         }
 
         // Display Assets in Model
+
         // Head
-        currentSet.transform.GetChild(0).transform.GetChild(10).GetComponentInChildren<Image>().sprite = newSetObj.setHeadFront;
-        currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = newSetObj.setHeadBack;
+        currentSet.transform.GetChild(0).transform.GetChild(12).GetComponentInChildren<Image>().sprite = newSetObj.setHeadFront;
+        currentSet.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = newSetObj.setHeadBack;
 
         // Torso
-        currentSet.transform.GetChild(0).transform.GetChild(9).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoFront;
-        currentSet.transform.GetChild(0).transform.GetChild(7).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoMiddle;
-        currentSet.transform.GetChild(0).transform.GetChild(4).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoBack;
+        currentSet.transform.GetChild(0).transform.GetChild(14).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoSuperFront;
+        currentSet.transform.GetChild(0).transform.GetChild(11).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoFront;
+        currentSet.transform.GetChild(0).transform.GetChild(8).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoMiddle;
+        currentSet.transform.GetChild(0).transform.GetChild(5).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoBack;
+        currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoSuperBack;
 
         // Legs
-        currentSet.transform.GetChild(0).transform.GetChild(8).GetComponentInChildren<Image>().sprite = newSetObj.setLegsFront;
-        currentSet.transform.GetChild(0).transform.GetChild(5).GetComponentInChildren<Image>().sprite = newSetObj.setLegsMiddle;
-        currentSet.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = newSetObj.setLegsBack;
+        currentSet.transform.GetChild(0).transform.GetChild(13).GetComponentInChildren<Image>().sprite = newSetObj.setLegsSuperFront;
+        currentSet.transform.GetChild(0).transform.GetChild(9).GetComponentInChildren<Image>().sprite = newSetObj.setLegsFront;
+        currentSet.transform.GetChild(0).transform.GetChild(6).GetComponentInChildren<Image>().sprite = newSetObj.setLegsMiddle;
+        currentSet.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Image>().sprite = newSetObj.setLegsBack;
 
         // Shoes
-        currentSet.transform.GetChild(0).transform.GetChild(6).GetComponentInChildren<Image>().sprite = newSetObj.setShoesFront;
-        currentSet.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Image>().sprite = newSetObj.setShoesBack;
+        currentSet.transform.GetChild(0).transform.GetChild(10).GetComponentInChildren<Image>().sprite = newSetObj.setShoesFront;
+        currentSet.transform.GetChild(0).transform.GetChild(7).GetComponentInChildren<Image>().sprite = newSetObj.setShoesMiddle;
+        currentSet.transform.GetChild(0).transform.GetChild(4).GetComponentInChildren<Image>().sprite = newSetObj.setShoesBack;
 
         // Back Piece
-        currentSet.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = newSetObj.setBackPiece;
+        currentSet.transform.GetChild(0).transform.GetChild(15).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceFront;
+        currentSet.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceBack;
     }
 
     private void displaySet(CosmeticSet newSetObj)

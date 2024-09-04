@@ -27,13 +27,18 @@ MonoBehaviour:
   setBackPieceStats: 175509
   setHeadFront: {fileID: 21300000, guid: 94741ce20b6626b409e902443fd68bcf, type: 3}
   setHeadBack: {fileID: 21300000, guid: 3b0ba4685e3a4a84a81a0ef7df5478af, type: 3}
+  setTorsoSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoMiddle: {fileID: 21300000, guid: fdd49880b9a40c54a9a2588285985e5e, type: 3}
   setTorsoBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setLegsMiddle: {fileID: 21300000, guid: 1b1113ad8463bf34187b8c04fe6ca172, type: 3}
   setLegsBack: {fileID: 21300000, guid: d7a969b4016b727498b9819c9aecce27, type: 3}
-  setShoesFront: {fileID: 21300000, guid: 4e9a81e8be6a8e0499560e43972d1d99, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setShoesMiddle: {fileID: 21300000, guid: 4e9a81e8be6a8e0499560e43972d1d99, type: 3}
   setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setBackPiece: {fileID: 21300000, guid: 12e258eff7529c94a99f06bb6f99ad68, type: 3}
+  setBackPieceFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceBack: {fileID: 21300000, guid: 12e258eff7529c94a99f06bb6f99ad68, type: 3}
   setIcon: {fileID: 21300000, guid: 1bb02daed7f153d439c877e2aac7052f, type: 3}
