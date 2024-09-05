@@ -17,7 +17,7 @@ public class PlayerDataManager : MonoBehaviour
     private void Start()
     {
         // Loading Volume Settings
-        BGMVolumeSetting = PlayerPrefs.GetFloat("BGMVolumeSetting", 1.0f);
-        SFXVolumeSetting = PlayerPrefs.GetFloat("SFXVolumeSetting", 1.0f);
+        BGMVolumeSetting = PlayerPrefs.GetFloat("BGMVolumeSetting", .35f);
+        SFXVolumeSetting = PlayerPrefs.GetFloat("SFXVolumeSetting", .35f);
     }
 }
