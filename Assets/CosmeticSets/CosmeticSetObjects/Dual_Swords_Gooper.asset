@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
+  m_Name: Dual_Swords_Gooper
+  m_EditorClassIdentifier: 
+  setName: Dual Swords Gooper
+  setDescription: Study the way of the blade! Again! and Again!
+  setRarity: 2
+  hasHead: 1
+  hasTorso: 1
+  hasLegs: 1
+  hasShoes: 1
+  hasBackPiece: 1
+  setHeadStats: 0
+  setTorsoStats: 0
+  setLegsStats: 0
+  setShoesStats: 0
+  setBackPieceStats: 0
+  setHeadFront: {fileID: 21300000, guid: 95523fe03ce1b1449a40cc6a05373e2a, type: 3}
+  setHeadBack: {fileID: 21300000, guid: 5fcfb6bea16d63e48b9aa25dc86bd3c9, type: 3}
+  setTorsoSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoMiddle: {fileID: 21300000, guid: aa62b8fa8ea15b947bfaffcecd53cf00, type: 3}
+  setTorsoBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsFront: {fileID: 21300000, guid: c32790824db7dba45968c018367f84ee, type: 3}
+  setLegsMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsBack: {fileID: 21300000, guid: 1602fe49e848641469c58c3fd21a622c, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setShoesMiddle: {fileID: 21300000, guid: 223298d272602a2408769af8f2576165, type: 3}
+  setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceBack: {fileID: 21300000, guid: 03736351ef2626f49b377db2f6ea21a0, type: 3}
+  setIcon: {fileID: 21300000, guid: 199470c16de800a45a146ebf51ef1a45, type: 3}
