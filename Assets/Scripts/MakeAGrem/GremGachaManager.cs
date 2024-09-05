@@ -30,7 +30,7 @@ public class GremGachaManager : MonoBehaviour
     // Rarity Rates (Percentage)
     [SerializeField] private int rateOHMYGOOP;
     [SerializeField] private int rateCriminal;
-    [SerializeField] private int rateBarelyLegal;
+    [SerializeField] private int rateContraband;
     [SerializeField] private int rateOffensive;
     
     // Multipliers
@@ -42,7 +42,7 @@ public class GremGachaManager : MonoBehaviour
     [SerializeField] private float fivePcSetBonus;
 
     [SerializeField] private float offensiveBonusAmplifier;
-    [SerializeField] private float barelyLegalBonusAmplifier;
+    [SerializeField] private float contrabandBonusAmplifier;
     [SerializeField] private float criminalBonusAmplifier;
 
     // Random Num Generator
@@ -78,8 +78,8 @@ public class GremGachaManager : MonoBehaviour
         int result = randNumGen.Next(1, 101);
 
         if (result <= rateOffensive) { return rarity.Offensive; }
-        else if (result <= rateOffensive + rateBarelyLegal) { return rarity.BarelyLegal; }
-        else if (result <= rateOffensive + rateBarelyLegal + rateCriminal) { return rarity.Criminal;  }
+        else if (result <= rateOffensive + rateContraband) { return rarity.Contraband; }
+        else if (result <= rateOffensive + rateContraband + rateCriminal) { return rarity.Criminal;  }
         return rarity.OhMyGOOP;
     }
 
@@ -184,8 +184,8 @@ public class GremGachaManager : MonoBehaviour
                         case rarity.Criminal:
                             multiplier *= criminalBonusAmplifier;
                             break;
-                        case rarity.BarelyLegal:
-                            multiplier *= barelyLegalBonusAmplifier;
+                        case rarity.Contraband:
+                            multiplier *= contrabandBonusAmplifier;
                             break;
                         default:
                             // rarity.Offensive Rarity by default

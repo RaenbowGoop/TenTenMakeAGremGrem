@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Possible set rarity
-public enum rarity { Offensive, BarelyLegal, Criminal, OhMyGOOP };
+public enum rarity { Offensive, Contraband, Criminal, OhMyGOOP };
 
 [CreateAssetMenu(fileName = "New Cosmetic Set", menuName = "Cosmetic Sets/New Cosmetic Set")]
 public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, System.IEquatable<CosmeticSet>
@@ -57,7 +57,7 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
             return 3;
 
         }
-        else if (setRarity == rarity.BarelyLegal)
+        else if (setRarity == rarity.Contraband)
         {
             return 2;
 

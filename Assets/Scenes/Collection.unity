@@ -245,7 +245,7 @@ MonoBehaviour:
   setModel: {fileID: 6867511775273212269, guid: 127d2cc71db5a644aa20abe6a0f70683, type: 3}
   setDisplay: {fileID: 226646179}
   offensiveIcon: {fileID: 21300000, guid: 66692fe2a857b5e468eb0330b26a05b2, type: 3}
-  barelyLegalIcon: {fileID: 21300000, guid: 1ef8e2166dcdd7748b072a7e4288e594, type: 3}
+  contrabandIcon: {fileID: 21300000, guid: 1ef8e2166dcdd7748b072a7e4288e594, type: 3}
   criminalIcon: {fileID: 21300000, guid: 40a238a66db9a3443bf97c83dabfc630, type: 3}
   ohMyGoopIcon: {fileID: 21300000, guid: 5b83838c660959b4ba1f12159c5bb286, type: 3}
 --- !u!1001 &461810923
@@ -912,7 +912,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

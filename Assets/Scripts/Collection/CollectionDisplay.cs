@@ -19,7 +19,7 @@ public class CollectionDisplay : MonoBehaviour
 
     // Cosmetic Set 
     [SerializeField] Sprite offensiveIcon;
-    [SerializeField] Sprite barelyLegalIcon;
+    [SerializeField] Sprite contrabandIcon;
     [SerializeField] Sprite criminalIcon;
     [SerializeField] Sprite ohMyGoopIcon;
 
@@ -52,7 +52,7 @@ public class CollectionDisplay : MonoBehaviour
                 // Set Sprites in Object
                 short rarity = set.getRarity();
                 if (rarity == 3) { obj.transform.GetChild(0).GetComponent<Image>().sprite = offensiveIcon; }
-                else if (rarity == 2) { obj.transform.GetChild(0).GetComponent<Image>().sprite = barelyLegalIcon; }
+                else if (rarity == 2) { obj.transform.GetChild(0).GetComponent<Image>().sprite = contrabandIcon; }
                 else if (rarity == 1) { obj.transform.GetChild(0).GetComponent<Image>().sprite = criminalIcon; }
                 else { obj.transform.GetChild(0).GetComponent<Image>().sprite = ohMyGoopIcon; }
 

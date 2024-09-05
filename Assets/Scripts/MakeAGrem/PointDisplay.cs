@@ -16,7 +16,7 @@ public class PointDisplay : MonoBehaviour
     [SerializeField] GremGachaManager gremGachaManager;
 
     [SerializeField] Sprite offensiveFrame;
-    [SerializeField] Sprite barelyLegalFrame;
+    [SerializeField] Sprite contrabandFrame;
     [SerializeField] Sprite criminalFrame;
     [SerializeField] Sprite ohMyGoopFrame;
 
@@ -50,8 +50,8 @@ public class PointDisplay : MonoBehaviour
         {
             case rarity.Offensive:
                 return offensiveFrame;
-            case rarity.BarelyLegal:
-                return barelyLegalFrame;
+            case rarity.Contraband:
+                return contrabandFrame;
             case rarity.Criminal:
                 return criminalFrame;
             default:

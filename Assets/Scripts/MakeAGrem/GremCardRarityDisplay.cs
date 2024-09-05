@@ -7,7 +7,7 @@ public class GremCardRarityDisplay : MonoBehaviour
 {
     [SerializeField] Sprite ohMyGoopCard;
     [SerializeField] Sprite criminalCard;
-    [SerializeField] Sprite barelyLegalCard;
+    [SerializeField] Sprite contrabandCard;
     [SerializeField] Sprite offensiveCard;
 
     [SerializeField] GremGachaManager gremGachaManager;
@@ -61,8 +61,8 @@ public class GremCardRarityDisplay : MonoBehaviour
             case rarity.Offensive:
                 card.transform.GetChild(0).GetComponent<Image>().sprite = offensiveCard;
                 break;
-            case rarity.BarelyLegal:
-                card.transform.GetChild(0).GetComponent<Image>().sprite = barelyLegalCard;
+            case rarity.Contraband:
+                card.transform.GetChild(0).GetComponent<Image>().sprite = contrabandCard;
                 break;
             case rarity.Criminal:
                 card.transform.GetChild(0).GetComponent<Image>().sprite = criminalCard;

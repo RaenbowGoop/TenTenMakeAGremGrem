@@ -571,7 +571,7 @@ MonoBehaviour:
   stamps: {fileID: 656923937}
   gremGachaManager: {fileID: 966256712}
   offensiveFrame: {fileID: 21300000, guid: 66692fe2a857b5e468eb0330b26a05b2, type: 3}
-  barelyLegalFrame: {fileID: 21300000, guid: 1ef8e2166dcdd7748b072a7e4288e594, type: 3}
+  contrabandFrame: {fileID: 21300000, guid: 1ef8e2166dcdd7748b072a7e4288e594, type: 3}
   criminalFrame: {fileID: 21300000, guid: 40a238a66db9a3443bf97c83dabfc630, type: 3}
   ohMyGoopFrame: {fileID: 21300000, guid: 5b83838c660959b4ba1f12159c5bb286, type: 3}
 --- !u!1 &67853230
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ohMyGoopCard: {fileID: 21300000, guid: 607f0b71367cb234bb6f9c95a95a6c0e, type: 3}
   criminalCard: {fileID: 21300000, guid: a956be374967dc44eaa3564eabe9cf19, type: 3}
-  barelyLegalCard: {fileID: 21300000, guid: cd4ba8be46e35564492a245b140dc72a, type: 3}
+  contrabandCard: {fileID: 21300000, guid: cd4ba8be46e35564492a245b140dc72a, type: 3}
   offensiveCard: {fileID: 21300000, guid: 0572dd9eecd1ed543b6ae13515161ebe, type: 3}
   gremGachaManager: {fileID: 966256712}
   headCard: {fileID: 404766636}
@@ -5812,15 +5812,15 @@ MonoBehaviour:
   csDatabase: {fileID: 11400000, guid: 63a9494a9e390f34d84ce25083efd3fc, type: 2}
   rateOHMYGOOP: 15
   rateCriminal: 20
-  rateBarelyLegal: 30
+  rateContraband: 30
   rateOffensive: 35
-  flatOMGoopBonus: 13
+  flatOMGoopBonus: 8
   twoPcSetBonus: 3
   threePcSetBonus: 5
   fourPcSetBonus: 7
   fivePcSetBonus: 9
   offensiveBonusAmplifier: 2.25
-  barelyLegalBonusAmplifier: 4.25
+  contrabandBonusAmplifier: 4.25
   criminalBonusAmplifier: 6.25
 --- !u!4 &966256713
 Transform:
