@@ -13,9 +13,9 @@ public class ColorTimeManager : MonoBehaviour
     [SerializeField] PostProcessVolume postProcessVolume;
     [SerializeField] GameObject CafeSaki;
 
-    [SerializeField] int targetHour;
-    [SerializeField] int targetMinute;
-    [SerializeField] int gracePeriod;
+    [SerializeField] public int targetHour;
+    [SerializeField] public int targetMinute;
+    [SerializeField] public int gracePeriod;
     bool isDark;
     System.DateTime localDate;
 
