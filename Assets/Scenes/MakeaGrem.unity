@@ -5966,7 +5966,7 @@ MonoBehaviour:
   rateCriminal: 20
   rateContraband: 30
   rateOffensive: 35
-  flatOMGoopBonus: 8
+  flatOMGoopBonus: 10
   twoPcSetBonus: 3
   threePcSetBonus: 6
   fourPcSetBonus: 9
