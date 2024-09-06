@@ -48,11 +48,7 @@ public class CafeSakiMessageManager : MonoBehaviour
     bool checkIfProperTime()
     {
         // Return true if time is target time or within grace period after target time
-        if (localDate.Hour % 12 == colorTimeManager.targetHour)
-        {
-            return true;
-        }
-        if (localDate.Minute > colorTimeManager.targetMinute && localDate.Minute < colorTimeManager.targetMinute + colorTimeManager.gracePeriod)
+        if (localDate.Hour % 12 == colorTimeManager.targetHour && localDate.Minute > colorTimeManager.targetMinute && localDate.Minute < colorTimeManager.targetMinute + colorTimeManager.gracePeriod)
         {
             return true;
         }
