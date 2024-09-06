@@ -33,7 +33,7 @@ MonoBehaviour:
   setTorsoBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setLegsSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsFront: {fileID: 21300000, guid: 8c9fd5628e48b194eadad56cd1acec9d, type: 3}
   setLegsMiddle: {fileID: 21300000, guid: 1b1113ad8463bf34187b8c04fe6ca172, type: 3}
   setLegsBack: {fileID: 21300000, guid: d7a969b4016b727498b9819c9aecce27, type: 3}
   setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
