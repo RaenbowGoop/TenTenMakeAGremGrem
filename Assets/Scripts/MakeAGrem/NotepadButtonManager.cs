@@ -17,7 +17,6 @@ public class NotepadButtonManager : MonoBehaviour
     {
         notePadBackground.GetComponent<Image>().sprite = resultBG;
         resultInfo.SetActive(true);
-        Debug.Log("res");
     }
 
 
@@ -25,12 +24,10 @@ public class NotepadButtonManager : MonoBehaviour
     {
         notePadBackground.GetComponent<Image>().sprite = basePointInfoBG;
         resultInfo.SetActive(false);
-        Debug.Log("base");
     }
     public void changeToMultiplierInfo()
     {
         notePadBackground.GetComponent<Image>().sprite = multiplierInfoBG;
         resultInfo.SetActive(false);
-        Debug.Log("mul");
     }
 }

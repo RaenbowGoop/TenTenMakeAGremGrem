@@ -9,7 +9,12 @@ public class MouseClickAnimationSpawner : MonoBehaviour
     [SerializeField] Animator mouseAnim;
     [SerializeField] TextMeshProUGUI animationText;
     [SerializeField] GameObject mouseAnimObj;
-    System.Random rng = new System.Random();
+    System.Random rng;
+
+    void Start()
+    {
+        rng = new System.Random();
+    }
 
     void Update()
     {

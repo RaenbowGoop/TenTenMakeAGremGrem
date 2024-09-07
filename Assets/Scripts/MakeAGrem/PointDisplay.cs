@@ -24,22 +24,33 @@ public class PointDisplay : MonoBehaviour
     int totalBasePoints;
     int totalMultiplier;
 
-    IEnumerator Start()
+    // Flag for display
+    bool isDisplayed;
+
+    void Start()
     {
-        // Wait for GremGachaManager to calculate results
-        yield return new WaitForSeconds(1f);
+        isDisplayed = false;
+    }
 
-        // Display Base Point Stats
-        basePointDisplay();
+    void Update()
+    {
+        if (!isDisplayed)
+        {
+            // Display Base Point Stats
+            basePointDisplay();
 
-        // Display Multiplier
-        multiplierDisplay();
+            // Display Multiplier
+            multiplierDisplay();
 
-        // Display Total Points
-        totalPointTextGroup.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = gremGachaManager.totalPoints.ToString("N0");
+            // Display Total Points
+            totalPointTextGroup.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = gremGachaManager.totalPoints.ToString("N0");
 
-        // Display Icons of Pieces ROLLED
-        displaySetPieceIcons();
+            // Display Icons of Pieces ROLLED
+            displaySetPieceIcons();
+
+            // Set Flag
+            isDisplayed = true;
+        }
     }
 
     // Returns frame base on rarity
