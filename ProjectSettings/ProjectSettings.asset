@@ -524,7 +524,10 @@ PlayerSettings:
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
   m_TemplateCustomTags:
+    BACKGROUND: '#000'
+    OPTIMIZE_FOR_PIXEL_ART: false
     PRODUCT_DESCRIPTION: 
+    SCALE_TO_FIT: true
   mobileMTRendering:
     Android: 1
     iPhone: 1
@@ -538,7 +541,7 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Format: 3
   - m_BuildTarget: WebGL
-    m_Format: 5
+    m_Format: 3
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -781,7 +784,7 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: APPLICATION:Minimal
+  webGLTemplate: PROJECT:BetterMinimal
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 0
