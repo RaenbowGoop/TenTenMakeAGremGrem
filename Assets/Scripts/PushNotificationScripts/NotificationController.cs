@@ -25,14 +25,6 @@ public class NotificationController : MonoBehaviour
         SetUpMakeAGremNotifications();
     }
 
-    private void OnApplicationFocus(bool focus)
-    {
-        if (!focus)
-        {
-            SetUpMakeAGremNotifications();
-        }
-    }
-
     private void SetUpMakeAGremNotifications()
     {
         // Only Run on Android
