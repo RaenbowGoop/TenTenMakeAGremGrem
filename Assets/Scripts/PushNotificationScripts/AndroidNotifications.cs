@@ -41,7 +41,6 @@ public class AndroidNotifications : MonoBehaviour
         notification.RepeatInterval = repeatInterval;
         notification.SmallIcon = "icon_1";
         notification.LargeIcon = "icon_0";
-        notification.ShowTimestamp = true;
 
         AndroidNotificationCenter.SendNotification(notification, channelID);
     }
