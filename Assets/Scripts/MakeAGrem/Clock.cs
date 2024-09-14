@@ -11,8 +11,7 @@ public class Clock : MonoBehaviour
     Dictionary<int, string> months;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         // Store Months
         months = new Dictionary<int, string>();
@@ -28,7 +27,10 @@ public class Clock : MonoBehaviour
         months[10] = "Oct.";
         months[11] = "Nov.";
         months[12] = "Dec.";
-
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
         updateDateTimeDisplay();
     }
 

@@ -1,20 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_ANDROID
 using Unity.Notifications.Android;
 using UnityEngine.Android;
-using System;
+#endif
 
 public class NotificationController : MonoBehaviour
 {
+#if UNITY_ANDROID
     [SerializeField] AndroidNotifications androidNotifications;
+#endif
 
     // Start is called before the first frame update
     private void Start()
     {
+#if UNITY_ANDROID
         // set Up Notification Channel
         androidNotifications.RequestAuthorization();
-        androidNotifications.RegisterNotificationChannel();
+        androidNotifications.RegisterNotificationChannel("warning_am", "10:05 AM Warning", "10:05 AM Make A Grem Warning");
+        androidNotifications.RegisterNotificationChannel("alert_am", "10:10 AM Alert", "10:10 AM Make A Grem Alert");
+        androidNotifications.RegisterNotificationChannel("warning_pm", "10:05 PM Warning", "10:05 PM Make A Grem Warning");
+        androidNotifications.RegisterNotificationChannel("alert_pm", "10:10 PM Alert", "10:10 PM Make A Grem Alert");
+
+
+        SetUpMakeAGremNotifications();
+
+#endif
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+#if UNITY_ANDROID
+        if (focus)
+        {
+            SetUpMakeAGremNotifications();
+        }
+#endif
+    }
+
+    private void SetUpMakeAGremNotifications()
+    {
+        // Only Run on Android
+#if UNITY_ANDROID
 
         // Set Up Make A Grem Notifications
         AndroidNotificationCenter.CancelAllNotifications();
@@ -35,7 +63,7 @@ public class NotificationController : MonoBehaviour
             // If 10:05 passed, shift notification to next day
             if (now.Minute > 5)
             {
-                notificationTimePrefireAM = notificationTimePrefireAM.AddDays(1); 
+                notificationTimePrefireAM = notificationTimePrefireAM.AddDays(1);
             }
             // If 10:10 passed, shift notification to next day
             if (now.Minute > 10)
@@ -66,7 +94,7 @@ public class NotificationController : MonoBehaviour
             }
         }
         // Past 10 PM
-        else if (now.Hour > 10)
+        else if (now.Hour > 22)
         {
             // Shift both PM notifications to the next day
             notificationTimePrefirePM = notificationTimePrefirePM.AddDays(1);
@@ -77,13 +105,16 @@ public class NotificationController : MonoBehaviour
         System.TimeSpan notificationRepeatInterval = new System.TimeSpan(24, 0, 0);
 
         // 5 minutes until Make A Grem (AM)
-        androidNotifications.SendNotification("10:10 Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefireAM, notificationRepeatInterval);
+        androidNotifications.SendNotification("10:10 Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefireAM, notificationRepeatInterval, "warning_am");
         // 10:10 Make A Grem time (AM)
-        androidNotifications.SendNotification("10:10 Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimeAM, notificationRepeatInterval);
+        androidNotifications.SendNotification("10:10 Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimeAM, notificationRepeatInterval, "alert_am");
 
         // 5 minutes until Make A Grem (PM)
-        androidNotifications.SendNotification("10:10 Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefirePM, notificationRepeatInterval);
+        androidNotifications.SendNotification("10:10 Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefirePM, notificationRepeatInterval, "warning_pm");
         // 10:10 Make A Grem time (PM)
-        androidNotifications.SendNotification("10:10 Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimePM, notificationRepeatInterval);
+        androidNotifications.SendNotification("10:10 Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimePM, notificationRepeatInterval, "alert_pm");
+
+#endif
     }
 }
+

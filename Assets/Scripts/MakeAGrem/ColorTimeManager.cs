@@ -7,9 +7,8 @@ using Unity​Engine.Rendering.PostProcessing;
 
 public class ColorTimeManager : MonoBehaviour
 {
-
-    [SerializeField] PlayableDirector darkenAnimation;
-    [SerializeField] PlayableDirector lightenAnimation;
+    public PlayableDirector darkenAnimation;
+    public PlayableDirector lightenAnimation;
     [SerializeField] PostProcessVolume postProcessVolume;
     [SerializeField] GameObject CafeSaki;
 
