@@ -8,27 +8,41 @@ using UnityEngine.Android;
 
 public class NotificationController : MonoBehaviour
 {
+#if UNITY_ANDROID
     [SerializeField] AndroidNotifications androidNotifications;
+#endif
 
     // Start is called before the first frame update
     private void Start()
     {
-        #if UNITY_ANDROID
+#if UNITY_ANDROID
         // set Up Notification Channel
         androidNotifications.RequestAuthorization();
         androidNotifications.RegisterNotificationChannel("warning_am", "10:05 AM Warning", "10:05 AM Make A Grem Warning");
         androidNotifications.RegisterNotificationChannel("alert_am", "10:10 AM Alert", "10:10 AM Make A Grem Alert");
         androidNotifications.RegisterNotificationChannel("warning_pm", "10:05 PM Warning", "10:05 PM Make A Grem Warning");
         androidNotifications.RegisterNotificationChannel("alert_pm", "10:10 PM Alert", "10:10 PM Make A Grem Alert");
-        #endif
+
 
         SetUpMakeAGremNotifications();
+
+#endif
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+#if UNITY_ANDROID
+        if (focus)
+        {
+            SetUpMakeAGremNotifications();
+        }
+#endif
     }
 
     private void SetUpMakeAGremNotifications()
     {
         // Only Run on Android
-        #if UNITY_ANDROID
+#if UNITY_ANDROID
 
         // Set Up Make A Grem Notifications
         AndroidNotificationCenter.CancelAllNotifications();
@@ -100,7 +114,7 @@ public class NotificationController : MonoBehaviour
         // 10:10 Make A Grem time (PM)
         androidNotifications.SendNotification("10:10 Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimePM, notificationRepeatInterval, "alert_pm");
 
-        #endif
+#endif
     }
 }
 
