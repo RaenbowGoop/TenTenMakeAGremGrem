@@ -9,6 +9,7 @@ public class ColorTimeManager : MonoBehaviour
 {
     public PlayableDirector darkenAnimation;
     public PlayableDirector lightenAnimation;
+    [SerializeField] GameObject iOSDarkenScreen;
     [SerializeField] PostProcessVolume postProcessVolume;
     [SerializeField] GameObject CafeSaki;
 
@@ -16,6 +17,7 @@ public class ColorTimeManager : MonoBehaviour
     [SerializeField] public int targetMinute;
     [SerializeField] public int gracePeriod;
     bool isDark;
+    [HideInInspector] public bool buildForiOSMobile;
     System.DateTime localDate;
 
     // Start is called before the first frame update
@@ -25,9 +27,15 @@ public class ColorTimeManager : MonoBehaviour
         isDark = checkIfNotTime();
         if (isDark)
         {
-            postProcessVolume.weight = 1.0f;
-            CafeSaki.transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
-            CafeSaki.transform.GetChild(2).transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
+            // Change iOSDarkenScreen obj if building for iOS/mobile
+            if (buildForiOSMobile) {
+                iOSDarkenScreen.GetComponent<CanvasGroup>().alpha = 0.95f;
+            // Change post processing volume if building for normal builds
+            } else {
+                postProcessVolume.weight = 1.0f;
+                CafeSaki.transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
+                CafeSaki.transform.GetChild(2).transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
+            }
         }
         
     }

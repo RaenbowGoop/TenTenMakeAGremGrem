@@ -6994,7 +6994,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164020694}
   m_Enabled: 1
-  m_Alpha: 0.95
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -7320,11 +7320,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   darkenAnimation: {fileID: 521443331}
   lightenAnimation: {fileID: 1760101905}
+  iOSDarkenScreen: {fileID: 1164020694}
   postProcessVolume: {fileID: 1196855197}
   CafeSaki: {fileID: 1079065800}
   targetHour: 10
   targetMinute: 10
   gracePeriod: 1
+  buildForiOSMobile: 0
 --- !u!95 &1196855201
 Animator:
   serializedVersion: 5
