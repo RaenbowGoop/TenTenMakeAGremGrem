@@ -27,14 +27,16 @@ public class ColorTimeManager : MonoBehaviour
         isDark = checkIfNotTime();
         if (isDark)
         {
+            // Darken Cafe Saki
+            CafeSaki.transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
+            CafeSaki.transform.GetChild(2).transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
+
             // Change iOSDarkenScreen obj if building for iOS/mobile
             if (buildForiOSMobile) {
                 iOSDarkenScreen.GetComponent<CanvasGroup>().alpha = 0.95f;
             // Change post processing volume if building for normal builds
             } else {
                 postProcessVolume.weight = 1.0f;
-                CafeSaki.transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
-                CafeSaki.transform.GetChild(2).transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 0.0f;
             }
         }
         
