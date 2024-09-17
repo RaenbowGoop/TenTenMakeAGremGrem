@@ -23,8 +23,8 @@ MonoBehaviour:
   setHeadStats: 0
   setTorsoStats: 311302
   setLegsStats: 334433
-  setShoesStats: 262553
-  setBackPieceStats: 243583
+  setShoesStats: 339861
+  setBackPieceStats: 327095
   setHeadFront: {fileID: 21300000, guid: 48f61feab94f9c8409364abdae073176, type: 3}
   setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
@@ -40,5 +40,6 @@ MonoBehaviour:
   setShoesMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setBackPieceFront: {fileID: 21300000, guid: 365284c6a976deb43b3a26077d927fa6, type: 3}
-  setBackPieceBack: {fileID: 21300000, guid: 1034ba905fa2ba445850817fd3a4328a, type: 3}
+  setBackPieceMiddle: {fileID: 21300000, guid: 1034ba905fa2ba445850817fd3a4328a, type: 3}
+  setBackPieceBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setIcon: {fileID: 21300000, guid: 87d5019f596c6e248904141e0e46087b, type: 3}
