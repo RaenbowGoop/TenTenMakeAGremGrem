@@ -20,7 +20,7 @@ MonoBehaviour:
   hasLegs: 0
   hasShoes: 0
   hasBackPiece: 0
-  setHeadStats: 338406
+  setHeadStats: 385759
   setTorsoStats: 0
   setLegsStats: 0
   setShoesStats: 0
@@ -40,5 +40,6 @@ MonoBehaviour:
   setShoesMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setBackPieceFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setBackPieceBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setIcon: {fileID: 21300000, guid: 86ffcf1bdb7e0b54891a37026e785a38, type: 3}
