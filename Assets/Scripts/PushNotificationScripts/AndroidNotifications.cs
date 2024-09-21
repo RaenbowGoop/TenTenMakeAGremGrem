@@ -40,11 +40,7 @@ public class AndroidNotifications : MonoBehaviour
     public void SendNotification(string title, string text, DateTime fireTime, TimeSpan repeatInterval, string channelID)
     {
 #if UNITY_ANDROID
-        var notification = new AndroidNotification();
-        notification.Title = title;
-        notification.Text = text;
-        notification.FireTime = fireTime;
-        notification.RepeatInterval = repeatInterval;
+        var notification = new AndroidNotification(title, text, fireTime, repeatInterval); 
         notification.SmallIcon = "icon_1";
         notification.LargeIcon = "icon_0";
 

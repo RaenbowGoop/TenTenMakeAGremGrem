@@ -9,6 +9,7 @@ TagManager:
   - DoNotDestroy
   - SoundManager
   - MouseClickAnimation
+  - NotificationManager
   layers:
   - Default
   - TransparentFX

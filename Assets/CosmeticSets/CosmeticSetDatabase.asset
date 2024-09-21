@@ -49,6 +49,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34d82d52d8939b04a82503eb779f98ac, type: 2}
   - {fileID: 11400000, guid: 9caa6d3ee78f6c140b3a45a6ff3fbbb5, type: 2}
   - {fileID: 11400000, guid: 168fdc7ded0a79d4a97328490e266357, type: 2}
+  - {fileID: 11400000, guid: b72ad06daeba97e459490262d40d7e8c, type: 2}
   - {fileID: 11400000, guid: f0c1fb9b22fdd3c4fa216d8e63d526e4, type: 2}
   - {fileID: 11400000, guid: 5e9702dc7e3ddba4bb7a2e099d151433, type: 2}
   cosmeticSetsWithHeads:
@@ -74,6 +75,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34d82d52d8939b04a82503eb779f98ac, type: 2}
   - {fileID: 11400000, guid: 9caa6d3ee78f6c140b3a45a6ff3fbbb5, type: 2}
   - {fileID: 11400000, guid: 168fdc7ded0a79d4a97328490e266357, type: 2}
+  - {fileID: 11400000, guid: b72ad06daeba97e459490262d40d7e8c, type: 2}
   - {fileID: 11400000, guid: f0c1fb9b22fdd3c4fa216d8e63d526e4, type: 2}
   - {fileID: 11400000, guid: 5e9702dc7e3ddba4bb7a2e099d151433, type: 2}
   cosmeticSetsWithTorso:
@@ -97,6 +99,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34d82d52d8939b04a82503eb779f98ac, type: 2}
   - {fileID: 11400000, guid: 9caa6d3ee78f6c140b3a45a6ff3fbbb5, type: 2}
   - {fileID: 11400000, guid: 168fdc7ded0a79d4a97328490e266357, type: 2}
+  - {fileID: 11400000, guid: b72ad06daeba97e459490262d40d7e8c, type: 2}
   - {fileID: 11400000, guid: f0c1fb9b22fdd3c4fa216d8e63d526e4, type: 2}
   - {fileID: 11400000, guid: 5e9702dc7e3ddba4bb7a2e099d151433, type: 2}
   cosmeticSetsWithLegs:
@@ -120,6 +123,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34d82d52d8939b04a82503eb779f98ac, type: 2}
   - {fileID: 11400000, guid: 9caa6d3ee78f6c140b3a45a6ff3fbbb5, type: 2}
   - {fileID: 11400000, guid: 168fdc7ded0a79d4a97328490e266357, type: 2}
+  - {fileID: 11400000, guid: b72ad06daeba97e459490262d40d7e8c, type: 2}
   - {fileID: 11400000, guid: f0c1fb9b22fdd3c4fa216d8e63d526e4, type: 2}
   - {fileID: 11400000, guid: 5e9702dc7e3ddba4bb7a2e099d151433, type: 2}
   cosmeticSetsWithShoes:
@@ -142,6 +146,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34d82d52d8939b04a82503eb779f98ac, type: 2}
   - {fileID: 11400000, guid: 9caa6d3ee78f6c140b3a45a6ff3fbbb5, type: 2}
   - {fileID: 11400000, guid: 168fdc7ded0a79d4a97328490e266357, type: 2}
+  - {fileID: 11400000, guid: b72ad06daeba97e459490262d40d7e8c, type: 2}
   - {fileID: 11400000, guid: f0c1fb9b22fdd3c4fa216d8e63d526e4, type: 2}
   - {fileID: 11400000, guid: 5e9702dc7e3ddba4bb7a2e099d151433, type: 2}
   cosmeticSetsWithBackPiece:
@@ -165,5 +170,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34d82d52d8939b04a82503eb779f98ac, type: 2}
   - {fileID: 11400000, guid: 9caa6d3ee78f6c140b3a45a6ff3fbbb5, type: 2}
   - {fileID: 11400000, guid: 168fdc7ded0a79d4a97328490e266357, type: 2}
+  - {fileID: 11400000, guid: b72ad06daeba97e459490262d40d7e8c, type: 2}
   - {fileID: 11400000, guid: f0c1fb9b22fdd3c4fa216d8e63d526e4, type: 2}
   - {fileID: 11400000, guid: 5e9702dc7e3ddba4bb7a2e099d151433, type: 2}
