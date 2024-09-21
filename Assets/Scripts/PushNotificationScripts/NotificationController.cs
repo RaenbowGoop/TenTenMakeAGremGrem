@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 #if UNITY_ANDROID
 using Unity.Notifications.Android;
 using UnityEngine.Android;
@@ -34,7 +36,7 @@ public class NotificationController : MonoBehaviour
 #if UNITY_ANDROID
         if (focus)
         {
-            SetUpMakeAGremNotifications();
+            AndroidNotificationCenter.CancelAllDisplayedNotifications();
         }
 #endif
     }
@@ -101,8 +103,8 @@ public class NotificationController : MonoBehaviour
             notificationTimePM = notificationTimePM.AddDays(1);
         }
 
-        // TimeSpan of repeat notification (repeat every 24 hours)
-        System.TimeSpan notificationRepeatInterval = new System.TimeSpan(24, 0, 0);
+        // TimeSpan of repeat notification (repeat every day)
+        System.TimeSpan notificationRepeatInterval = TimeSpan.FromDays(1);
 
         // 5 minutes until Make A Grem (AM)
         androidNotifications.SendNotification("10:10 Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefireAM, notificationRepeatInterval, "warning_am");
