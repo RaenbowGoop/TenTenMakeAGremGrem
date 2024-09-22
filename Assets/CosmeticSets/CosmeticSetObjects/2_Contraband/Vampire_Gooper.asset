@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
+  m_Name: Vampire_Gooper
+  m_EditorClassIdentifier: 
+  setName: Vampire Gooper
+  setDescription: He likes tomatoes, but not ketchup.
+  setRarity: 1
+  hasHead: 1
+  hasTorso: 1
+  hasLegs: 1
+  hasShoes: 1
+  hasBackPiece: 1
+  setHeadStats: 182949
+  setTorsoStats: 148072
+  setLegsStats: 126328
+  setShoesStats: 137919
+  setBackPieceStats: 167732
+  setHeadFront: {fileID: 21300000, guid: 44eabb0dfe9f1a9469fe404df962afab, type: 3}
+  setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoMiddle: {fileID: 21300000, guid: aa01a2247bdbdad41b942be19da24de6, type: 3}
+  setTorsoBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsMiddle: {fileID: 21300000, guid: 517cb0c7e4e8373468123d1bde9c08fd, type: 3}
+  setLegsBack: {fileID: 21300000, guid: 1602fe49e848641469c58c3fd21a622c, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setShoesMiddle: {fileID: 21300000, guid: 06c36b2f2845f90448e2df67098f7d2c, type: 3}
+  setShoesBack: {fileID: 21300000, guid: 094c2e6478ee8384c92c22de93ab0b84, type: 3}
+  setBackPieceFront: {fileID: 21300000, guid: a735c6215e8268446b3dd100e6b06aea, type: 3}
+  setBackPieceMiddle: {fileID: 21300000, guid: f70e88ca2f3e87e4499b0eec161bdb24, type: 3}
+  setBackPieceBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setIcon: {fileID: 21300000, guid: fb4e8b06b895e3340b22b1411d4331d4, type: 3}
