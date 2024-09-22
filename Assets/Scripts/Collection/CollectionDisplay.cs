@@ -108,7 +108,7 @@ public class CollectionDisplay : MonoBehaviour
                 GameObject obj = Instantiate(setFrame, Vector3.zero, Quaternion.identity, transform);
 
                 // Set Scale of Object
-                obj.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+                obj.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
 
                 // Set Sprites in Object
                 short rarity = set.getRarity();
