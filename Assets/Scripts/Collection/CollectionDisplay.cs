@@ -135,9 +135,9 @@ public class CollectionDisplay : MonoBehaviour
         }
 
         // Setting Up Set display
-        if (!currentSet && setsDisplayed.Count > 0)
+        if (setsDisplayed.Count > 0)
         {
-            displaySet(csdb.cosmeticSets[0], displaySetting);
+            displaySet(cosmeticSets[0], displaySetting);
         }
     }
 

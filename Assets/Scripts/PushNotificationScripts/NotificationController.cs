@@ -20,14 +20,8 @@ public class NotificationController : MonoBehaviour
 #if UNITY_ANDROID
         // set Up Notification Channel
         androidNotifications.RequestAuthorization();
-        androidNotifications.RegisterNotificationChannel("warning_am", "10:05 AM Warning", "10:05 AM Make A Grem Warning");
-        androidNotifications.RegisterNotificationChannel("alert_am", "10:10 AM Alert", "10:10 AM Make A Grem Alert");
-        androidNotifications.RegisterNotificationChannel("warning_pm", "10:05 PM Warning", "10:05 PM Make A Grem Warning");
-        androidNotifications.RegisterNotificationChannel("alert_pm", "10:10 PM Alert", "10:10 PM Make A Grem Alert");
-
-
+        androidNotifications.RegisterNotificationChannel("grem_channel", "10:10 Make A Grem Notifications", "10:10 Make A Grem Warnings and Alerts");
         SetUpMakeAGremNotifications();
-
 #endif
     }
 
@@ -107,14 +101,14 @@ public class NotificationController : MonoBehaviour
         System.TimeSpan notificationRepeatInterval = TimeSpan.FromDays(1);
 
         // 5 minutes until Make A Grem (AM)
-        androidNotifications.SendNotification("10:10 Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefireAM, notificationRepeatInterval, "warning_am");
+        androidNotifications.SendNotification("10:10 AM Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefireAM, notificationRepeatInterval, "grem_channel");
         // 10:10 Make A Grem time (AM)
-        androidNotifications.SendNotification("10:10 Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimeAM, notificationRepeatInterval, "alert_am");
+        androidNotifications.SendNotification("10:10 AM Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimeAM, notificationRepeatInterval, "grem_channel");
 
         // 5 minutes until Make A Grem (PM)
-        androidNotifications.SendNotification("10:10 Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefirePM, notificationRepeatInterval, "warning_pm");
+        androidNotifications.SendNotification("10:10 PM Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefirePM, notificationRepeatInterval, "grem_channel");
         // 10:10 Make A Grem time (PM)
-        androidNotifications.SendNotification("10:10 Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimePM, notificationRepeatInterval, "alert_pm");
+        androidNotifications.SendNotification("10:10 PM Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimePM, notificationRepeatInterval, "grem_channel");
 
 #endif
     }
