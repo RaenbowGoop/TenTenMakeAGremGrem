@@ -14,7 +14,7 @@ public class CosmeticSetDatabase : ScriptableObject, ISerializationCallbackRecei
     public List<CosmeticSet> cosmeticSetsWithLegs;
     public List<CosmeticSet> cosmeticSetsWithShoes;
     public List<CosmeticSet> cosmeticSetsWithBackPiece;
-
+    public List<CosmeticSet> newestCosmeticSets;
 
     public void OnAfterDeserialize()
     {
@@ -25,6 +25,7 @@ public class CosmeticSetDatabase : ScriptableObject, ISerializationCallbackRecei
     {
         // Sort Cosmetic Set
         cosmeticSets.Sort();
+        newestCosmeticSets.Sort();
 
         // Clear lists
         cosmeticSetsWithHeads.Clear();

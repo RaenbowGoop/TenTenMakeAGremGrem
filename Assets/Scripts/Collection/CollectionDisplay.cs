@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public enum displaySetting { ALL, HEAD, TORSO, LEGS, SHOES, BACKPIECE };
+public enum displaySetting { ALL, HEAD, TORSO, LEGS, SHOES, BACKPIECE, NEW };
 
 public class CollectionDisplay : MonoBehaviour
 {
@@ -59,10 +59,13 @@ public class CollectionDisplay : MonoBehaviour
     {
         UpdateDisplay(displaySetting.SHOES);
     }
-
     public void displaySetsWithBackPiece()
     {
         UpdateDisplay(displaySetting.BACKPIECE);
+    }
+    public void displayNewSets()
+    {
+        UpdateDisplay(displaySetting.NEW);
     }
 
     private void UpdateDisplay(displaySetting displaySetting)
@@ -86,8 +89,11 @@ public class CollectionDisplay : MonoBehaviour
             case displaySetting.SHOES:
                 cosmeticSets = csdb.cosmeticSetsWithShoes;
                 break;
-            default:
+            case displaySetting.BACKPIECE:
                 cosmeticSets = csdb.cosmeticSetsWithBackPiece;
+                break;
+            default:
+                cosmeticSets = csdb.newestCosmeticSets;
                 break; 
         }
 
@@ -233,8 +239,8 @@ public class CollectionDisplay : MonoBehaviour
         }
 
         // Display Assets in Model
-        // Head (only display set's head if display setting is ALL or HEAD. Otherwise, display dummy head)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.HEAD) {
+        // Head (only display set's head if display setting is ALL or NEW or HEAD. Otherwise, display dummy head)
+        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.HEAD) {
             currentSet.transform.GetChild(0).transform.GetChild(13).GetComponentInChildren<Image>().sprite = newSetObj.setHeadFront;
             currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = newSetObj.setHeadBack;
         } else {
@@ -242,8 +248,8 @@ public class CollectionDisplay : MonoBehaviour
             currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = transparentSprite;
         }
 
-        // Torso (only display set's torso if display setting is ALL or TORSO. Otherwise, display plain torso)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.TORSO) {
+        // Torso (only display set's torso if display setting is ALL or NEW or TORSO. Otherwise, display plain torso)
+        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.TORSO) {
             currentSet.transform.GetChild(0).transform.GetChild(15).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoSuperFront;
             currentSet.transform.GetChild(0).transform.GetChild(12).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoFront;
             currentSet.transform.GetChild(0).transform.GetChild(9).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoMiddle;
@@ -257,8 +263,8 @@ public class CollectionDisplay : MonoBehaviour
             currentSet.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Image>().sprite = transparentSprite;
         }
 
-        // Legs (only display set's legs if display setting is ALL or LEGS. Otherwise, display plain legs)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.LEGS) {
+        // Legs (only display set's legs if display setting is ALL or NEW or LEGS. Otherwise, display plain legs)
+        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.LEGS) {
             currentSet.transform.GetChild(0).transform.GetChild(14).GetComponentInChildren<Image>().sprite = newSetObj.setLegsSuperFront;
             currentSet.transform.GetChild(0).transform.GetChild(10).GetComponentInChildren<Image>().sprite = newSetObj.setLegsFront;
             currentSet.transform.GetChild(0).transform.GetChild(7).GetComponentInChildren<Image>().sprite = newSetObj.setLegsMiddle;
@@ -270,8 +276,8 @@ public class CollectionDisplay : MonoBehaviour
             currentSet.transform.GetChild(0).transform.GetChild(4).GetComponentInChildren<Image>().sprite = plainLegs;
         }
 
-        // Shoes (only display set's shoes if display setting is ALL or SHOES. Otherwise, display NOTHING)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.SHOES) {
+        // Shoes (only display set's shoes if display setting is ALL or NEW or SHOES. Otherwise, display NOTHING)
+        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.SHOES) {
             currentSet.transform.GetChild(0).transform.GetChild(11).GetComponentInChildren<Image>().sprite = newSetObj.setShoesFront;
             currentSet.transform.GetChild(0).transform.GetChild(8).GetComponentInChildren<Image>().sprite = newSetObj.setShoesMiddle;
             currentSet.transform.GetChild(0).transform.GetChild(5).GetComponentInChildren<Image>().sprite = newSetObj.setShoesBack;
@@ -281,8 +287,8 @@ public class CollectionDisplay : MonoBehaviour
             currentSet.transform.GetChild(0).transform.GetChild(5).GetComponentInChildren<Image>().sprite = transparentSprite;
         }
 
-        // Back Piece (only display set's shoes if display setting is ALL or BACKPIECE. Otherwise, display NOTHING)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.BACKPIECE)
+        // Back Piece (only display set's shoes if display setting is ALL or NEW or BACKPIECE. Otherwise, display NOTHING)
+        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.BACKPIECE)
         {
             currentSet.transform.GetChild(0).transform.GetChild(16).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceFront;
             currentSet.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceMiddle;

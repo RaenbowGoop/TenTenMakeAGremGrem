@@ -185,3 +185,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b72ad06daeba97e459490262d40d7e8c, type: 2}
   - {fileID: 11400000, guid: f0c1fb9b22fdd3c4fa216d8e63d526e4, type: 2}
   - {fileID: 11400000, guid: 5e9702dc7e3ddba4bb7a2e099d151433, type: 2}
+  newestCosmeticSets:
+  - {fileID: 11400000, guid: 4c0b261fa98586e4c8c3983351eaf247, type: 2}
+  - {fileID: 11400000, guid: 8488ed9c53bed8c47a29cc589cd6f9d7, type: 2}
+  - {fileID: 11400000, guid: 893394f39182b344cb9196ce2f42028f, type: 2}
+  - {fileID: 11400000, guid: 6797dcf13e315ac4e83195e2e15ac0df, type: 2}
+  - {fileID: 11400000, guid: 4b067632367982d45aa8c5ba268d17f8, type: 2}
+  - {fileID: 11400000, guid: 5bf79ca55034f6c4d8936117179b532a, type: 2}
+  - {fileID: 11400000, guid: e2eeceb327901444cb3f35fd1a4f86fd, type: 2}
+  - {fileID: 11400000, guid: 0f0e04bca02bbeb4b976acad37be491d, type: 2}
+  - {fileID: 11400000, guid: 82a4ad771de02674c8332cf89ff9418d, type: 2}
+  - {fileID: 11400000, guid: b72ad06daeba97e459490262d40d7e8c, type: 2}
