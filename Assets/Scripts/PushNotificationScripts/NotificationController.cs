@@ -97,7 +97,7 @@ public class NotificationController : MonoBehaviour
         }
 
         // Schedule Warnings and Alerts for specified number of days
-        int numberOfDays = 30;
+        int numberOfDays = 10;
         for (int day = 0; day < numberOfDays; day++)
         {
             // 5 minutes until Make A Grem (AM)
