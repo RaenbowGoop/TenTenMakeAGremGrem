@@ -20,7 +20,9 @@ public class NotificationController : MonoBehaviour
 #if UNITY_ANDROID
         // set Up Notification Channel
         androidNotifications.RequestAuthorization();
-        androidNotifications.RegisterNotificationChannel("grem_channel", "10:10 Make A Grem Notifications", "10:10 Make A Grem Warnings and Alerts");
+        AndroidNotificationCenter.Initialize();
+        androidNotifications.RegisterNotificationChannel("grem_warning_channel", "10:10 Make A Grem 5 Minute Warning", "10:10 Make A Grem Warnings");
+        androidNotifications.RegisterNotificationChannel("grem_alert_channel", "10:10 Make A Grem Alert", "10:10 Make A Grem Alerts");
         SetUpMakeAGremNotifications();
 #endif
     }
@@ -30,7 +32,7 @@ public class NotificationController : MonoBehaviour
 #if UNITY_ANDROID
         if (focus)
         {
-            AndroidNotificationCenter.CancelAllDisplayedNotifications();
+            SetUpMakeAGremNotifications();
         }
 #endif
     }
@@ -46,70 +48,70 @@ public class NotificationController : MonoBehaviour
         // Time of notification fire
         System.DateTime now = System.DateTime.Now;
 
-        System.DateTime notificationTimePrefireAM = new System.DateTime(now.Year, now.Month, now.Day, 10, 05, 0);
-        System.DateTime notificationTimeAM = new System.DateTime(now.Year, now.Month, now.Day, 10, 10, 0);
-
-        System.DateTime notificationTimePrefirePM = new System.DateTime(now.Year, now.Month, now.Day, 22, 05, 0);
-        System.DateTime notificationTimePM = new System.DateTime(now.Year, now.Month, now.Day, 22, 10, 0);
+        System.DateTime notificationTimeWarningAM = new System.DateTime(now.Year, now.Month, now.Day, 10, 04, 55);
+        System.DateTime notificationTimeAlertAM = new System.DateTime(now.Year, now.Month, now.Day, 10, 9, 55);
 
         // Shift notification time depending on current time
         // 10 AM
         if (now.Hour == 10)
         {
             // If 10:05 passed, shift notification to next day
-            if (now.Minute > 5)
+            if (now.Minute >= 5)
             {
-                notificationTimePrefireAM = notificationTimePrefireAM.AddDays(1);
+                notificationTimeWarningAM = notificationTimeWarningAM.AddHours(12);
             }
             // If 10:10 passed, shift notification to next day
-            if (now.Minute > 10)
+            if (now.Minute >= 10)
             {
-                notificationTimeAM = notificationTimeAM.AddDays(1);
+                notificationTimeAlertAM = notificationTimeAlertAM.AddHours(12);
             }
         }
         // Past 10 AM
         else if (now.Hour > 10)
         {
-            // Shift both AM notifications to the next day
-            notificationTimePrefireAM = notificationTimePrefireAM.AddDays(1);
-            notificationTimeAM = notificationTimeAM.AddDays(1);
+            // Shift both notifications to the next 12 hour cycle
+            notificationTimeWarningAM = notificationTimeWarningAM.AddHours(12);
+            notificationTimeAlertAM = notificationTimeAlertAM.AddHours(12);
         }
 
         // 10 PM
         if (now.Hour == 22)
         {
             // If 10:05 passed, shift notification to next day
-            if (now.Minute > 5)
+            if (now.Minute >= 5)
             {
-                notificationTimePrefirePM = notificationTimePrefirePM.AddDays(1);
+                notificationTimeWarningAM = notificationTimeWarningAM.AddHours(12);
             }
             // If 10:10 passed, shift notification to next day
-            if (now.Minute > 10)
+            if (now.Minute >= 10)
             {
-                notificationTimePM = notificationTimePM.AddDays(1);
+                notificationTimeAlertAM = notificationTimeAlertAM.AddHours(12);
             }
         }
         // Past 10 PM
         else if (now.Hour > 22)
         {
-            // Shift both PM notifications to the next day
-            notificationTimePrefirePM = notificationTimePrefirePM.AddDays(1);
-            notificationTimePM = notificationTimePM.AddDays(1);
+            // Shift both notifications to the next 12 hour cycle
+            notificationTimeWarningAM = notificationTimeWarningAM.AddHours(12);
+            notificationTimeAlertAM = notificationTimeAlertAM.AddHours(12);
         }
 
-        // TimeSpan of repeat notification (repeat every day)
-        System.TimeSpan notificationRepeatInterval = TimeSpan.FromDays(1);
+        // Schedule Warnings and Alerts for specified number of days
+        int numberOfDays = 30;
+        for (int day = 0; day < numberOfDays; day++)
+        {
+            // 5 minutes until Make A Grem (AM)
+            androidNotifications.SendNotification("10:10 AM Make A Grem", "5 Minutes Until Make a Grem!", notificationTimeWarningAM.AddHours(day * 24), "grem_warning_channel");
 
-        // 5 minutes until Make A Grem (AM)
-        androidNotifications.SendNotification("10:10 AM Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefireAM, notificationRepeatInterval, "grem_channel");
-        // 10:10 Make A Grem time (AM)
-        androidNotifications.SendNotification("10:10 AM Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimeAM, notificationRepeatInterval, "grem_channel");
+            // 5 minutes until Make A Grem (PM)
+            androidNotifications.SendNotification("10:10 PM Make A Grem", "5 Minutes Until Make a Grem!", notificationTimeWarningAM.AddHours(12 + day * 24), "grem_warning_channel");
 
-        // 5 minutes until Make A Grem (PM)
-        androidNotifications.SendNotification("10:10 PM Make A Grem", "5 Minutes Until Make a Grem!", notificationTimePrefirePM, notificationRepeatInterval, "grem_channel");
-        // 10:10 Make A Grem time (PM)
-        androidNotifications.SendNotification("10:10 PM Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimePM, notificationRepeatInterval, "grem_channel");
+            // 10:10 Make A Grem time (AM)
+            androidNotifications.SendNotification("10:10 AM Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimeAlertAM.AddHours(day * 24), "grem_alert_channel");
 
+            // 10:10 Make A Grem time (PM)
+            androidNotifications.SendNotification("10:10 PM Make A Grem", "It's Time To Make A Grem! GO GO GO!", notificationTimeAlertAM.AddHours(12 + day * 24), "grem_alert_channel");
+        }
 #endif
     }
 }
