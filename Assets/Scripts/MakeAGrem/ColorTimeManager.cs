@@ -16,12 +16,12 @@ public class ColorTimeManager : MonoBehaviour
     [SerializeField] public int targetHour;
     [SerializeField] public int targetMinute;
     [SerializeField] public int gracePeriod;
-    bool isDark;
+    public bool isDark;
     [HideInInspector] public bool buildForiOSMobile;
     System.DateTime localDate;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Immediately set darken (w/o animation) if entering the scene when not target time + grace period
         isDark = checkIfNotTime();

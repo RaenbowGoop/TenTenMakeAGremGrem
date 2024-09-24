@@ -10,6 +10,12 @@ public struct MultiplierCombo
 
 public class GremGachaManager : MonoBehaviour
 {
+    // Player Statistic Objects
+    SetStatisticManager setStatisticManager;
+
+    // ColorTimeManager
+    [SerializeField] ColorTimeManager colorTimeManager;
+
     // Gacha Results
     [HideInInspector] public CosmeticSet head;
     [HideInInspector] public CosmeticSet torso;
@@ -51,6 +57,9 @@ public class GremGachaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Find setStatisticManager
+        setStatisticManager = GameObject.FindWithTag("Player").GetComponent<SetStatisticManager>();
+
         // Instantiate csDict
         csDict = new Dictionary<CosmeticSet, int>();
 
@@ -69,6 +78,19 @@ public class GremGachaManager : MonoBehaviour
 
         // Calculate Total Points
         totalPoints = (int)(basePointTotal * multiplierTotal);
+
+        // if the roll was made during the 10:10 time frame, log results in setStatisticManager
+        if (!colorTimeManager.isDark)
+        {
+            setStatisticManager.incrementSetPieceCount(head.setName, setPieceType.HEAD);
+            setStatisticManager.incrementSetPieceCount(torso.setName, setPieceType.TORSO);
+            setStatisticManager.incrementSetPieceCount(legs.setName, setPieceType.LEGS);
+            setStatisticManager.incrementSetPieceCount(shoes.setName, setPieceType.SHOES);
+            setStatisticManager.incrementSetPieceCount(backPiece.setName, setPieceType.BACKPIECE);
+
+            // Save and Load results
+            setStatisticManager.SerializeJson();
+        }
     }
 
     // rolls a random rarity
