@@ -82,15 +82,27 @@ public class GremGachaManager : MonoBehaviour
         // if the roll was made during the 10:10 time frame, log results in setStatisticManager
         if (!colorTimeManager.isDark)
         {
+            // increment legal grem count
+            setStatisticManager.incrementLegalGremCounter();
+
+            // increment set piece counters
             setStatisticManager.incrementSetPieceCount(head.setName, setPieceType.HEAD);
             setStatisticManager.incrementSetPieceCount(torso.setName, setPieceType.TORSO);
             setStatisticManager.incrementSetPieceCount(legs.setName, setPieceType.LEGS);
             setStatisticManager.incrementSetPieceCount(shoes.setName, setPieceType.SHOES);
             setStatisticManager.incrementSetPieceCount(backPiece.setName, setPieceType.BACKPIECE);
-
-            // Save and Load results
-            setStatisticManager.SerializeJson();
         }
+        else
+        {
+            // increment illegal grem count
+            setStatisticManager.incrementIllegalGremCounter();
+        }
+
+        // Check if rolled grem grem contest the highest and lowest scores
+        setStatisticManager.contestExtremeScores(totalPoints, head.setName, torso.setName, legs.setName, shoes.setName, backPiece.setName);
+
+        // Save and Load results
+        setStatisticManager.SerializeJson();
     }
 
     // rolls a random rarity
