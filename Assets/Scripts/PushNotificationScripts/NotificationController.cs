@@ -21,8 +21,18 @@ public class NotificationController : MonoBehaviour
         // set Up Notification Channel
         androidNotifications.RequestAuthorization();
         AndroidNotificationCenter.Initialize();
+
+        // Remove previous channels (in case)
+        foreach (AndroidNotificationChannel channel in AndroidNotificationCenter.GetNotificationChannels())
+        {
+            AndroidNotificationCenter.DeleteNotificationChannel(channel.Id);
+        }
+
+        // Register Channels
         androidNotifications.RegisterNotificationChannel("grem_warning_channel", "10:10 Make A Grem 5 Minute Warning", "10:10 Make A Grem Warnings");
         androidNotifications.RegisterNotificationChannel("grem_alert_channel", "10:10 Make A Grem Alert", "10:10 Make A Grem Alerts");
+
+        // Set up notifications
         SetUpMakeAGremNotifications();
 #endif
     }
