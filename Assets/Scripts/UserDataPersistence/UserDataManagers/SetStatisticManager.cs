@@ -62,10 +62,10 @@ public class SetStatisticManager : MonoBehaviour
     int illegalGremsMade;
 
     // highest score grem grem
-    GremCapsule highestScoreGrem;
+    public GremCapsule highestScoreGrem;
 
     // lowest score grem grem
-    GremCapsule lowestScoreGrem;
+    public GremCapsule lowestScoreGrem;
 
 
     // data service object to save/load data
@@ -179,9 +179,6 @@ public class SetStatisticManager : MonoBehaviour
                     setRollStatistics[set.setName] = new SetPieceCounter();
                 }
             }
-
-            // Save and Load
-            SerializeJson();
         } catch {
             // If unable to load data, create fresh slate for stats
             setRollStatistics = new Dictionary<string, SetPieceCounter>();
@@ -191,9 +188,6 @@ public class SetStatisticManager : MonoBehaviour
             {
                 setRollStatistics[set.setName] = new SetPieceCounter();
             }
-
-            // Save and Load
-            SerializeJson();
         }
 
         // Legal Grems Made Counter
@@ -206,9 +200,6 @@ public class SetStatisticManager : MonoBehaviour
         {
             // If unable to load data, create fresh counter
             legalGremsMade = 0;
-
-            // Save and Load
-            SerializeJson();
         }
 
         // Illegal Grems Made Counter
@@ -221,9 +212,6 @@ public class SetStatisticManager : MonoBehaviour
         {
             // If unable to load data, create fresh counter
             illegalGremsMade = 0;
-
-            // Save and Load
-            SerializeJson();
         }
 
         // Highest Score
@@ -236,9 +224,6 @@ public class SetStatisticManager : MonoBehaviour
         {
             // If unable to load data, insert empty grem capsule
             highestScoreGrem = new GremCapsule(0, "N/A", "N/A", "N/A", "N/A", "N/A", false);
-
-            // Save and Load
-            SerializeJson();
         }
 
         // Lowest Score
@@ -251,10 +236,10 @@ public class SetStatisticManager : MonoBehaviour
         {
             // If unable to load data, insert empty grem capsule
             lowestScoreGrem = new GremCapsule(0, "N/A", "N/A", "N/A", "N/A", "N/A", false);
-
-            // Save and Load
-            SerializeJson();
         }
+
+        // Save and Load
+        SerializeJson();
     }
 
     public void incrementSetPieceCount( string setName, setPieceType setPieceType )
