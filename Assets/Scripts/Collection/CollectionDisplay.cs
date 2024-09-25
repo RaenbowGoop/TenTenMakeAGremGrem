@@ -241,9 +241,11 @@ public class CollectionDisplay : MonoBehaviour
         // Display Assets in Model
         // Head (only display set's head if display setting is ALL or NEW or HEAD. Otherwise, display dummy head)
         if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.HEAD) {
+            currentSet.transform.GetChild(0).transform.GetChild(16).GetComponentInChildren<Image>().sprite = newSetObj.setHeadSuperFront;
             currentSet.transform.GetChild(0).transform.GetChild(13).GetComponentInChildren<Image>().sprite = newSetObj.setHeadFront;
             currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = newSetObj.setHeadBack;
         } else {
+            currentSet.transform.GetChild(0).transform.GetChild(16).GetComponentInChildren<Image>().sprite = transparentSprite;
             currentSet.transform.GetChild(0).transform.GetChild(13).GetComponentInChildren<Image>().sprite = dummyHead;
             currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = transparentSprite;
         }
@@ -290,11 +292,11 @@ public class CollectionDisplay : MonoBehaviour
         // Back Piece (only display set's shoes if display setting is ALL or NEW or BACKPIECE. Otherwise, display NOTHING)
         if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.BACKPIECE)
         {
-            currentSet.transform.GetChild(0).transform.GetChild(16).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceFront;
+            currentSet.transform.GetChild(0).transform.GetChild(17).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceFront;
             currentSet.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceMiddle;
             currentSet.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceBack;
         } else {
-            currentSet.transform.GetChild(0).transform.GetChild(16).GetComponentInChildren<Image>().sprite = transparentSprite;
+            currentSet.transform.GetChild(0).transform.GetChild(17).GetComponentInChildren<Image>().sprite = transparentSprite;
             currentSet.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = transparentSprite;
             currentSet.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = transparentSprite;
         }

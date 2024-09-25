@@ -28,10 +28,12 @@ public struct SetPieceCounter
 
 public struct GremCapsule
 {
-    public GremCapsule (int score, string head, string torso, string legs, string shoes, string backPiece, bool hasGrem)
+    public GremCapsule (int score, int basePoints, float multiplier, string head, string torso, string legs, string shoes, string backPiece, bool hasGrem)
     {
         HasGrem = hasGrem;
         Score = score;
+        BasePoints = basePoints;
+        Multiplier = multiplier;
         Head = head;
         Torso = torso;
         Legs = legs;
@@ -40,6 +42,9 @@ public struct GremCapsule
     }
 
     public int Score { get; set; }
+
+    public int BasePoints { get; set; }
+    public float Multiplier { get; set; }
     public bool HasGrem { get; set; }
     public string Head { get; set; }
     public string Torso { get; set; }
@@ -223,7 +228,7 @@ public class SetStatisticManager : MonoBehaviour
         catch
         {
             // If unable to load data, insert empty grem capsule
-            highestScoreGrem = new GremCapsule(0, "N/A", "N/A", "N/A", "N/A", "N/A", false);
+            highestScoreGrem = new GremCapsule(0, 0, 0.0f, "N/A", "N/A", "N/A", "N/A", "N/A", false);
         }
 
         // Lowest Score
@@ -235,7 +240,7 @@ public class SetStatisticManager : MonoBehaviour
         catch
         {
             // If unable to load data, insert empty grem capsule
-            lowestScoreGrem = new GremCapsule(0, "N/A", "N/A", "N/A", "N/A", "N/A", false);
+            lowestScoreGrem = new GremCapsule(0, 0, 0.0f, "N/A", "N/A", "N/A", "N/A", "N/A", false);
         }
 
         // Save and Load
@@ -278,9 +283,9 @@ public class SetStatisticManager : MonoBehaviour
         illegalGremsMade += 1;
     }
 
-    public void contestExtremeScores(int score, string head, string torso, string legs, string shoes, string backPiece)
+    public void contestExtremeScores(int score, int basePoints, float multiplier, string head, string torso, string legs, string shoes, string backPiece)
     {
-        GremCapsule contestant = new GremCapsule(score, head, torso, legs, shoes, backPiece, true);
+        GremCapsule contestant = new GremCapsule(score, basePoints, multiplier, head, torso, legs, shoes, backPiece, true);
 
         // Base Case: no grem score logged yet
         if (!highestScoreGrem.HasGrem || !lowestScoreGrem.HasGrem)

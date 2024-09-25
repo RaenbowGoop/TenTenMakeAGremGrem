@@ -25,6 +25,7 @@ MonoBehaviour:
   setLegsStats: 106690
   setShoesStats: 121920
   setBackPieceStats: 107860
+  setHeadSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setHeadFront: {fileID: 21300000, guid: 4fb6e90281e62cd4b90361829d3ad86c, type: 3}
   setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setTorsoSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}

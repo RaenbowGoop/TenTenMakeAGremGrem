@@ -20,6 +20,7 @@ public class GremGachaDisplay : MonoBehaviour
         {
             // Display Assets in Model
             // Head
+            this.transform.GetChild(16).GetComponent<Image>().sprite = gremGachaManager.head.setHeadSuperFront;
             this.transform.GetChild(13).GetComponent<Image>().sprite = gremGachaManager.head.setHeadFront;
             this.transform.GetChild(1).GetComponent<Image>().sprite = gremGachaManager.head.setHeadBack;
 
@@ -42,7 +43,7 @@ public class GremGachaDisplay : MonoBehaviour
             this.transform.GetChild(5).GetComponent<Image>().sprite = gremGachaManager.shoes.setShoesBack;
 
             // Back Piece
-            this.transform.GetChild(16).GetComponent<Image>().sprite = gremGachaManager.backPiece.setBackPieceFront;
+            this.transform.GetChild(17).GetComponent<Image>().sprite = gremGachaManager.backPiece.setBackPieceFront;
             this.transform.GetChild(2).GetComponent<Image>().sprite = gremGachaManager.backPiece.setBackPieceMiddle;
             this.transform.GetChild(0).GetComponent<Image>().sprite = gremGachaManager.backPiece.setBackPieceBack;
 
