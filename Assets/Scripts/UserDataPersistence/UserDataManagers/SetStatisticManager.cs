@@ -54,7 +54,7 @@ public class SetStatisticManager : MonoBehaviour
     [SerializeField] CosmeticSetDatabase csdb;
 
     // Dictionary to track how many times a piece has been rolled
-    Dictionary<string, SetPieceCounter> setRollStatistics;
+    public Dictionary<string, SetPieceCounter> setRollStatistics;
 
     // Number of Legal Grems rolled
     int legalGremsMade;

@@ -79,18 +79,18 @@ public class GremGachaManager : MonoBehaviour
         // Calculate Total Points
         totalPoints = (int)(basePointTotal * multiplierTotal);
 
-        // if the roll was made during the 10:10 time frame, log results in setStatisticManager
+        // record set rolls (increment set piece counters)
+        setStatisticManager.incrementSetPieceCount(head.setName, setPieceType.HEAD);
+        setStatisticManager.incrementSetPieceCount(torso.setName, setPieceType.TORSO);
+        setStatisticManager.incrementSetPieceCount(legs.setName, setPieceType.LEGS);
+        setStatisticManager.incrementSetPieceCount(shoes.setName, setPieceType.SHOES);
+        setStatisticManager.incrementSetPieceCount(backPiece.setName, setPieceType.BACKPIECE);
+
+        // if the roll was made during the 10:10 time frame, increment counter in setStatisticManager
         if (!colorTimeManager.isDark)
         {
             // increment legal grem count
             setStatisticManager.incrementLegalGremCounter();
-
-            // increment set piece counters
-            setStatisticManager.incrementSetPieceCount(head.setName, setPieceType.HEAD);
-            setStatisticManager.incrementSetPieceCount(torso.setName, setPieceType.TORSO);
-            setStatisticManager.incrementSetPieceCount(legs.setName, setPieceType.LEGS);
-            setStatisticManager.incrementSetPieceCount(shoes.setName, setPieceType.SHOES);
-            setStatisticManager.incrementSetPieceCount(backPiece.setName, setPieceType.BACKPIECE);
         }
         else
         {
