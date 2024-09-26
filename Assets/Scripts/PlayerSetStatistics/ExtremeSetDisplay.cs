@@ -56,7 +56,7 @@ public class ExtremeSetDisplay : MonoBehaviour
         if (!setStatisticManager.highestScoreGrem.HasGrem || !setStatisticManager.lowestScoreGrem.HasGrem)
         {
             // Set Grem Capsules for Scores + multiplier
-            highestGrem = new GremCapsule(0, 0, 0.0f, "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", true);
+            highestGrem = new GremCapsule(0, 0, 0.0f, "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", false);
             lowestGrem = highestGrem;
 
             // Set Cosmetic Sets for highest grem
@@ -157,8 +157,13 @@ public class ExtremeSetDisplay : MonoBehaviour
 
     void displaySetFrame(CosmeticSet set, Transform setIconFrame)
     {
-        // Set Sprites in Object
-        short rarity = set.getRarity();
+        // Don't Change frame if there is no grem grem in the capsule
+        if (!highestGrem.HasGrem || !lowestGrem.HasGrem)
+        {
+            return;
+        }
+            // Set Sprites in Object
+            short rarity = set.getRarity();
         switch (rarity)
         {
             case 3:
