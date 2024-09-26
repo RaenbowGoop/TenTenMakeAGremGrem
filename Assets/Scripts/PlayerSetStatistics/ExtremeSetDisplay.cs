@@ -18,6 +18,17 @@ public class ExtremeSetDisplay : MonoBehaviour
     // Grem Display Game Objects
     [SerializeField] GameObject gremModel;
     [SerializeField] GameObject gremDetails;
+    [SerializeField] GameObject gremDetailsBackground;
+
+    // Cosmetic Set Icons
+    [SerializeField] Sprite offensiveIcon;
+    [SerializeField] Sprite contrabandIcon;
+    [SerializeField] Sprite criminalIcon;
+    [SerializeField] Sprite ohMyGoopIcon;
+
+    // Grem Details Backgrounds
+    [SerializeField] Sprite highestGremBackground;
+    [SerializeField] Sprite lowestGremBackground;
 
     // Cosmetic Sets for Highest Score
     GremCapsule highestGrem;
@@ -45,7 +56,7 @@ public class ExtremeSetDisplay : MonoBehaviour
         if (!setStatisticManager.highestScoreGrem.HasGrem || !setStatisticManager.lowestScoreGrem.HasGrem)
         {
             // Set Grem Capsules for Scores + multiplier
-            highestGrem = new GremCapsule(0, 0, 0.0f, "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", true);
+            highestGrem = new GremCapsule(0, 0, 0.0f, "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", "DUMMY GOOPER", false);
             lowestGrem = highestGrem;
 
             // Set Cosmetic Sets for highest grem
@@ -125,9 +136,9 @@ public class ExtremeSetDisplay : MonoBehaviour
         gremModel.transform.GetChild(0).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceBack;
 
         // DISPLAY SET POINTS AND DETAILS
-        gremDetails.transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gremCapsule.Score.ToString("N0") + " pts";
-        gremDetails.transform.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gremCapsule.BasePoints.ToString("N0") + " pts";
-        gremDetails.transform.GetChild(3).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "x" + gremCapsule.Multiplier.ToString();
+        gremDetails.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "TOTAL: " + gremCapsule.Score.ToString("N0") + " pts";
+        gremDetails.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "BASE: " + gremCapsule.BasePoints.ToString("N0") + " pts";
+        gremDetails.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "MULTIPLIER: x" + gremCapsule.Multiplier.ToString();
 
         // Display Set icons
         gremDetails.transform.GetChild(4).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = head.setIcon;
@@ -135,15 +146,51 @@ public class ExtremeSetDisplay : MonoBehaviour
         gremDetails.transform.GetChild(4).transform.GetChild(2).transform.GetChild(0).GetComponent<Image>().sprite = legs.setIcon;
         gremDetails.transform.GetChild(4).transform.GetChild(3).transform.GetChild(0).GetComponent<Image>().sprite = shoes.setIcon;
         gremDetails.transform.GetChild(4).transform.GetChild(4).transform.GetChild(0).GetComponent<Image>().sprite = backPiece.setIcon;
+
+        // Display set icon frames
+        displaySetFrame(head, gremDetails.transform.GetChild(4).transform.GetChild(0));
+        displaySetFrame(torso, gremDetails.transform.GetChild(4).transform.GetChild(1));
+        displaySetFrame(legs, gremDetails.transform.GetChild(4).transform.GetChild(2));
+        displaySetFrame(shoes, gremDetails.transform.GetChild(4).transform.GetChild(3));
+        displaySetFrame(backPiece, gremDetails.transform.GetChild(4).transform.GetChild(4));
+    }
+
+    void displaySetFrame(CosmeticSet set, Transform setIconFrame)
+    {
+        // Don't Change frame if there is no grem grem in the capsule
+        if (!highestGrem.HasGrem || !lowestGrem.HasGrem)
+        {
+            return;
+        }
+            // Set Sprites in Object
+            short rarity = set.getRarity();
+        switch (rarity)
+        {
+            case 3:
+                setIconFrame.GetComponent<Image>().sprite = offensiveIcon;
+                break;
+            case 2:
+                setIconFrame.GetComponent<Image>().sprite = contrabandIcon;
+                break;
+            case 1:
+                setIconFrame.GetComponent<Image>().sprite = criminalIcon;
+                break;
+            default:
+                setIconFrame.GetComponent<Image>().sprite = ohMyGoopIcon;
+                break;
+        }
     }
 
     public void displayHighestScoreGrem()
     {
         displayGrem(headHigh, torsoHigh, legsHigh, shoesHigh, backPieceHigh, highestGrem);
+        gremDetailsBackground.GetComponent<Image>().sprite = highestGremBackground;
+
     }
 
     public void displayLowestScoreGrem()
     {
         displayGrem(headLow, torsoLow, legsLow, shoesLow, backPieceLow, lowestGrem);
+        gremDetailsBackground.GetComponent<Image>().sprite = lowestGremBackground;
     }
 }
