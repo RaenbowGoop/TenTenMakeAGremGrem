@@ -74,3 +74,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   csdb: {fileID: 11400000, guid: 63a9494a9e390f34d84ce25083efd3fc, type: 2}
+  legalGremsMade: 0
+  illegalGremsMade: 0

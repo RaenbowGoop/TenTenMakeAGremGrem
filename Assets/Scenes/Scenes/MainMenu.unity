@@ -3915,6 +3915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87206efff90cd5c43b082e89aba4bbc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  androidNotifications: {fileID: 1365484562}
 --- !u!4 &1365484564
 Transform:
   m_ObjectHideFlags: 0
