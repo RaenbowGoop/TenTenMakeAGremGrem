@@ -28,10 +28,12 @@ public struct SetPieceCounter
 
 public struct GremCapsule
 {
-    public GremCapsule (int score, string head, string torso, string legs, string shoes, string backPiece, bool hasGrem)
+    public GremCapsule (int score, int basePoints, float multiplier, string head, string torso, string legs, string shoes, string backPiece, bool hasGrem)
     {
         HasGrem = hasGrem;
         Score = score;
+        BasePoints = basePoints;
+        Multiplier = multiplier;
         Head = head;
         Torso = torso;
         Legs = legs;
@@ -40,6 +42,9 @@ public struct GremCapsule
     }
 
     public int Score { get; set; }
+
+    public int BasePoints { get; set; }
+    public float Multiplier { get; set; }
     public bool HasGrem { get; set; }
     public string Head { get; set; }
     public string Torso { get; set; }
@@ -57,15 +62,15 @@ public class SetStatisticManager : MonoBehaviour
     public Dictionary<string, SetPieceCounter> setRollStatistics;
 
     // Number of Legal Grems rolled
-    int legalGremsMade;
+    public int legalGremsMade;
     // Number of illegal Grems rolled
-    int illegalGremsMade;
+    public int illegalGremsMade;
 
     // highest score grem grem
-    GremCapsule highestScoreGrem;
+    public GremCapsule highestScoreGrem;
 
     // lowest score grem grem
-    GremCapsule lowestScoreGrem;
+    public GremCapsule lowestScoreGrem;
 
 
     // data service object to save/load data
@@ -179,9 +184,6 @@ public class SetStatisticManager : MonoBehaviour
                     setRollStatistics[set.setName] = new SetPieceCounter();
                 }
             }
-
-            // Save and Load
-            SerializeJson();
         } catch {
             // If unable to load data, create fresh slate for stats
             setRollStatistics = new Dictionary<string, SetPieceCounter>();
@@ -191,9 +193,6 @@ public class SetStatisticManager : MonoBehaviour
             {
                 setRollStatistics[set.setName] = new SetPieceCounter();
             }
-
-            // Save and Load
-            SerializeJson();
         }
 
         // Legal Grems Made Counter
@@ -206,9 +205,6 @@ public class SetStatisticManager : MonoBehaviour
         {
             // If unable to load data, create fresh counter
             legalGremsMade = 0;
-
-            // Save and Load
-            SerializeJson();
         }
 
         // Illegal Grems Made Counter
@@ -221,9 +217,6 @@ public class SetStatisticManager : MonoBehaviour
         {
             // If unable to load data, create fresh counter
             illegalGremsMade = 0;
-
-            // Save and Load
-            SerializeJson();
         }
 
         // Highest Score
@@ -235,10 +228,7 @@ public class SetStatisticManager : MonoBehaviour
         catch
         {
             // If unable to load data, insert empty grem capsule
-            highestScoreGrem = new GremCapsule(0, "N/A", "N/A", "N/A", "N/A", "N/A", false);
-
-            // Save and Load
-            SerializeJson();
+            highestScoreGrem = new GremCapsule(0, 0, 0.0f, "N/A", "N/A", "N/A", "N/A", "N/A", false);
         }
 
         // Lowest Score
@@ -250,11 +240,11 @@ public class SetStatisticManager : MonoBehaviour
         catch
         {
             // If unable to load data, insert empty grem capsule
-            lowestScoreGrem = new GremCapsule(0, "N/A", "N/A", "N/A", "N/A", "N/A", false);
-
-            // Save and Load
-            SerializeJson();
+            lowestScoreGrem = new GremCapsule(0, 0, 0.0f, "N/A", "N/A", "N/A", "N/A", "N/A", false);
         }
+
+        // Save and Load
+        SerializeJson();
     }
 
     public void incrementSetPieceCount( string setName, setPieceType setPieceType )
@@ -293,9 +283,9 @@ public class SetStatisticManager : MonoBehaviour
         illegalGremsMade += 1;
     }
 
-    public void contestExtremeScores(int score, string head, string torso, string legs, string shoes, string backPiece)
+    public void contestExtremeScores(int score, int basePoints, float multiplier, string head, string torso, string legs, string shoes, string backPiece)
     {
-        GremCapsule contestant = new GremCapsule(score, head, torso, legs, shoes, backPiece, true);
+        GremCapsule contestant = new GremCapsule(score, basePoints, multiplier, head, torso, legs, shoes, backPiece, true);
 
         // Base Case: no grem score logged yet
         if (!highestScoreGrem.HasGrem || !lowestScoreGrem.HasGrem)

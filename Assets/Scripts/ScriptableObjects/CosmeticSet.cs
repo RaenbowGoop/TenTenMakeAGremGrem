@@ -27,6 +27,7 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
     [SerializeField] public int setBackPieceStats;
 
     // Sprites
+    [SerializeField] public Sprite setHeadSuperFront;
     [SerializeField] public Sprite setHeadFront;
     [SerializeField] public Sprite setHeadBack;
 

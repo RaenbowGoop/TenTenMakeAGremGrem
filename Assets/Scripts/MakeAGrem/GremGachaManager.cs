@@ -99,7 +99,7 @@ public class GremGachaManager : MonoBehaviour
         }
 
         // Check if rolled grem grem contest the highest and lowest scores
-        setStatisticManager.contestExtremeScores(totalPoints, head.setName, torso.setName, legs.setName, shoes.setName, backPiece.setName);
+        setStatisticManager.contestExtremeScores(totalPoints, basePointTotal, multiplierTotal, head.setName, torso.setName, legs.setName, shoes.setName, backPiece.setName);
 
         // Save and Load results
         setStatisticManager.SerializeJson();
