@@ -68,6 +68,9 @@ public class PlayerStatisticsManager : MonoBehaviour
     // cosmetic set database
     [SerializeField] CosmeticSetDatabase csdb;
 
+    // Ranking Background
+    [SerializeField] GameObject rankingBackground;
+
     // Player set stat manager
     SetStatisticManager setStatisticManager;
 
@@ -96,13 +99,22 @@ public class PlayerStatisticsManager : MonoBehaviour
     [SerializeField] Sprite ohMyGoopIcon;
 
     // Generic Set Type Icons
-
     [SerializeField] Sprite allPieceIcon;
     [SerializeField] Sprite headIcon;
     [SerializeField] Sprite torsoIcon;
     [SerializeField] Sprite legsIcon;
     [SerializeField] Sprite shoesIcon;
     [SerializeField] Sprite backPieceIcon;
+
+    // ranking Backgrounds
+    [SerializeField] Sprite allRankingBackground;
+    [SerializeField] Sprite headRankingBackground;
+    [SerializeField] Sprite torsoRankingBackground;
+    [SerializeField] Sprite legsRankingBackground;
+    [SerializeField] Sprite shoesRankingBackground;
+    [SerializeField] Sprite backPieceRankingBackground;
+
+
 
     void Start()
     {
@@ -163,6 +175,12 @@ public class PlayerStatisticsManager : MonoBehaviour
         displayTotalSetCount();
     }
 
+    void displayRankingBackground(Sprite background)
+    {
+        // Set ranking background
+        rankingBackground.GetComponent<Image>().sprite = background;
+    }
+
     void displayRankingHeader(Sprite icon)
     {
         rankingHeader.transform.GetChild(0).GetComponent<Image>().sprite = icon;
@@ -220,37 +238,48 @@ public class PlayerStatisticsManager : MonoBehaviour
 
     public void displayTotalSetCount()
     {
+        // Set Ranking Header
         displayRankingHeader(allPieceIcon);
+
+        // Display Ranking entries
         displayRanking(fullCosmeticSetCounts);
+
+        // Display Ranking Background
+        displayRankingBackground(allRankingBackground);
     }
 
     public void displayHeadSetCount()
     {
         displayRankingHeader(headIcon);
         displayRanking(headCosmeticSetCounts);
+        displayRankingBackground(headRankingBackground);
     }
 
     public void displayTorsoSetCount()
     {
         displayRankingHeader(torsoIcon);
         displayRanking(torsoCosmeticSetCounts);
+        displayRankingBackground(torsoRankingBackground);
     }
 
     public void displayLegsSetCount()
     {
         displayRankingHeader(legsIcon);
         displayRanking(legsCosmeticSetCounts);
+        displayRankingBackground(legsRankingBackground);
     }
 
     public void displayShoesSetCount()
     {
         displayRankingHeader(shoesIcon);
         displayRanking(shoesCosmeticSetCounts);
+        displayRankingBackground(shoesRankingBackground);
     }
 
     public void displayBackPieceSetCount()
     {
         displayRankingHeader(backPieceIcon);
         displayRanking(backPieceCosmeticSetCounts);
+        displayRankingBackground(backPieceRankingBackground);
     }
 }
