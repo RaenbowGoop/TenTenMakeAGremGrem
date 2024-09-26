@@ -70,6 +70,19 @@ public class CollectionDisplay : MonoBehaviour
 
     private void UpdateDisplay(displaySetting displaySetting)
     {
+        // Clear out current display (destroy existing Gameobjects and clear our the dictionary setsDisplayed
+        foreach (KeyValuePair<CosmeticSet, GameObject> set in setsDisplayed)
+        {
+            Destroy(set.Value);
+        }
+        setsDisplayed.Clear();
+
+        // If we are displaying new sets, but we want to hide them, don't display anything
+        if (displaySetting == displaySetting.NEW && csdb.hideNewSets)
+        {
+            return;
+        }
+
         // Select which sets to display
         List<CosmeticSet> cosmeticSets;
         switch (displaySetting)
@@ -97,16 +110,16 @@ public class CollectionDisplay : MonoBehaviour
                 break; 
         }
 
-        // Clear out current display (destroy existing Gameobjects and clear our the dictionary setsDisplayed
-        foreach (KeyValuePair<CosmeticSet, GameObject> set in setsDisplayed)
-        {
-            Destroy(set.Value);
-        }
-        setsDisplayed.Clear();
-
         // Update Set Display in Collection
         foreach (CosmeticSet set in cosmeticSets)
         {
+            // If we're displaying all sets, but we want to hide new sets, skip new sets
+            if (displaySetting == displaySetting.ALL && csdb.hideNewSets) {
+                if (csdb.newestCosmeticSets.Contains(set)) {
+                    continue;
+                }
+            }
+
             // If set is not yet displayed or doesnt exists on display
             if (!setsDisplayed.ContainsKey(set))
             {

@@ -16,6 +16,9 @@ public class CosmeticSetDatabase : ScriptableObject, ISerializationCallbackRecei
     public List<CosmeticSet> cosmeticSetsWithBackPiece;
     public List<CosmeticSet> newestCosmeticSets;
 
+    [SerializeField] public bool hideNewSets;
+    [SerializeField] bool includeNewSets;
+
     public void OnAfterDeserialize()
     {
 
@@ -37,6 +40,15 @@ public class CosmeticSetDatabase : ScriptableObject, ISerializationCallbackRecei
         // sort out cosmetic sets that have certain pieces
         foreach (CosmeticSet set in cosmeticSets)
         {
+            // if we don't want to include new sets, skip this set if it's a new set
+            if(!includeNewSets)
+            {
+                if (newestCosmeticSets.Contains(set))
+                {
+                    continue;
+                }
+            }
+
             // Filter with Head
             if (set.hasHead)
             {
