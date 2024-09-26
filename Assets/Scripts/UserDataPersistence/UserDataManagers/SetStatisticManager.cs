@@ -290,7 +290,6 @@ public class SetStatisticManager : MonoBehaviour
         // Base Case: no grem score logged yet
         if (!highestScoreGrem.HasGrem || !lowestScoreGrem.HasGrem)
         {
-            Debug.Log("Base");
             // set the highest and lowest grems to the contestant
             highestScoreGrem = contestant;
             lowestScoreGrem = contestant;
@@ -298,13 +297,11 @@ public class SetStatisticManager : MonoBehaviour
         // Check if highest score yet
         else if (score > highestScoreGrem.Score)
         {
-            Debug.Log("High");
             highestScoreGrem = contestant;
         }
         // Check if highest score yet
         else if (score < lowestScoreGrem.Score)
         {
-            Debug.Log("Low");
             lowestScoreGrem = contestant;
         }
     }
