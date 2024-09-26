@@ -62,9 +62,9 @@ public class SetStatisticManager : MonoBehaviour
     public Dictionary<string, SetPieceCounter> setRollStatistics;
 
     // Number of Legal Grems rolled
-    int legalGremsMade;
+    public int legalGremsMade;
     // Number of illegal Grems rolled
-    int illegalGremsMade;
+    public int illegalGremsMade;
 
     // highest score grem grem
     public GremCapsule highestScoreGrem;

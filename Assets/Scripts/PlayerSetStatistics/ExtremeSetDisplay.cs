@@ -125,9 +125,16 @@ public class ExtremeSetDisplay : MonoBehaviour
         gremModel.transform.GetChild(0).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceBack;
 
         // DISPLAY SET POINTS AND DETAILS
-        gremDetails.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gremCapsule.Score.ToString("N0") + " pts";
-        gremDetails.transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gremCapsule.BasePoints.ToString("N0") + " pts";
-        gremDetails.transform.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "x" + gremCapsule.Multiplier.ToString();
+        gremDetails.transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gremCapsule.Score.ToString("N0") + " pts";
+        gremDetails.transform.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gremCapsule.BasePoints.ToString("N0") + " pts";
+        gremDetails.transform.GetChild(3).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "x" + gremCapsule.Multiplier.ToString();
+
+        // Display Set icons
+        gremDetails.transform.GetChild(4).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = head.setIcon;
+        gremDetails.transform.GetChild(4).transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().sprite = torso.setIcon;
+        gremDetails.transform.GetChild(4).transform.GetChild(2).transform.GetChild(0).GetComponent<Image>().sprite = legs.setIcon;
+        gremDetails.transform.GetChild(4).transform.GetChild(3).transform.GetChild(0).GetComponent<Image>().sprite = shoes.setIcon;
+        gremDetails.transform.GetChild(4).transform.GetChild(4).transform.GetChild(0).GetComponent<Image>().sprite = backPiece.setIcon;
     }
 
     public void displayHighestScoreGrem()
