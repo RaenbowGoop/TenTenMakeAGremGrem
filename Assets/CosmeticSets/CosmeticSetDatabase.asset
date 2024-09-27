@@ -164,5 +164,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f0e04bca02bbeb4b976acad37be491d, type: 2}
   - {fileID: 11400000, guid: 82a4ad771de02674c8332cf89ff9418d, type: 2}
   - {fileID: 11400000, guid: b72ad06daeba97e459490262d40d7e8c, type: 2}
-  hideNewSets: 0
+  hideNewSets: 1
   includeNewSets: 0
