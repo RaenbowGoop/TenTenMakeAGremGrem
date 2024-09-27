@@ -40,6 +40,7 @@ MonoBehaviour:
   setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setShoesMiddle: {fileID: 21300000, guid: 637a5643ab90d4348a7f907f583194b1, type: 3}
   setShoesBack: {fileID: 21300000, guid: 5d35504a307e5bc4d98715020d8073fe, type: 3}
+  setShoesSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setBackPieceFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setBackPieceMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setBackPieceBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}

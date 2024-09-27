@@ -45,6 +45,7 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
     [SerializeField] public Sprite setShoesFront;
     [SerializeField] public Sprite setShoesMiddle;
     [SerializeField] public Sprite setShoesBack;
+    [SerializeField] public Sprite setShoesSuperBack;
 
     [SerializeField] public Sprite setBackPieceFront;
     [SerializeField] public Sprite setBackPieceMiddle;

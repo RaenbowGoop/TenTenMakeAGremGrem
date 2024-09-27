@@ -108,31 +108,32 @@ public class ExtremeSetDisplay : MonoBehaviour
     {
         // Display Assets in Model
         // Head
-        gremModel.transform.GetChild(16).GetComponentInChildren<Image>().sprite = head.setHeadSuperFront;
-        gremModel.transform.GetChild(13).GetComponentInChildren<Image>().sprite = head.setHeadFront;
-        gremModel.transform.GetChild(1).GetComponentInChildren<Image>().sprite = head.setHeadBack;
+        gremModel.transform.GetChild(17).GetComponentInChildren<Image>().sprite = head.setHeadSuperFront;
+        gremModel.transform.GetChild(14).GetComponentInChildren<Image>().sprite = head.setHeadFront;
+        gremModel.transform.GetChild(2).GetComponentInChildren<Image>().sprite = head.setHeadBack;
 
         // Torso
-        gremModel.transform.GetChild(15).GetComponentInChildren<Image>().sprite = torso.setTorsoSuperFront;
-        gremModel.transform.GetChild(12).GetComponentInChildren<Image>().sprite = torso.setTorsoFront;
-        gremModel.transform.GetChild(9).GetComponentInChildren<Image>().sprite = torso.setTorsoMiddle;
-        gremModel.transform.GetChild(6).GetComponentInChildren<Image>().sprite = torso.setTorsoBack;
-        gremModel.transform.GetChild(3).GetComponentInChildren<Image>().sprite = torso.setTorsoSuperBack;
+        gremModel.transform.GetChild(16).GetComponentInChildren<Image>().sprite = torso.setTorsoSuperFront;
+        gremModel.transform.GetChild(13).GetComponentInChildren<Image>().sprite = torso.setTorsoFront;
+        gremModel.transform.GetChild(10).GetComponentInChildren<Image>().sprite = torso.setTorsoMiddle;
+        gremModel.transform.GetChild(7).GetComponentInChildren<Image>().sprite = torso.setTorsoBack;
+        gremModel.transform.GetChild(4).GetComponentInChildren<Image>().sprite = torso.setTorsoSuperBack;
 
         // Legs
-        gremModel.transform.GetChild(14).GetComponentInChildren<Image>().sprite = legs.setLegsSuperFront;
-        gremModel.transform.GetChild(10).GetComponentInChildren<Image>().sprite = legs.setLegsFront;
-        gremModel.transform.GetChild(7).GetComponentInChildren<Image>().sprite = legs.setLegsMiddle;
-        gremModel.transform.GetChild(4).GetComponentInChildren<Image>().sprite = legs.setLegsBack;
+        gremModel.transform.GetChild(15).GetComponentInChildren<Image>().sprite = legs.setLegsSuperFront;
+        gremModel.transform.GetChild(11).GetComponentInChildren<Image>().sprite = legs.setLegsFront;
+        gremModel.transform.GetChild(8).GetComponentInChildren<Image>().sprite = legs.setLegsMiddle;
+        gremModel.transform.GetChild(5).GetComponentInChildren<Image>().sprite = legs.setLegsBack;
 
         // Shoes
-        gremModel.transform.GetChild(11).GetComponentInChildren<Image>().sprite = shoes.setShoesFront;
-        gremModel.transform.GetChild(8).GetComponentInChildren<Image>().sprite = shoes.setShoesMiddle;
-        gremModel.transform.GetChild(5).GetComponentInChildren<Image>().sprite = shoes.setShoesBack;
+        gremModel.transform.GetChild(12).GetComponentInChildren<Image>().sprite = shoes.setShoesFront;
+        gremModel.transform.GetChild(9).GetComponentInChildren<Image>().sprite = shoes.setShoesMiddle;
+        gremModel.transform.GetChild(6).GetComponentInChildren<Image>().sprite = shoes.setShoesBack;
+        gremModel.transform.GetChild(1).GetComponentInChildren<Image>().sprite = shoes.setShoesSuperBack;
 
         // BackPiece
-        gremModel.transform.GetChild(17).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceFront;
-        gremModel.transform.GetChild(2).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceMiddle;
+        gremModel.transform.GetChild(18).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceFront;
+        gremModel.transform.GetChild(3).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceMiddle;
         gremModel.transform.GetChild(0).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceBack;
 
         // DISPLAY SET POINTS AND DETAILS
