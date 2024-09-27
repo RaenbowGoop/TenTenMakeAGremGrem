@@ -21,7 +21,7 @@ public class ColorTimeManager : MonoBehaviour
     System.DateTime localDate;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         // Immediately set darken (w/o animation) if entering the scene when not target time + grace period
         isDark = checkIfNotTime();

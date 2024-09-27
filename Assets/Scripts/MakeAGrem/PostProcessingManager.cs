@@ -20,7 +20,6 @@ public class PostProcessingManager : MonoBehaviour
     {
         // Disable iOS Screen by default
         iOSDarkenScreen.SetActive(false);
-        colorTimeManager.buildForiOSMobile = buildingForiOSMobile;
 
         // Disable post processing and enable iOS darken screen if on iOS
         if (buildingForiOSMobile )
@@ -38,5 +37,9 @@ public class PostProcessingManager : MonoBehaviour
             colorTimeManager.darkenAnimation = darkenAnimationNormal;
             colorTimeManager.lightenAnimation = lightenAnimationNormal;
         }
+
+        // Set Flag for ColorTimeManager
+        colorTimeManager.buildForiOSMobile = buildingForiOSMobile;
+        
     }
 }
