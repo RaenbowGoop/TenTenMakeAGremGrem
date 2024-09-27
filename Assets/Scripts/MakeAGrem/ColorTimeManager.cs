@@ -78,7 +78,7 @@ public class ColorTimeManager : MonoBehaviour
         }
     }
 
-    bool checkIfNotTime()
+    public bool checkIfNotTime()
     {
         localDate = System.DateTime.Now;
         // Return true if time is not target time or within grace period after target time

@@ -87,7 +87,7 @@ public class GremGachaManager : MonoBehaviour
         setStatisticManager.incrementSetPieceCount(backPiece.setName, setPieceType.BACKPIECE);
 
         // if the roll was made during the 10:10 time frame, increment counter in setStatisticManager
-        if (!colorTimeManager.isDark)
+        if (!colorTimeManager.checkIfNotTime())
         {
             // increment legal grem count
             setStatisticManager.incrementLegalGremCounter();
