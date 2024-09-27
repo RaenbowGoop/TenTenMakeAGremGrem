@@ -7601,7 +7601,7 @@ MonoBehaviour:
   postProcessVolume: {fileID: 1196855197}
   postProcessLayer: {fileID: 1196855198}
   iOSDarkenScreen: {fileID: 1164020694}
-  buildingForiOSMobile: 1
+  buildingForiOSMobile: 0
 --- !u!1 &1201568442
 GameObject:
   m_ObjectHideFlags: 0
