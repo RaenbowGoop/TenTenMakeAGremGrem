@@ -41,7 +41,7 @@ public class GremGachaDisplay : MonoBehaviour
             this.transform.GetChild(12).GetComponent<Image>().sprite = gremGachaManager.shoes.setShoesFront;
             this.transform.GetChild(9).GetComponent<Image>().sprite = gremGachaManager.shoes.setShoesMiddle;
             this.transform.GetChild(6).GetComponent<Image>().sprite = gremGachaManager.shoes.setShoesBack;
-            this.transform.GetChild(1).GetComponent<Image>().sprite = gremGachaManager.head.setShoesSuperBack;
+            this.transform.GetChild(1).GetComponent<Image>().sprite = gremGachaManager.shoes.setShoesSuperBack;
 
             // Back Piece
             this.transform.GetChild(18).GetComponent<Image>().sprite = gremGachaManager.backPiece.setBackPieceFront;
