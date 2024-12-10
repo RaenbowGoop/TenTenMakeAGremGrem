@@ -6,18 +6,6 @@ using UnityEngine.UI;
 // Possible set rarity
 public enum rarity { Offensive, Contraband, Criminal, OhMyGOOP };
 
-public struct TransformCosmeticSetPair
-{
-    public CosmeticSet cosmeticSet;
-    public Transform gremModel;
-
-    public TransformCosmeticSetPair(CosmeticSet cosmeticSet, Transform gremModel)
-    {
-        this.cosmeticSet = cosmeticSet;
-        this.gremModel = gremModel;
-    }
-}
-
 [CreateAssetMenu(fileName = "New Cosmetic Set", menuName = "Cosmetic Sets/New Cosmetic Set")]
 public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, System.IEquatable<CosmeticSet>
 {
@@ -175,51 +163,51 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
         }
     }
 
-    public static void setGremDisplay(TransformCosmeticSetPair head, TransformCosmeticSetPair torso, TransformCosmeticSetPair legs, TransformCosmeticSetPair shoes, TransformCosmeticSetPair backPiece)
+    public static void setGremDisplay(Transform gremModel, CosmeticSet head, CosmeticSet torso, CosmeticSet legs, CosmeticSet shoes, CosmeticSet backPiece)
     {
         // Head
-        if (head.gremModel != null)
+        if (head != null)
         {
-            head.gremModel.GetChild(HEAD_SUPER_FRONT_INDEX).GetComponentInChildren<Image>().sprite = head.cosmeticSet.setHeadSuperFront;
-            head.gremModel.GetChild(HEAD_FRONT_INDEX).GetComponentInChildren<Image>().sprite = head.cosmeticSet.setHeadFront;
-            head.gremModel.GetChild(HEAD_BACK_INDEX).GetComponentInChildren<Image>().sprite = head.cosmeticSet.setHeadBack;
+            gremModel.GetChild(HEAD_SUPER_FRONT_INDEX).GetComponentInChildren<Image>().sprite = head.setHeadSuperFront;
+            gremModel.GetChild(HEAD_FRONT_INDEX).GetComponentInChildren<Image>().sprite = head.setHeadFront;
+            gremModel.GetChild(HEAD_BACK_INDEX).GetComponentInChildren<Image>().sprite = head.setHeadBack;
         }
 
         // Torso
-        if (torso.gremModel != null)
+        if (torso != null)
         {
-            torso.gremModel.GetChild(TORSO_SUPER_FRONT_INDEX).GetComponentInChildren<Image>().sprite = torso.cosmeticSet.setTorsoSuperFront;
-            torso.gremModel.GetChild(TORSO_FRONT_INDEX).GetComponentInChildren<Image>().sprite = torso.cosmeticSet.setTorsoFront;
-            torso.gremModel.GetChild(TORSO_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = torso.cosmeticSet.setTorsoMiddle;
-            torso.gremModel.GetChild(TORSO_BACK_INDEX).GetComponentInChildren<Image>().sprite = torso.cosmeticSet.setTorsoBack;
-            torso.gremModel.GetChild(TORSO_SUPER_BACK_INDEX).GetComponentInChildren<Image>().sprite = torso.cosmeticSet.setTorsoSuperBack;
+            gremModel.GetChild(TORSO_SUPER_FRONT_INDEX).GetComponentInChildren<Image>().sprite = torso.setTorsoSuperFront;
+            gremModel.GetChild(TORSO_FRONT_INDEX).GetComponentInChildren<Image>().sprite = torso.setTorsoFront;
+            gremModel.GetChild(TORSO_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = torso.setTorsoMiddle;
+            gremModel.GetChild(TORSO_BACK_INDEX).GetComponentInChildren<Image>().sprite = torso.setTorsoBack;
+            gremModel.GetChild(TORSO_SUPER_BACK_INDEX).GetComponentInChildren<Image>().sprite = torso.setTorsoSuperBack;
         }
 
         // Legs
-        if (legs.gremModel != null)
+        if (legs != null)
         {
-            legs.gremModel.GetChild(LEGS_SUPER_FRONT_INDEX).GetComponentInChildren<Image>().sprite = legs.cosmeticSet.setLegsSuperFront;
-            legs.gremModel.GetChild(LEGS_FRONT_INDEX).GetComponentInChildren<Image>().sprite = legs.cosmeticSet.setLegsFront;
-            legs.gremModel.GetChild(LEGS_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = legs.cosmeticSet.setLegsMiddle;
-            legs.gremModel.GetChild(LEGS_BACK_INDEX).GetComponentInChildren<Image>().sprite = legs.cosmeticSet.setLegsBack;
+            gremModel.GetChild(LEGS_SUPER_FRONT_INDEX).GetComponentInChildren<Image>().sprite = legs.setLegsSuperFront;
+            gremModel.GetChild(LEGS_FRONT_INDEX).GetComponentInChildren<Image>().sprite = legs.setLegsFront;
+            gremModel.GetChild(LEGS_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = legs.setLegsMiddle;
+            gremModel.GetChild(LEGS_BACK_INDEX).GetComponentInChildren<Image>().sprite = legs.setLegsBack;
         }
 
         // Shoes
-        if (shoes.gremModel != null)
+        if (shoes != null)
         {
-            shoes.gremModel.GetChild(SHOES_FRONT_INDEX).GetComponentInChildren<Image>().sprite = shoes.cosmeticSet.setShoesFront;
-            shoes.gremModel.GetChild(SHOES_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = shoes.cosmeticSet.setShoesMiddle;
-            shoes.gremModel.GetChild(SHOES_BACK_INDEX).GetComponentInChildren<Image>().sprite = shoes.cosmeticSet.setShoesBack;
-            shoes.gremModel.GetChild(SHOES_SUPER_BACK_INDEX).GetComponentInChildren<Image>().sprite = shoes.cosmeticSet.setShoesSuperBack;
+            gremModel.GetChild(SHOES_FRONT_INDEX).GetComponentInChildren<Image>().sprite = shoes.setShoesFront;
+            gremModel.GetChild(SHOES_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = shoes.setShoesMiddle;
+            gremModel.GetChild(SHOES_BACK_INDEX).GetComponentInChildren<Image>().sprite = shoes.setShoesBack;
+            gremModel.GetChild(SHOES_SUPER_BACK_INDEX).GetComponentInChildren<Image>().sprite = shoes.setShoesSuperBack;
         }
 
         // BackPiece
-        if (backPiece.gremModel != null)
+        if (backPiece != null)
         {
-            backPiece.gremModel.GetChild(BACK_PIECE_FRONT_INDEX).GetComponentInChildren<Image>().sprite = backPiece.cosmeticSet.setBackPieceFront;
-            backPiece.gremModel.GetChild(BACK_PIECE_FRONT_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = backPiece.cosmeticSet.setBackPieceFrontMiddle;
-            backPiece.gremModel.GetChild(BACK_PIECE_BACK_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = backPiece.cosmeticSet.setBackPieceBackMiddle;
-            backPiece.gremModel.GetChild(BACK_PIECE_BACK_INDEX).GetComponentInChildren<Image>().sprite = backPiece.cosmeticSet.setBackPieceBack;
+            gremModel.GetChild(BACK_PIECE_FRONT_INDEX).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceFront;
+            gremModel.GetChild(BACK_PIECE_FRONT_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceFrontMiddle;
+            gremModel.GetChild(BACK_PIECE_BACK_MIDDLE_INDEX).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceBackMiddle;
+            gremModel.GetChild(BACK_PIECE_BACK_INDEX).GetComponentInChildren<Image>().sprite = backPiece.setBackPieceBack;
         }
     }
 }

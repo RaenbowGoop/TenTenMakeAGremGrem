@@ -299,14 +299,7 @@ public class PlayerStatisticsManager : MonoBehaviour
     {
         // Display Grem on Main model
         Transform mainGremModelTransform = mainGremModel.transform;
-
-        TransformCosmeticSetPair mainHeadPair = new TransformCosmeticSetPair(set, mainGremModelTransform);
-        TransformCosmeticSetPair mainTorsoPair = new TransformCosmeticSetPair(set, mainGremModelTransform);
-        TransformCosmeticSetPair mainLegsPair = new TransformCosmeticSetPair(set, mainGremModelTransform);
-        TransformCosmeticSetPair mainShoesPair = new TransformCosmeticSetPair(set, mainGremModelTransform);
-        TransformCosmeticSetPair mainBackPiecePair = new TransformCosmeticSetPair(set, mainGremModelTransform);
-
-        CosmeticSet.setGremDisplay(mainHeadPair, mainTorsoPair, mainLegsPair, mainShoesPair, mainBackPiecePair);
+        CosmeticSet.setGremDisplay(mainGremModelTransform, set, set, set, set, set);
 
         // Set Name Card
         // If set has head, display entire grem. If no head, just display Icon
@@ -320,14 +313,7 @@ public class PlayerStatisticsManager : MonoBehaviour
 
             // Display Set
             Transform gremNameCardDisplayTransform = gremNameCardDisplay.transform.GetChild(0).transform;
-
-            TransformCosmeticSetPair headPair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
-            TransformCosmeticSetPair torsoPair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
-            TransformCosmeticSetPair legsPair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
-            TransformCosmeticSetPair shoesPair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
-            TransformCosmeticSetPair backPiecePair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
-
-            CosmeticSet.setGremDisplay(headPair, torsoPair, legsPair, shoesPair, backPiecePair);
+            CosmeticSet.setGremDisplay(gremNameCardDisplayTransform, set, set, set, set, set);
 
         } else {
             // Disable Set Model
