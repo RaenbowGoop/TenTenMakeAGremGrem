@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.VisualScripting;
+using UnityEngine.WSA;
 
 public class CosmeticSetCountPair : System.IComparable<CosmeticSetCountPair>, System.IEquatable<CosmeticSetCountPair>
 {
@@ -296,34 +298,15 @@ public class PlayerStatisticsManager : MonoBehaviour
     public void displayGremFromRanking(CosmeticSet set)
     {
         // Display Grem on Main model
-        // Head
-        mainGremModel.transform.GetChild(17).GetComponentInChildren<Image>().sprite = set.setHeadSuperFront;
-        mainGremModel.transform.GetChild(14).GetComponentInChildren<Image>().sprite = set.setHeadFront;
-        mainGremModel.transform.GetChild(2).GetComponentInChildren<Image>().sprite = set.setHeadBack;
+        Transform mainGremModelTransform = mainGremModel.transform;
 
-        // Torso
-        mainGremModel.transform.GetChild(16).GetComponentInChildren<Image>().sprite = set.setTorsoSuperFront;
-        mainGremModel.transform.GetChild(13).GetComponentInChildren<Image>().sprite = set.setTorsoFront;
-        mainGremModel.transform.GetChild(10).GetComponentInChildren<Image>().sprite = set.setTorsoMiddle;
-        mainGremModel.transform.GetChild(7).GetComponentInChildren<Image>().sprite = set.setTorsoBack;
-        mainGremModel.transform.GetChild(4).GetComponentInChildren<Image>().sprite = set.setTorsoSuperBack;
+        TransformCosmeticSetPair mainHeadPair = new TransformCosmeticSetPair(set, mainGremModelTransform);
+        TransformCosmeticSetPair mainTorsoPair = new TransformCosmeticSetPair(set, mainGremModelTransform);
+        TransformCosmeticSetPair mainLegsPair = new TransformCosmeticSetPair(set, mainGremModelTransform);
+        TransformCosmeticSetPair mainShoesPair = new TransformCosmeticSetPair(set, mainGremModelTransform);
+        TransformCosmeticSetPair mainBackPiecePair = new TransformCosmeticSetPair(set, mainGremModelTransform);
 
-        // Legs
-        mainGremModel.transform.GetChild(15).GetComponentInChildren<Image>().sprite = set.setLegsSuperFront;
-        mainGremModel.transform.GetChild(11).GetComponentInChildren<Image>().sprite = set.setLegsFront;
-        mainGremModel.transform.GetChild(8).GetComponentInChildren<Image>().sprite = set.setLegsMiddle;
-        mainGremModel.transform.GetChild(5).GetComponentInChildren<Image>().sprite = set.setLegsBack;
-
-        // Shoes
-        mainGremModel.transform.GetChild(12).GetComponentInChildren<Image>().sprite = set.setShoesFront;
-        mainGremModel.transform.GetChild(9).GetComponentInChildren<Image>().sprite = set.setShoesMiddle;
-        mainGremModel.transform.GetChild(6).GetComponentInChildren<Image>().sprite = set.setShoesBack;
-        mainGremModel.transform.GetChild(1).GetComponentInChildren<Image>().sprite = set.setShoesSuperBack;
-
-        // BackPiece
-        mainGremModel.transform.GetChild(18).GetComponentInChildren<Image>().sprite = set.setBackPieceFront;
-        mainGremModel.transform.GetChild(3).GetComponentInChildren<Image>().sprite = set.setBackPieceMiddle;
-        mainGremModel.transform.GetChild(0).GetComponentInChildren<Image>().sprite = set.setBackPieceBack;
+        CosmeticSet.setGremDisplay(mainHeadPair, mainTorsoPair, mainLegsPair, mainShoesPair, mainBackPiecePair);
 
         // Set Name Card
         // If set has head, display entire grem. If no head, just display Icon
@@ -336,34 +319,15 @@ public class PlayerStatisticsManager : MonoBehaviour
             gremNameCardDisplay.transform.GetChild(0).gameObject.SetActive(true);
 
             // Display Set
-            // Head
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(17).GetComponentInChildren<Image>().sprite = set.setHeadSuperFront;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(14).GetComponentInChildren<Image>().sprite = set.setHeadFront;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = set.setHeadBack;
+            Transform gremNameCardDisplayTransform = gremNameCardDisplay.transform.GetChild(0).transform;
 
-            // Torso
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(16).GetComponentInChildren<Image>().sprite = set.setTorsoSuperFront;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(13).GetComponentInChildren<Image>().sprite = set.setTorsoFront;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(10).GetComponentInChildren<Image>().sprite = set.setTorsoMiddle;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(7).GetComponentInChildren<Image>().sprite = set.setTorsoBack;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(4).GetComponentInChildren<Image>().sprite = set.setTorsoSuperBack;
+            TransformCosmeticSetPair headPair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
+            TransformCosmeticSetPair torsoPair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
+            TransformCosmeticSetPair legsPair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
+            TransformCosmeticSetPair shoesPair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
+            TransformCosmeticSetPair backPiecePair = new TransformCosmeticSetPair(set, gremNameCardDisplayTransform);
 
-            // Legs
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(15).GetComponentInChildren<Image>().sprite = set.setLegsSuperFront;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(11).GetComponentInChildren<Image>().sprite = set.setLegsFront;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(8).GetComponentInChildren<Image>().sprite = set.setLegsMiddle;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(5).GetComponentInChildren<Image>().sprite = set.setLegsBack;
-
-            // Shoes
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(12).GetComponentInChildren<Image>().sprite = set.setShoesFront;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(9).GetComponentInChildren<Image>().sprite = set.setShoesMiddle;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(6).GetComponentInChildren<Image>().sprite = set.setShoesBack;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = set.setShoesSuperBack;
-
-            // BackPiece
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(18).GetComponentInChildren<Image>().sprite = set.setBackPieceFront;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Image>().sprite = set.setBackPieceMiddle;
-            gremNameCardDisplay.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = set.setBackPieceBack;
+            CosmeticSet.setGremDisplay(headPair, torsoPair, legsPair, shoesPair, backPiecePair);
 
         } else {
             // Disable Set Model
