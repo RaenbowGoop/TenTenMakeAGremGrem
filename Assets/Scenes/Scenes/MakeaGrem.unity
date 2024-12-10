@@ -6224,10 +6224,10 @@ MonoBehaviour:
   multiplierTotal: 0
   totalPoints: 0
   csDatabase: {fileID: 11400000, guid: 63a9494a9e390f34d84ce25083efd3fc, type: 2}
-  rateOHMYGOOP: 15
-  rateCriminal: 20
-  rateContraband: 30
-  rateOffensive: 35
+  rateOHMYGOOP: 100
+  rateCriminal: 0
+  rateContraband: 0
+  rateOffensive: 0
   flatOMGoopBonus: 10
   twoPcSetBonus: 3
   threePcSetBonus: 6
@@ -9682,7 +9682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -496, y: -445.98007}
+  m_AnchoredPosition: {x: -612, y: -445.98007}
   m_SizeDelta: {x: 81, y: 92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1563769398
