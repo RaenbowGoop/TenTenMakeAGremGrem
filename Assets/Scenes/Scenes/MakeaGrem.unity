@@ -6224,10 +6224,10 @@ MonoBehaviour:
   multiplierTotal: 0
   totalPoints: 0
   csDatabase: {fileID: 11400000, guid: 63a9494a9e390f34d84ce25083efd3fc, type: 2}
-  rateOHMYGOOP: 100
-  rateCriminal: 0
-  rateContraband: 0
-  rateOffensive: 0
+  rateOHMYGOOP: 15
+  rateCriminal: 20
+  rateContraband: 30
+  rateOffensive: 35
   flatOMGoopBonus: 10
   twoPcSetBonus: 3
   threePcSetBonus: 6
