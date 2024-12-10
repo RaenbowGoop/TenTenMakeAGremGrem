@@ -1,6 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Linq;
 using UnityEngine;
 
 
@@ -8,13 +7,16 @@ using UnityEngine;
 
 public class CosmeticSetDatabase : ScriptableObject, ISerializationCallbackReceiver
 {
+    public List<CosmeticSet> existingCosmeticSets;
+    public List<CosmeticSet> newestCosmeticSets;
     public List<CosmeticSet> cosmeticSets;
+
     public List<CosmeticSet> cosmeticSetsWithHeads;
     public List<CosmeticSet> cosmeticSetsWithTorso;
     public List<CosmeticSet> cosmeticSetsWithLegs;
     public List<CosmeticSet> cosmeticSetsWithShoes;
     public List<CosmeticSet> cosmeticSetsWithBackPiece;
-    public List<CosmeticSet> newestCosmeticSets;
+    
 
     [SerializeField] public bool hideNewSets;
     [SerializeField] bool includeNewSets;
@@ -26,9 +28,22 @@ public class CosmeticSetDatabase : ScriptableObject, ISerializationCallbackRecei
 
     public void OnBeforeSerialize()
     {
-        // Sort Cosmetic Set
-        cosmeticSets.Sort();
+        // Sort Cosmetic Sets
+        existingCosmeticSets = existingCosmeticSets.Distinct().ToList();
+        existingCosmeticSets.Sort();
+
+        newestCosmeticSets = newestCosmeticSets.Distinct().ToList();
         newestCosmeticSets.Sort();
+
+        // Assemble effective cosmetic set list 
+        cosmeticSets.Clear();
+        cosmeticSets.AddRange(existingCosmeticSets);
+
+        if (includeNewSets) { 
+            cosmeticSets.AddRange(newestCosmeticSets); 
+        }
+
+        cosmeticSets.Sort();
 
         // Clear lists
         cosmeticSetsWithHeads.Clear();
@@ -40,15 +55,6 @@ public class CosmeticSetDatabase : ScriptableObject, ISerializationCallbackRecei
         // sort out cosmetic sets that have certain pieces
         foreach (CosmeticSet set in cosmeticSets)
         {
-            // if we don't want to include new sets, skip this set if it's a new set
-            if(!includeNewSets)
-            {
-                if (newestCosmeticSets.Contains(set))
-                {
-                    continue;
-                }
-            }
-
             // Filter with Head
             if (set.hasHead)
             {
@@ -75,5 +81,15 @@ public class CosmeticSetDatabase : ScriptableObject, ISerializationCallbackRecei
                 cosmeticSetsWithBackPiece.Add(set);
             }
         }
+    }
+
+    [ContextMenu("Merge Newest Sets into Cosmetic Sets")]
+    void mergeNewestSetsIntoCosmeticSets()
+    {
+        foreach (CosmeticSet set in newestCosmeticSets)
+        {
+            cosmeticSets.Add(set);
+        }
+        newestCosmeticSets.Clear();
     }
 }
