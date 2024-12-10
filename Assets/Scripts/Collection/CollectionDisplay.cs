@@ -26,10 +26,7 @@ public class CollectionDisplay : MonoBehaviour
     [SerializeField] Sprite ohMyGoopIcon;
 
     // Filler Display Pieces
-    [SerializeField] Sprite dummyHead;
-    [SerializeField] Sprite plainTorso;
-    [SerializeField] Sprite plainLegs;
-    [SerializeField] Sprite transparentSprite;
+    [SerializeField] CosmeticSet dummySet;
 
 
     // Start is called before the first frame update
@@ -195,7 +192,30 @@ public class CollectionDisplay : MonoBehaviour
         currentSet.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = newSetObj.setDescription;
         currentSet.transform.GetChild(2).transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text = "rarity: " + newSetObj.setRarity.ToString().ToUpper();
 
-        // Set Set Stats
+        // Set Set Statistics
+        displaySetStatistics(newSetObj);
+
+        // Display Assets in Model
+        Transform gremModelTransform = currentSet.transform.GetChild(0).transform;
+
+        // Only display set's head if display setting is ALL or NEW or the corresponding set item (HEAD, TORSO, LEGS, SHOES, BACKPIECE). Otherwise, display dummy set
+        CosmeticSet headSet = (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.HEAD) ? newSetObj : dummySet;
+        CosmeticSet torsoSet = (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.TORSO) ? newSetObj : dummySet;
+        CosmeticSet legsSet = (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.LEGS) ? newSetObj : dummySet;
+        CosmeticSet shoesSet = (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.SHOES) ? newSetObj : dummySet;
+        CosmeticSet backPieceSet = (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.BACKPIECE) ? newSetObj : dummySet;
+
+        TransformCosmeticSetPair headPair = new TransformCosmeticSetPair(headSet, gremModelTransform);
+        TransformCosmeticSetPair torsoPair = new TransformCosmeticSetPair(torsoSet, gremModelTransform);
+        TransformCosmeticSetPair legsPair = new TransformCosmeticSetPair(legsSet, gremModelTransform);
+        TransformCosmeticSetPair shoesPair = new TransformCosmeticSetPair(shoesSet, gremModelTransform);
+        TransformCosmeticSetPair backPiecePair = new TransformCosmeticSetPair(backPieceSet, gremModelTransform);
+
+        CosmeticSet.setGremDisplay(headPair, torsoPair, legsPair, shoesPair, backPiecePair);
+    }
+
+    private void displaySetStatistics(CosmeticSet newSetObj)
+    {
         // Display number only if head points is not 0
         if (newSetObj.hasHead)
         {
@@ -250,72 +270,6 @@ public class CollectionDisplay : MonoBehaviour
             currentSet.transform.GetChild(3).transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "N/A";
             currentSet.transform.GetChild(3).transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(false);
         }
-
-        // Display Assets in Model
-        // Head (only display set's head if display setting is ALL or NEW or HEAD. Otherwise, display dummy head)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.HEAD) {
-            currentSet.transform.GetChild(0).transform.GetChild(17).GetComponentInChildren<Image>().sprite = newSetObj.setHeadSuperFront;
-            currentSet.transform.GetChild(0).transform.GetChild(14).GetComponentInChildren<Image>().sprite = newSetObj.setHeadFront;
-            currentSet.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = newSetObj.setHeadBack;
-        } else {
-            currentSet.transform.GetChild(0).transform.GetChild(17).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(14).GetComponentInChildren<Image>().sprite = dummyHead;
-            currentSet.transform.GetChild(0).transform.GetChild(2).GetComponentInChildren<Image>().sprite = transparentSprite;
-        }
-
-        // Torso (only display set's torso if display setting is ALL or NEW or TORSO. Otherwise, display plain torso)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.TORSO) {
-            currentSet.transform.GetChild(0).transform.GetChild(16).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoSuperFront;
-            currentSet.transform.GetChild(0).transform.GetChild(13).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoFront;
-            currentSet.transform.GetChild(0).transform.GetChild(10).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoMiddle;
-            currentSet.transform.GetChild(0).transform.GetChild(7).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoBack;
-            currentSet.transform.GetChild(0).transform.GetChild(4).GetComponentInChildren<Image>().sprite = newSetObj.setTorsoSuperBack;
-        } else {
-            currentSet.transform.GetChild(0).transform.GetChild(16).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(13).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(10).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(7).GetComponentInChildren<Image>().sprite = plainTorso;
-            currentSet.transform.GetChild(0).transform.GetChild(4).GetComponentInChildren<Image>().sprite = transparentSprite;
-        }
-
-        // Legs (only display set's legs if display setting is ALL or NEW or LEGS. Otherwise, display plain legs)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.LEGS) {
-            currentSet.transform.GetChild(0).transform.GetChild(15).GetComponentInChildren<Image>().sprite = newSetObj.setLegsSuperFront;
-            currentSet.transform.GetChild(0).transform.GetChild(11).GetComponentInChildren<Image>().sprite = newSetObj.setLegsFront;
-            currentSet.transform.GetChild(0).transform.GetChild(8).GetComponentInChildren<Image>().sprite = newSetObj.setLegsMiddle;
-            currentSet.transform.GetChild(0).transform.GetChild(5).GetComponentInChildren<Image>().sprite = newSetObj.setLegsBack;
-        } else {
-            currentSet.transform.GetChild(0).transform.GetChild(15).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(11).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(8).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(5).GetComponentInChildren<Image>().sprite = plainLegs;
-        }
-
-        // Shoes (only display set's shoes if display setting is ALL or NEW or SHOES. Otherwise, display NOTHING)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.SHOES) {
-            currentSet.transform.GetChild(0).transform.GetChild(12).GetComponentInChildren<Image>().sprite = newSetObj.setShoesFront;
-            currentSet.transform.GetChild(0).transform.GetChild(9).GetComponentInChildren<Image>().sprite = newSetObj.setShoesMiddle;
-            currentSet.transform.GetChild(0).transform.GetChild(6).GetComponentInChildren<Image>().sprite = newSetObj.setShoesBack;
-            currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = newSetObj.setShoesSuperBack;
-        } else {
-            currentSet.transform.GetChild(0).transform.GetChild(12).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(9).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(6).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(1).GetComponentInChildren<Image>().sprite = transparentSprite;
-        }
-
-        // Back Piece (only display set's shoes if display setting is ALL or NEW or BACKPIECE. Otherwise, display NOTHING)
-        if (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.BACKPIECE)
-        {
-            currentSet.transform.GetChild(0).transform.GetChild(18).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceFront;
-            currentSet.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceMiddle;
-            currentSet.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = newSetObj.setBackPieceBack;
-        } else {
-            currentSet.transform.GetChild(0).transform.GetChild(18).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Image>().sprite = transparentSprite;
-            currentSet.transform.GetChild(0).transform.GetChild(0).GetComponentInChildren<Image>().sprite = transparentSprite;
-        }
     }
-
 }
 
