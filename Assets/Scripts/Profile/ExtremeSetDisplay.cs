@@ -108,14 +108,7 @@ public class ExtremeSetDisplay : MonoBehaviour
     {
         // Display Assets in Model
         Transform gremModelTransform = gremModel.transform;
-
-        TransformCosmeticSetPair headPair = new TransformCosmeticSetPair(head, gremModelTransform);
-        TransformCosmeticSetPair torsoPair = new TransformCosmeticSetPair(torso, gremModelTransform);
-        TransformCosmeticSetPair legsPair = new TransformCosmeticSetPair(legs, gremModelTransform);
-        TransformCosmeticSetPair shoesPair = new TransformCosmeticSetPair(shoes, gremModelTransform);
-        TransformCosmeticSetPair backPiecePair = new TransformCosmeticSetPair(backPiece, gremModelTransform);
-
-        CosmeticSet.setGremDisplay(headPair, torsoPair, legsPair, shoesPair, backPiecePair);
+        CosmeticSet.setGremDisplay(gremModelTransform, head, torso, legs, shoes, backPiece);
 
         // DISPLAY SET POINTS AND DETAILS
         gremDetails.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "TOTAL: " + gremCapsule.Score.ToString("N0") + " pts";

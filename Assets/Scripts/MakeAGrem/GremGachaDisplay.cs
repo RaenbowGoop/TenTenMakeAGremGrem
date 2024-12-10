@@ -19,15 +19,7 @@ public class GremGachaDisplay : MonoBehaviour
         if (!isDisplayed)
         {
             // Display Assets in Model
-            Transform gremModelTransform = this.transform;
-
-            TransformCosmeticSetPair headPair = new TransformCosmeticSetPair(gremGachaManager.head, gremModelTransform);
-            TransformCosmeticSetPair torsoPair = new TransformCosmeticSetPair(gremGachaManager.torso, gremModelTransform);
-            TransformCosmeticSetPair legsPair = new TransformCosmeticSetPair(gremGachaManager.legs, gremModelTransform);
-            TransformCosmeticSetPair shoesPair = new TransformCosmeticSetPair(gremGachaManager.shoes, gremModelTransform);
-            TransformCosmeticSetPair backPiecePair = new TransformCosmeticSetPair(gremGachaManager.backPiece, gremModelTransform);
-
-            CosmeticSet.setGremDisplay(headPair, torsoPair, legsPair, shoesPair, backPiecePair);
+            CosmeticSet.setGremDisplay(this.transform, gremGachaManager.head, gremGachaManager.torso, gremGachaManager.legs, gremGachaManager.shoes, gremGachaManager.backPiece);
 
             isDisplayed = true;
         }

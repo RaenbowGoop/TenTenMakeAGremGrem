@@ -205,13 +205,7 @@ public class CollectionDisplay : MonoBehaviour
         CosmeticSet shoesSet = (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.SHOES) ? newSetObj : dummySet;
         CosmeticSet backPieceSet = (displaySetting == displaySetting.ALL || displaySetting == displaySetting.NEW || displaySetting == displaySetting.BACKPIECE) ? newSetObj : dummySet;
 
-        TransformCosmeticSetPair headPair = new TransformCosmeticSetPair(headSet, gremModelTransform);
-        TransformCosmeticSetPair torsoPair = new TransformCosmeticSetPair(torsoSet, gremModelTransform);
-        TransformCosmeticSetPair legsPair = new TransformCosmeticSetPair(legsSet, gremModelTransform);
-        TransformCosmeticSetPair shoesPair = new TransformCosmeticSetPair(shoesSet, gremModelTransform);
-        TransformCosmeticSetPair backPiecePair = new TransformCosmeticSetPair(backPieceSet, gremModelTransform);
-
-        CosmeticSet.setGremDisplay(headPair, torsoPair, legsPair, shoesPair, backPiecePair);
+        CosmeticSet.setGremDisplay(gremModelTransform, headSet, torsoSet, legsSet, shoesSet, backPieceSet);
     }
 
     private void displaySetStatistics(CosmeticSet newSetObj)
