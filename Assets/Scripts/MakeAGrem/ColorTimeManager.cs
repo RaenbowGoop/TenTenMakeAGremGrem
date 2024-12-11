@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Globalization;
+﻿using UnityEngine;
 using UnityEngine.Playables;
 using Unity​Engine.Rendering.PostProcessing;
 
