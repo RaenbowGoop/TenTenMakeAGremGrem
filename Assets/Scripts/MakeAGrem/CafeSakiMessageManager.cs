@@ -55,10 +55,10 @@ public class CafeSakiMessageManager : MonoBehaviour
 
     bool checkForRareLine()
     {
-        int randNum = randNumGen.Next(1, 667);
+        int randNum = randNumGen.Next(1, 70);
 
         // Chip and Pondo were here
-        if (randNum == 246)
+        if (randNum == 69)
         {
             return true;
         }
