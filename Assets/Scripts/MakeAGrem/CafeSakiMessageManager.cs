@@ -1,15 +1,18 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Globalization;
+using UnityEngine.UI;
 
 public class CafeSakiMessageManager : MonoBehaviour
 {
     [SerializeField] List<string> cafeSakiLinesDuringTime;
     [SerializeField] List<string> cafeSakiLinesNotDuringTime;
     [SerializeField] List<string> cafeSakiLinesRareLines;
+
     [SerializeField] TextMeshProUGUI messageText;
+    [SerializeField] Image messageTextBackground;
+    [SerializeField] Image messageTextBackgroundDark;
+
     [SerializeField] ColorTimeManager colorTimeManager;
     System.DateTime localDate;
     System.Random randNumGen;
@@ -70,11 +73,15 @@ public class CafeSakiMessageManager : MonoBehaviour
         // determine which list of messages to choose from
         if (checkForRareLine())
         {
+            // Set Random Rare Line
             int lineIndex = randNumGen.Next(0, cafeSakiLinesRareLines.Count);
             messageText.text = cafeSakiLinesRareLines[lineIndex];
-        }
-        else
-        {
+
+            // Change Text Box Appearance
+            messageText.color = new Color(255, 255, 0, 100);
+            messageTextBackground.color = new Color(255, 0, 0, 100);
+            messageTextBackgroundDark.color = new Color(255, 0, 0, 100);
+        } else {
             if (checkIfProperTime())
             {
                 // Set random line to message box
