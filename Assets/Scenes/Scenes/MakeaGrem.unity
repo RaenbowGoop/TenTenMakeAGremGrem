@@ -7192,6 +7192,8 @@ MonoBehaviour:
   - Do You Think God Stays In Heaven Because He Too Lives In Fear Of What He's Created?
   - Chip and Pondo are in the basement.
   messageText: {fileID: 507571642}
+  messageTextBackground: {fileID: 1442893027}
+  messageTextBackgroundDark: {fileID: 2114837457}
   colorTimeManager: {fileID: 1196855200}
 --- !u!1 &1094136349
 GameObject:
@@ -10995,8 +10997,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 439.9, y: 121.47}
+  m_AnchoredPosition: {x: -1.66, y: 0.42}
+  m_SizeDelta: {x: 378.59, y: 109.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1693924630
 MonoBehaviour:
@@ -11018,7 +11020,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Screenshot Saved Under "My Grems" Album.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fba5dd21f09bf8243a299078f16ce4ab, type: 2}
   m_sharedMaterial: {fileID: 2117984651317321950, guid: fba5dd21f09bf8243a299078f16ce4ab, type: 2}
@@ -11045,8 +11047,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13246,7 +13248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 95078b96381ebfa40a6ec9dbee1c5792, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
