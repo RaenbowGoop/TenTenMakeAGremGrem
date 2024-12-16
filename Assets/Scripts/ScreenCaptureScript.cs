@@ -36,33 +36,62 @@ public class ScreenCapture : MonoBehaviour
         // Hide Screenshot Notification
         screenshotNotificationObject.SetActive(false);
 
+        // Hide Mouse Click Animation
+        TextMeshProUGUI mouseClickAnimation = GameObject.FindGameObjectWithTag("MouseClickAnimation").transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        if (mouseClickAnimation != null) {
+            mouseClickAnimation.color = new Color(mouseClickAnimation.color.r, mouseClickAnimation.color.g, mouseClickAnimation.color.b, 0);
+        }
+
         yield return new WaitForEndOfFrame();
 
+        // Screenshot parameters
         int width = Screen.width;
         int height = Screen.height;
-        Texture2D texture = new Texture2D(width, height, TextureFormat.RGB24, false);
+
+        Rect screenshotBounds;
+        Texture2D texture;
+
+        // Platform Type
+        RuntimePlatform platform = Application.platform;
+
+        // Define Screenshot boudns based on platform
+        if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
+        {
+            int screenshotWidth = (int)((4.0 / 3.0) * height);
+            int widthSpace = (width - screenshotWidth)/2;
+            screenshotBounds = new Rect(widthSpace, 0, screenshotWidth, height);
+            texture = new Texture2D(screenshotWidth, height, TextureFormat.RGB24, false);
+        } else
+        {
+            screenshotBounds = new Rect(0, 0, width, height);
+            texture = new Texture2D(width, height, TextureFormat.RGB24, false);
+        }
 
         // read screen
-        texture.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+        texture.ReadPixels(screenshotBounds, 0, 0);
         texture.Apply();
 
-
-        // encode texture into image
-        byte[] data = texture.EncodeToPNG();
         string filename = "gooper-" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
 
         // check platform
-        RuntimePlatform platform = Application.platform;
         if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer) {
             saveScreenshotOnMobile(texture, filename);
         } else {
+            // encode texture into image
+            byte[] data = texture.EncodeToPNG();
             saveScreenshotOnDesktopAndWebGL(data, filename);
         }
 
         Destroy(texture);
 
-        // Unhidde Screenshot Notification
+        // Unhide Screenshot Notification
         screenshotNotificationObject.SetActive(true);
+
+        // Unhide Mouse Click Animation
+        if (mouseClickAnimation != null)
+        {
+            mouseClickAnimation.color = new Color(mouseClickAnimation.color.r, mouseClickAnimation.color.g, mouseClickAnimation.color.b, 100);
+        }
     }
 
     void saveScreenshotOnMobile(Texture2D data, String filename) {
