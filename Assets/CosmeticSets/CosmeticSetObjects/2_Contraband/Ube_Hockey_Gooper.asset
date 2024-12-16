@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
-  m_Name: Sleepy_Duck_Gooper
+  m_Name: Ube_Hockey_Gooper
   m_EditorClassIdentifier: 
-  setName: Sleepy Duck Gooper
-  setDescription: Her shoes go "Quack Quack Quack!"
-  setRarity: 0
+  setName: Ube Hockey Gooper
+  setDescription: Eat this!
+  setRarity: 1
   hasHead: 1
   hasTorso: 1
   hasLegs: 1
@@ -26,23 +26,23 @@ MonoBehaviour:
   setShoesStats: 0
   setBackPieceStats: 0
   setHeadSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setHeadFront: {fileID: 21300000, guid: 3b65a526098406f41a3a163ad5d86898, type: 3}
-  setHeadBack: {fileID: 21300000, guid: 4cc8ceff5039c0e48a814fc17039aa5a, type: 3}
-  setTorsoSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setTorsoFront: {fileID: 21300000, guid: 12929756d4131d8478959f50dd74bb96, type: 3}
+  setHeadFront: {fileID: 21300000, guid: 03c381903ca48364c8b5606a768dcf55, type: 3}
+  setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoSuperFront: {fileID: 21300000, guid: 63a73ce9de719464f8c5c22d4d584ff0, type: 3}
+  setTorsoFront: {fileID: 21300000, guid: 65f5f4d54b991f848ba07d4ae0f088dc, type: 3}
   setTorsoMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setTorsoBack: {fileID: 21300000, guid: 6aec4148f7b33dc4a828afb49215261e, type: 3}
+  setTorsoBack: {fileID: 21300000, guid: 808d2e5cea29c5046921f5148f6d6af9, type: 3}
   setTorsoSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setLegsSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsFront: {fileID: 21300000, guid: 2bc4e0399ece69b429cad84753ba10db, type: 3}
   setLegsMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setLegsBack: {fileID: 21300000, guid: 0e324748ce6eb164d8cf758673ad134b, type: 3}
-  setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setShoesMiddle: {fileID: 21300000, guid: f961cfced0fcadc478ef4295de63f3a5, type: 3}
+  setLegsBack: {fileID: 21300000, guid: 1602fe49e848641469c58c3fd21a622c, type: 3}
+  setShoesFront: {fileID: 21300000, guid: da105f7e759fb1c488785c6370a1c6c1, type: 3}
+  setShoesMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setShoesSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setBackPieceFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceFront: {fileID: 21300000, guid: b67d7289aafc7d943973b279ceb549c3, type: 3}
   setBackPieceFrontMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
   setBackPieceBackMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
-  setBackPieceBack: {fileID: 21300000, guid: c078f27bdfd770c43856d7707cea7261, type: 3}
-  setIcon: {fileID: 21300000, guid: 41818c488a635b04f8f4011afdfb46b9, type: 3}
+  setBackPieceBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setIcon: {fileID: 21300000, guid: f841cb0e890b69f48a4bd314e79e8cf1, type: 3}
