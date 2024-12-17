@@ -1,26 +1,41 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 // Possible set rarity
 public enum rarity { Offensive, Contraband, Criminal, OhMyGOOP };
+
+// Set Piece Types
+public enum pieceType { Head, Torso, Legs, Shoes, BackPiece };
 
 [CreateAssetMenu(fileName = "New Cosmetic Set", menuName = "Cosmetic Sets/New Cosmetic Set")]
 public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, System.IEquatable<CosmeticSet>
 {
     // Details
+    [Header("Cosmetic Set General Attributes")]
     [SerializeField] public string setName;
     [SerializeField] public string setDescription;
     [SerializeField] public rarity setRarity;
 
     // Set Occupancy
+    [Header("Cosmetic Set Included Pieces")]
     [SerializeField] public bool hasHead;
     [SerializeField] public bool hasTorso;
     [SerializeField] public bool hasLegs;
     [SerializeField] public bool hasShoes;
     [SerializeField] public bool hasBackPiece;
+
+    // Advanced Settings for Sets (to omit or hide other pieces)
+    [Header("Cosmetic Set Advanced Settings")]
+    public List<pieceType> headHides;
+    public List<pieceType> torsoHides;
+    public List<pieceType> legsHides;
+    public List<pieceType> shoesHides;
+    public List<pieceType> backPieceHides;
+
     // Set Stats
+    [Header("Cosmetic Set Statistics")]
     [SerializeField] public int setHeadStats;
     [SerializeField] public int setTorsoStats;
     [SerializeField] public int setLegsStats;
@@ -28,6 +43,7 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
     [SerializeField] public int setBackPieceStats;
 
     // Sprites
+    [Header("Cosmetic Set Assets")]
     [SerializeField] public Sprite setHeadSuperFront;
     [SerializeField] public Sprite setHeadFront;
     [SerializeField] public Sprite setHeadBack;
@@ -76,6 +92,20 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
     public const int HEAD_BACK_INDEX = 2;
     public const int SHOES_SUPER_BACK_INDEX = 1;
     public const int BACK_PIECE_BACK_INDEX = 0;
+
+    public void OnBeforeSerialize() {
+        // Remove Duplicates and Sort
+        headHides = headHides.Distinct().ToList();
+        headHides.Sort();
+        torsoHides = torsoHides.Distinct().ToList();
+        torsoHides.Sort();
+        legsHides = legsHides.Distinct().ToList();
+        legsHides.Sort();
+        shoesHides = shoesHides.Distinct().ToList();
+        shoesHides.Sort();
+        backPieceHides = backPieceHides.Distinct().ToList();
+        backPieceHides.Sort();
+    }
 
     public short getRarity()
     {
@@ -165,6 +195,7 @@ public class CosmeticSet : ScriptableObject, System.IComparable<CosmeticSet>, Sy
 
     public static void setGremDisplay(Transform gremModel, CosmeticSet head, CosmeticSet torso, CosmeticSet legs, CosmeticSet shoes, CosmeticSet backPiece)
     {
+
         // Head
         if (head != null)
         {
