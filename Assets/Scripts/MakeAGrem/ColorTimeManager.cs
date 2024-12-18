@@ -13,7 +13,7 @@ public class ColorTimeManager : MonoBehaviour
     [SerializeField] public int targetHour;
     [SerializeField] public int targetMinute;
     [SerializeField] public int gracePeriod;
-    public bool isDark;
+    [HideInInspector] public bool isDark;
     [HideInInspector] public bool buildForiOSMobile;
     System.DateTime localDate;
 
