@@ -20,7 +20,12 @@ MonoBehaviour:
   hasLegs: 0
   hasShoes: 0
   hasBackPiece: 0
-  setHeadStats: 0
+  headHides: 
+  torsoHides: 
+  legsHides: 
+  shoesHides: 
+  backPieceHides: 
+  setHeadStats: 390786
   setTorsoStats: 0
   setLegsStats: 0
   setShoesStats: 0
