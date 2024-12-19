@@ -19,8 +19,8 @@ public class ScreenCapture : MonoBehaviour
                                                 RuntimePlatform.WindowsEditor,
                                                 RuntimePlatform.WindowsServer,
                                                 RuntimePlatform.OSXPlayer,
-                                                RuntimePlatform.LinuxPlayer,
-                                                RuntimePlatform.WebGLPlayer
+                                                RuntimePlatform.LinuxPlayer
+                                                // RuntimePlatform.WebGLPlayer
                                             };
 
     private void Start() {
