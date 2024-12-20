@@ -11,6 +11,7 @@ public class ScreenCapture : MonoBehaviour
 {
     [SerializeField] private PlayableDirector screenshotNotificationAnimation;
     [SerializeField] private GameObject screenshotNotificationObject;
+    [SerializeField] private WebGLScreenshotTool.WebGLScreenshotTool webglScreenshotObject;
 
     // only allow screenshot button on supported platforms
     RuntimePlatform[] allowedPlatforms =    {   RuntimePlatform.IPhonePlayer,
@@ -19,8 +20,8 @@ public class ScreenCapture : MonoBehaviour
                                                 RuntimePlatform.WindowsEditor,
                                                 RuntimePlatform.WindowsServer,
                                                 RuntimePlatform.OSXPlayer,
-                                                RuntimePlatform.LinuxPlayer
-                                                // RuntimePlatform.WebGLPlayer
+                                                RuntimePlatform.LinuxPlayer,
+                                                RuntimePlatform.WebGLPlayer
                                             };
 
     private void Start() {
@@ -76,10 +77,12 @@ public class ScreenCapture : MonoBehaviour
         // check platform
         if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer) {
             saveScreenshotOnMobile(texture, filename);
+        } else if (platform == RuntimePlatform.WebGLPlayer) {
+            webglScreenshotObject.TakeScreenshotIgnoringSpecificCanvas();
         } else {
             // encode texture into image
             byte[] data = texture.EncodeToPNG();
-            saveScreenshotOnDesktopAndWebGL(data, filename);
+            saveScreenshotOnDesktop(data, filename);
         }
 
         Destroy(texture);
@@ -111,7 +114,7 @@ public class ScreenCapture : MonoBehaviour
         );
     }
 
-    void saveScreenshotOnDesktopAndWebGL(byte[] data, String filename)
+    void saveScreenshotOnDesktop(byte[] data, String filename)
     {
         string panelTitle = "Select Folder";
         string defaultDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
@@ -131,13 +134,4 @@ public class ScreenCapture : MonoBehaviour
             }
         });
     }
-
-    /* void saveScreenshotOnDesktop(byte[] data, String filename) {
-        string panelTitle = "Select Folder";
-        string defaultDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        string extension = ".png";
-        FileBrowser.ShowLoadDialog( (paths) => { File.WriteAllBytes(paths[0] + "\\" + filename + extension, data); }, 
-                                    null, FileBrowser.PickMode.Folders, false, null, null, panelTitle, "Select" );
-    }
-    */
 }
