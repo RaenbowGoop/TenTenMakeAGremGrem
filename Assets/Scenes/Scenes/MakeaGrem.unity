@@ -13070,6 +13070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1888938809}
   - component: {fileID: 1888938810}
+  - component: {fileID: 1888938811}
   m_Layer: 0
   m_Name: ScreenCaptureManager
   m_TagString: Untagged
@@ -13106,6 +13107,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenshotNotificationAnimation: {fileID: 757150990}
   screenshotNotificationObject: {fileID: 1948494982}
+  webglScreenshotObject: {fileID: 1888938811}
+--- !u!114 &1888938811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888938808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3eaf63a8fa284a43976cb6765ed5f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fileName: gooper-
+  _withDateInFileName: 1
+  _canvasesToIgnore:
+  - {fileID: 216355730}
 --- !u!1 &1943910919
 GameObject:
   m_ObjectHideFlags: 0
