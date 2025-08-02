@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
+  m_Name: Aqua_Gooper
+  m_EditorClassIdentifier: 
+  setName: Aqua Gooper
+  setDescription: Water you doing?!?!?
+  setRarity: 2
+  hasHead: 1
+  hasTorso: 1
+  hasLegs: 1
+  hasShoes: 1
+  hasBackPiece: 0
+  headHides: 
+  torsoHides: 
+  legsHides: 
+  shoesHides: 
+  backPieceHides: 
+  setHeadStats: 0
+  setTorsoStats: 0
+  setLegsStats: 0
+  setShoesStats: 0
+  setBackPieceStats: 0
+  setHeadSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setHeadFront: {fileID: 21300000, guid: adeb69212599e2546962595d66c212b9, type: 3}
+  setHeadBack: {fileID: 21300000, guid: 6fd16d262f19eba4f9b738186914fbc5, type: 3}
+  setTorsoSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoFront: {fileID: 21300000, guid: 2fe3037c20ec0064c80f367421daf6a0, type: 3}
+  setTorsoMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoBack: {fileID: 21300000, guid: 6aec4148f7b33dc4a828afb49215261e, type: 3}
+  setTorsoSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsMiddle: {fileID: 21300000, guid: a19b8efe1007657458f7e2254f3ddcd9, type: 3}
+  setLegsBack: {fileID: 21300000, guid: 1602fe49e848641469c58c3fd21a622c, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setShoesMiddle: {fileID: 21300000, guid: 823f0d3bb2d07974ea559e29047db1db, type: 3}
+  setShoesBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setShoesSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceFrontMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceBackMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setIcon: {fileID: 21300000, guid: a9671fd11c82b9b4983ebed1c5b61267, type: 3}
