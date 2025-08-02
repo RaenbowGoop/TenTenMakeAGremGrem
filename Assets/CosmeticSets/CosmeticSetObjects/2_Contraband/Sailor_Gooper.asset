@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ab0cfb4bab72f47bae495a2c9e0072, type: 3}
+  m_Name: Sailor_Gooper
+  m_EditorClassIdentifier: 
+  setName: Sailor Gooper
+  setDescription: One day, this gooper will become Fleet Admiral.
+  setRarity: 1
+  hasHead: 1
+  hasTorso: 1
+  hasLegs: 1
+  hasShoes: 1
+  hasBackPiece: 0
+  headHides: 
+  torsoHides: 
+  legsHides: 
+  shoesHides: 
+  backPieceHides: 
+  setHeadStats: 0
+  setTorsoStats: 0
+  setLegsStats: 0
+  setShoesStats: 0
+  setBackPieceStats: 0
+  setHeadSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setHeadFront: {fileID: 21300000, guid: 42c95d7ffe7f70149bad91c19e20aa48, type: 3}
+  setHeadBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoFront: {fileID: 21300000, guid: 0365d2ae9c60dd54e88aaeb3bbae36ae, type: 3}
+  setTorsoMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setTorsoBack: {fileID: 21300000, guid: 2c39e00b87779ee43bbdca221d7dcb9f, type: 3}
+  setTorsoSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsSuperFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setLegsMiddle: {fileID: 21300000, guid: 56ac2449670f8d64d83b34c65bd963c0, type: 3}
+  setLegsBack: {fileID: 21300000, guid: cd74763f1bb0ba441a8a891541e7a384, type: 3}
+  setShoesFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setShoesMiddle: {fileID: 21300000, guid: 17780108e1a348041995e8058174dff7, type: 3}
+  setShoesBack: {fileID: 21300000, guid: cb7cd6ff4b2b4354a898ca82fd82973d, type: 3}
+  setShoesSuperBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceFront: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceFrontMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceBackMiddle: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setBackPieceBack: {fileID: 21300000, guid: 140408423bd2cb34f868e2715aef810b, type: 3}
+  setIcon: {fileID: 21300000, guid: bebfa286b0f8799498965586f9bdfcd4, type: 3}
