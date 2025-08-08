@@ -2,44 +2,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class CafeSakiMessageManager : MonoBehaviour
 {
-    [SerializeField] List<string> cafeSakiLinesDuringTime;
-    [SerializeField] List<string> cafeSakiLinesNotDuringTime;
-    [SerializeField] List<string> cafeSakiLinesRareLines;
+    // Cafe Characters
+    [SerializeField] List<CafeCharacter> cafeCharacters;
 
+    // Cafe Background Game Object
+    [SerializeField] GameObject cafeBackgroundLight;
+    [SerializeField] GameObject cafeBackgroundDark;
+    
+    // Message Assets
     [SerializeField] TextMeshProUGUI messageText;
     [SerializeField] Image messageTextBackground;
     [SerializeField] Image messageTextBackgroundDark;
 
+    // Scene Color and Time Objects
     [SerializeField] ColorTimeManager colorTimeManager;
-    System.DateTime localDate;
-    System.Random randNumGen;
-    bool currentState;
+    static System.DateTime localDate = System.DateTime.Now;
+    static System.Random randNumGen = new System.Random();
+    bool isProperTime;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        // Setting up Date Time obj
-        localDate = System.DateTime.Now;
-
-        // Set up Random Number Generator
-        randNumGen = new System.Random();
-
         // Set saki message
-        currentState = checkIfProperTime();
-        setSakiLine();
+        isProperTime = checkIfProperTime();
+        setCafeMessageAndBackground();
     }
     void Update()
     {
         // check if exiting or entering target time (if so, change message accordingly)
-        bool isProperTime = checkIfProperTime();
-        if (currentState != isProperTime)
+        bool updatedIsProperTime = checkIfProperTime();
+        if (isProperTime != updatedIsProperTime)
         {
-            currentState = isProperTime;
-            setSakiLine();
+            isProperTime = updatedIsProperTime;
+            setCafeMessageAndBackground();
         }
     }
     bool checkIfProperTime()
@@ -47,54 +47,16 @@ public class CafeSakiMessageManager : MonoBehaviour
         localDate = System.DateTime.Now;
 
         // Return true if time is target time or within grace period after target time
-        if (localDate.Hour % 12 == colorTimeManager.targetHour && localDate.Minute >= colorTimeManager.targetMinute && localDate.Minute <= colorTimeManager.targetMinute + colorTimeManager.gracePeriod)
-        {
-            return true;
-        }
-
-        // Return false not during target time + grace period
-        return false;
+        return (localDate.Hour % 12 == colorTimeManager.targetHour && localDate.Minute >= colorTimeManager.targetMinute && localDate.Minute <= colorTimeManager.targetMinute + colorTimeManager.gracePeriod);
     }
 
-    bool checkForRareLine()
+    void setCafeMessageAndBackground()
     {
-        int randNum = randNumGen.Next(1, 70);
-
-        // Chip and Pondo were here
-        if (randNum == 69)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    void setSakiLine()
-    {
-        // determine which list of messages to choose from
-        if (checkForRareLine())
-        {
-            // Set Random Rare Line
-            int lineIndex = randNumGen.Next(0, cafeSakiLinesRareLines.Count);
-            messageText.text = cafeSakiLinesRareLines[lineIndex];
-
-            // Change Text Box Appearance
-            messageText.color = new Color(255, 255, 0, 100);
-            messageTextBackground.color = new Color(255, 0, 0, 100);
-            messageTextBackgroundDark.color = new Color(255, 0, 0, 100);
-        } else {
-            if (checkIfProperTime())
-            {
-                // Set random line to message box
-                int lineIndex = randNumGen.Next(0, cafeSakiLinesDuringTime.Count);
-                messageText.text = cafeSakiLinesDuringTime[lineIndex];
-            }
-            else
-            {
-                // Set random line to message box
-                int lineIndex = randNumGen.Next(0, cafeSakiLinesNotDuringTime.Count);
-                messageText.text = cafeSakiLinesNotDuringTime[lineIndex];
-            }
-        }
+        // Get random character
+        CafeCharacter character = cafeCharacters[randNumGen.Next(0, cafeCharacters.Count)];
+        // set up message and background
+        character.setBackgroundSprite(cafeBackgroundLight.GetComponent<Image>(), cafeBackgroundDark.GetComponent<Image>());
+        character.setRandomMessage(checkIfProperTime(), messageText, messageTextBackground, messageTextBackgroundDark);
     }
 }
 

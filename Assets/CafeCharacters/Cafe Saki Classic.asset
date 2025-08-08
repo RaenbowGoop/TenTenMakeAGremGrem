@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08a118e416b317443a944d456d61aab1, type: 3}
+  m_Name: Cafe Saki Classic
+  m_EditorClassIdentifier: 
+  characterName: Cafe Saki
+  cafeBackgroundLight: {fileID: 21300000, guid: 852a93d409edcd948bc7708073b9a05a, type: 3}
+  cafeBackgroundDark: {fileID: 21300000, guid: 926d67f2882e2fd4f9856ecb9c0f7301, type: 3}
+  linesDuringTime:
+  - OH MY LANTA
+  - aigoo!
+  - aye shakuh Yah!
+  - daniel-saaaan!
+  - oh my stars and garters!
+  - spicy.
+  - interesting.
+  - do you want some tiramisu?
+  - goop.
+  - do you like ice cream?
+  - your coffee is getting cold.
+  - ':shinygasp:'
+  - ':weirdchamptalib:'
+  - shiny! get the camera!
+  - i want to be... forever young...
+  - i don't know about this one.
+  - would you like some juice?
+  - do you have any snacks?
+  - did i lock the front door?
+  - did i leave the stove on?
+  - i'm hungry.
+  - is this legal?
+  - :v0
+  - :^0
+  - :vD
+  - gooptastic.
+  - gooptacular.
+  - that was popular back in my day.
+  - put that back.
+  - goopland would be proud.
+  - put that back.
+  - we gottem where we want em!
+  - hey you... you're finally awake!
+  - very fashionable.
+  - very hip. very cool.
+  - oh my goop.
+  - i like that.
+  - oh mein goop.
+  - hmm...
+  - let me take a picture.
+  - that's nice.
+  - that's pretty cool.
+  - i think day bean would like this.
+  - i think night bean would like this.
+  - certainly a fit of all time.
+  - very goop.
+  - i think chip would like this.
+  - i think pondo would like this.
+  - i think grandpa would like this.
+  - i think jake would like this.
+  - i think jumbo would like this.
+  - i think zeal would like this.
+  - i think haley would like this.
+  - i think baba would like this.
+  - i think rochelle would like this.
+  - i think kumi would like this.
+  - i think michelle would like this.
+  linesNotDuringTime:
+  - STOP! You've violated the law!
+  - '*cocks shotgun*'
+  - that's illegal.
+  - you should go now.
+  - You are not a good person. You know that, right? Good people don't end up here.
+  - don't wish it was easier. wish you were better.
+  - you'd best be on your way brother.
+  - '*munching*'
+  - It's not 10:10, is it?
+  - that's cheating.
+  - '*calls talib*'
+  - I never asked for this.
+  - pathetic.
+  - clementine will remember this.
+  - useless.
+  - embarassing.
+  - humiliating.
+  - unacceptable.
+  - you think you're slick, but you're not.
+  - not goop.
+  - not cool man. not. cool.
+  - stop. you're upsetting the beans.
+  - no ice cream for you.
+  rareLines:
+  - HELP MEEEEEE!
+  - HELP! I'M STUCK IN A BOX!
+  - SEND HELP!
+  - CAN ANYONE READ THIS?! PLEASE SEND HELP!
+  - AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!
+  - I HAVE ONE WEEK OF OXYGEN LEFT!
+  - IT'S SO DARK DOWN HERE!
+  - WATER! GIVE ME WATER!
+  - AIN'T HAD NOTHIN' BUT MOGGOTY BREAD FOR THREE STINKIN' DAYS!
+  - '*muffled screaming*'
+  - I NEVER ASKED FOR THIS!
+  - Do You Think God Stays In Heaven Because He Too Lives In Fear Of What He's Created?
+  - Chip and Pondo are in the basement.
+  specialNumber: 69
+  textColor: {r: 1, g: 1, b: 0, a: 1}
+  lightBackgroundColor: {r: 1, g: 0, b: 0, a: 1}
+  darkBackgroundColor: {r: 1, g: 0, b: 0, a: 1}
