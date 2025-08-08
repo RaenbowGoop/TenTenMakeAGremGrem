@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using UnityEngine;
 
 namespace WebGLScreenshotTool
 {
+    
     [AddComponentMenu("WebGLScreenshot/WebGLScreenshotTool")]
     public class WebGLScreenshotTool : MonoBehaviour
     {
@@ -49,13 +51,13 @@ namespace WebGLScreenshotTool
         /// </summary>
         public void TakeScreenshot()
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
                 Debug.LogWarning("Screenshot is only possible in WebGL build.");
-            #endif
+#endif
 
-            #if UNITY_WEBGL && !UNITY_EDITOR
+#if UNITY_WEBGL && !UNITY_EDITOR
                 StartCoroutine(TakeScreenshotCoroutine());
-            #endif
+#endif
         }
 
         /// <summary>
@@ -64,13 +66,13 @@ namespace WebGLScreenshotTool
         /// <summary>
         public void TakeScreenshotIgnoringSpecificCanvas()
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
                 Debug.LogWarning("Screenshot is only possible in WebGL build.");
-            #endif
+#endif
 
-            #if UNITY_WEBGL && !UNITY_EDITOR
+#if UNITY_WEBGL && !UNITY_EDITOR
                 StartCoroutine(TakeScreenshotCoroutine(_canvasesToIgnore));
-            #endif
+#endif
         }
 
         /// <summary>
@@ -129,9 +131,10 @@ namespace WebGLScreenshotTool
             }
             yield return null;
         }
-
+#if UNITY_WEBGL
         [DllImport("__Internal")]
         private static extern string DownloadScreenshot(byte[] array, int byteLength, string fileName);
+#endif
 
         /// <summary>
         /// Coroutine to take screenshot.
@@ -150,9 +153,9 @@ namespace WebGLScreenshotTool
             byte[] bytes = ImageConversion.EncodeArrayToPNG(texture2D.GetRawTextureData(), texture2D.graphicsFormat, (uint)width, (uint)height);
             UnityEngine.Object.Destroy(texture2D);
 
-            #if UNITY_WEBGL && !UNITY_EDITOR
+#if UNITY_WEBGL && !UNITY_EDITOR
                 DownloadScreenshot(bytes, bytes.Length, DefineFileName() +".png");
-            #endif
+#endif
 
             yield return null;
         }
@@ -168,4 +171,4 @@ namespace WebGLScreenshotTool
             yield return EnableCanvasCoroutine(canvasToIgnore);
         }
     }
-}
+    }
