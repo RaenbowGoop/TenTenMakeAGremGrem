@@ -14,7 +14,7 @@ public class PostProcessingManager : MonoBehaviour
     [SerializeField] PostProcessLayer postProcessLayer;
     [SerializeField] GameObject iOSDarkenScreen;
 
-    [SerializeField] bool buildingForiOSMobile;
+    [SerializeField] bool buildingForWebGLMobile;
 
     void Awake()
     {
@@ -22,7 +22,7 @@ public class PostProcessingManager : MonoBehaviour
         iOSDarkenScreen.SetActive(false);
 
         // Disable post processing and enable iOS darken screen if on iOS
-        if (buildingForiOSMobile )
+        if (buildingForWebGLMobile)
         {
             // Disable Post processing effects and enable iOS Darken Screen
             postProcessVolume.enabled = false;
@@ -39,7 +39,7 @@ public class PostProcessingManager : MonoBehaviour
         }
 
         // Set Flag for ColorTimeManager
-        colorTimeManager.buildForiOSMobile = buildingForiOSMobile;
+        colorTimeManager.buildForiOSMobile = buildingForWebGLMobile;
         
     }
 }

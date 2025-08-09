@@ -55,6 +55,8 @@ MonoBehaviour:
   - You're amazing!
   - You're brilliant!
   - You're so cool!
+  - You're beautiful!
+  - I like you a lot!
   specialNumber: 10
   textColor: {r: 1, g: 1, b: 0, a: 1}
   lightBackgroundColor: {r: 1, g: 0, b: 0.73195887, a: 1}
