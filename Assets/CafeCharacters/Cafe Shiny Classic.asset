@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08a118e416b317443a944d456d61aab1, type: 3}
+  m_Name: Cafe Shiny Classic
+  m_EditorClassIdentifier: 
+  characterName: Cafe Shiny
+  cafeBackgroundLight: {fileID: 21300000, guid: 27e3a216a40f7ec41a8b60ee1776bdc4, type: 3}
+  cafeBackgroundDark: {fileID: 21300000, guid: 926d67f2882e2fd4f9856ecb9c0f7301, type: 3}
+  linesDuringTime:
+  - I love ice cream!
+  - I want to be foryever young!
+  - Oh! Tiramisu time!
+  - Can we be friends? :D
+  - Oh I like that!
+  - Hi! :D
+  - Have some ice cream!
+  - How wonderful!
+  linesNotDuringTime:
+  - STOP! You've violated the law!
+  - '*cocks shotgun*'
+  - that's illegal.
+  - you should go now.
+  - You are not a good person. You know that, right? Good people don't end up here.
+  - don't wish it was easier. wish you were better.
+  - you'd best be on your way brother.
+  - '*munching*'
+  - It's not 10:10, is it?
+  - that's cheating.
+  - '*calls talib*'
+  - I never asked for this.
+  - pathetic.
+  - clementine will remember this.
+  - useless.
+  - embarassing.
+  - humiliating.
+  - unacceptable.
+  - you think you're slick, but you're not.
+  - not goop.
+  - not cool man. not. cool.
+  - stop. you're upsetting the beans.
+  - no ice cream for you.
+  rareLines:
+  - Don't tell anyone, but I think you're cute!
+  - You make me so happy! :D
+  - 'I love you! '
+  - You're amazing!
+  - You're brilliant!
+  - You're so cool!
+  - You're beautiful!
+  - I like you a lot!
+  specialNumber: 10
+  textColor: {r: 1, g: 1, b: 0, a: 1}
+  lightBackgroundColor: {r: 1, g: 0, b: 0.73195887, a: 1}
+  darkBackgroundColor: {r: 1, g: 0, b: 0.73195887, a: 1}
