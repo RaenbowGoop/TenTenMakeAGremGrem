@@ -52,8 +52,9 @@ public class CafeSakiMessageManager : MonoBehaviour
 
     void setCafeMessageAndBackground()
     {
-        // Get random character
-        CafeCharacter character = cafeCharacters[randNumGen.Next(0, cafeCharacters.Count)];
+        // Get random character if it's proper time, otherwise, default to cafe saki (index 0)
+        CafeCharacter character = (checkIfProperTime()) ? cafeCharacters[randNumGen.Next(0, cafeCharacters.Count)] : cafeCharacters[0];
+
         // set up message and background
         character.setBackgroundSprite(cafeBackgroundLight.GetComponent<Image>(), cafeBackgroundDark.GetComponent<Image>());
         character.setRandomMessage(checkIfProperTime(), messageText, messageTextBackground, messageTextBackgroundDark);
